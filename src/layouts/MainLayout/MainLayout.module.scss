@@ -10,7 +10,14 @@
     flex: 0;
 }
 
-.page {
+.page-container {
     padding: 1rem 2rem;
     overflow: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page {
+    width: 100%;
 }

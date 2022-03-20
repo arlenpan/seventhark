@@ -3,7 +3,7 @@ import MainLayout from 'src/layouts/MainLayout';
 const Calculator = () => {
     return (
         <div>
-            <h1>Calculator</h1>
+            <h1>Calculator (WIP)</h1>
         </div>
     );
 };

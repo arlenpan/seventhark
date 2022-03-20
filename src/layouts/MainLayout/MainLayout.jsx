@@ -28,7 +28,10 @@ export default function MainLayout({ children }) {
                     </Menu.ItemGroup>
                 </Menu.SubMenu>
             </Menu>
-            <div className={styles.page}>{children}</div>
+            <section className={styles['page-container']}>
+                <div className={styles.page}>{children}</div>
+                <footer>Built by @Vynnr</footer>
+            </section>
         </div>
     );
 }
