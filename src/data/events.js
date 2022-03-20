@@ -20,7 +20,6 @@ export const DAILIES = [
     DAILY_ANGUISHED_ISLE,
 ];
 
-// TODO: fix fields
 const WEEKLY_ABYSSAL_DUNGEON_340_1 = {
     id: 'abyssal_dungeon_340_1',
     name: 'Abyssal Dungeon 340 (Demon Beast Canyon)',
@@ -108,7 +107,7 @@ const WEEKLY_ABYSS_RAID_1370 = {
     ilvl: 1370,
 };
 const WEEKLY_ABYSS_RAID_1385 = {
-    id: 'abyss_raid_1370',
+    id: 'abyss_raid_1385',
     name: 'Argos Phase 2',
     quantity: 1,
     tier: 3,
