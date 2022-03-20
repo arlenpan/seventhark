@@ -1,5 +1,6 @@
 import { Menu } from 'antd';
 import { useRouter } from 'next/router';
+import Footer from 'src/components/Footer';
 import styles from './MainLayout.module.scss';
 
 export default function MainLayout({ children }) {
@@ -30,7 +31,7 @@ export default function MainLayout({ children }) {
             </Menu>
             <section className={styles['page-container']}>
                 <div className={styles.page}>{children}</div>
-                <footer>Built by @Vynnr</footer>
+                <Footer />
             </section>
         </div>
     );

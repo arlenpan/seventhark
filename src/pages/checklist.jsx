@@ -1,31 +1,33 @@
 import { Col, Row } from 'antd';
 import CharacterPanel from 'src/components/CharacterPanel';
-import ChecklistRow from 'src/components/ChecklistRow';
-import { DAILIES, WEEKLIES } from 'src/data/events';
 import MainLayout from 'src/layouts/MainLayout';
+import { useState, useEffect } from 'react';
+import { getAllCharacters, resetSampleCharacters } from 'src/api/character';
+import ChecklistPanel from 'src/components/ChecklistPanel';
 
 const Checklist = () => {
+    const [characters, setCharacters] = useState([]);
+
+    useEffect(() => {
+        getCharacters();
+    }, []);
+
+    const getCharacters = () => {
+        getAllCharacters().then((res) => {
+            setCharacters(res);
+        });
+    };
+
     return (
         <div>
             <h1>Checklist</h1>
 
             <Row>
-                <Col xs={20}>
-                    <h3>Dailies</h3>
-                    <ul>
-                        {DAILIES.map((daily) => (
-                            <ChecklistRow key={daily.id} item={daily} />
-                        ))}
-                    </ul>
-                    <h3>Weeklies</h3>
-                    <ul>
-                        {WEEKLIES.map((weekly) => (
-                            <ChecklistRow key={weekly.id} item={weekly} />
-                        ))}
-                    </ul>
+                <Col xs={18}>
+                    <ChecklistPanel characters={characters} />
                 </Col>
-                <Col xs={4}>
-                    <CharacterPanel />
+                <Col xs={6}>
+                    <CharacterPanel characters={characters} onUpdate={getCharacters} />
                 </Col>
             </Row>
         </div>

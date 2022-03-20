@@ -1,23 +1,23 @@
-export const SAMPLE_DATA_CHARACTERS = [
-    {
-        name: 'Vynnr',
+export const SAMPLE_DATA_CHARACTERS = {
+    Vynnr: {
+        name: "Vynnr",
         ilvl: 1370,
-        class: 'Gunslinger',
+        class: "Gunslinger",
     },
-    {
-        name: 'Npl',
+    Npl: {
+        name: "Npl",
         ilvl: 1307,
-        class: 'Paladin',
+        class: "Paladin",
     },
-    {
-        name: 'Ttr',
+    Ttr: {
+        name: "Ttr",
         ilvl: 400,
-        class: 'Deathblade',
+        class: "Deathblade",
     },
-];
+};
 
 export const SAMPLE_DATA_SERVER = {
-    name: 'Valtan',
-    resetDaily: '0300',
-    resetWeekly: 'THU',
+    name: "Valtan",
+    resetDaily: "0300",
+    resetWeekly: "THU",
 };

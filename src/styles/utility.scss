@@ -1,17 +1,37 @@
+// LAYOUT
 .d-flex {
     display: flex;
 }
-
 .d-flex-center {
     display: flex;
     align-items: center;
 }
-
 .d-flex-column {
     display: flex;
     flex-direction: column;
 }
+.align-center {
+    align-items: center;
+}
+.justify-between {
+    justify-content: space-between;
+}
 
+// SPACING
+.m-ts {
+    margin-top: 1rem;
+}
+.m-ls {
+    margin-left: 1rem;
+}
+.m-rs {
+    margin-right: 1rem;
+}
 .m-bs {
     margin-bottom: 1rem;
+}
+
+// FONTS
+.font-small {
+    font-size: 80%;
 }
