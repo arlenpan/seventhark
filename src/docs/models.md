@@ -13,8 +13,9 @@
   { 
     Vynnr: 
       { 
-        abyssal_dungeon_1340_1: 1,
-        abyssal_dungeon_1325_1: 1
+        chaos_dungeon: [0, 1],
+        abyssal_dungeon_1340_1: [0],
+        abyssal_dungeon_1325_1: [0]
       }
   }
 ```
