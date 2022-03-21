@@ -1,8 +1,8 @@
-import { CloseOutlined } from "@ant-design/icons";
-import { Button } from "antd";
-import { useState } from "react";
-import { createCharacter, deleteCharacter, resetSampleCharacters } from "src/api/character";
-import CreateCharacterForm from "./CreateCharacterForm";
+import { CloseOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
+import { useState } from 'react';
+import { createCharacter, deleteCharacter, resetSampleCharacters } from 'src/api/character';
+import CreateCharacterForm from './CreateCharacterForm';
 
 export default function CharacterPanel({ characters, onUpdate }) {
     const [showCreatePanel, setCreatePanel] = useState(false);

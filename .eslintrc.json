@@ -1,3 +1,21 @@
 {
-  "extends": "next/core-web-vitals"
+    "extends": ["next/core-web-vitals", "airbnb"],
+    "rules": {
+        "indent": ["error", 4],
+        "arrow-body-style": 0,
+        "no-restricted-exports": 0,
+        "no-use-before-define": 0,
+        "no-return-assign": 0,
+        "no-unused-vars": 1,
+
+        "import/no-unresolved": 0,
+
+        "react/jsx-props-no-spreading": 1,
+        "react/jsx-one-expression-per-line": 0,
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": ["error", 4],
+        "react/react-in-jsx-scope": 0,
+        "react/prop-types": 0,
+        "react/function-component-definition": 0
+    }
 }

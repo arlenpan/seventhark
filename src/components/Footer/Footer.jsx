@@ -1,4 +1,4 @@
-export default function Footer({}) {
+export default function Footer() {
     return (
         <footer className="d-flex-column d-flex-center font-small m-ts">
             <span>Daily Reset in X Hours</span>
