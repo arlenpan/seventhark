@@ -1,20 +1,20 @@
 import { Checkbox, Table } from "antd";
 import { DAILIES, WEEKLIES } from "src/data/events";
-import ChecklistRow from "./ChecklistRow";
+import styles from "./Checklist.module.scss";
 
 export default function ChecklistPanel({ characters }) {
     const checkboxColumns = characters.map((char) => ({
         title: char.name,
         dataIndex: char.name,
         key: char.name,
-        width: '80px'
+        width: "80px",
     }));
 
     const columns = [...checkboxColumns, { title: "Event", dataIndex: "event", key: "event" }];
 
     const buildTableData = (events) => {
         return events.map((event) => {
-            const baseFields = { event: event.name };
+            const baseFields = { event: event.name, key: event.id };
             const characterFields = {};
             characters.forEach(
                 (char) => (characterFields[char.name] = renderCharacterField(char, event))
@@ -34,7 +34,7 @@ export default function ChecklistPanel({ characters }) {
     };
 
     return (
-        <div>
+        <div className={styles.checklist}>
             <h3>Dailies</h3>
             <Table
                 columns={columns}
