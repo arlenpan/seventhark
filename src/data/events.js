@@ -85,7 +85,7 @@ const WEEKLY_ABYSSAL_DUNGEON_960_3 = {
 };
 const WEEKLY_ABYSSAL_DUNGEON_1325_1 = {
     id: 'abyssal_dungeon_1325_1',
-    name: `Abyssal Dungeon 1325 (Aira's Oculus)`,
+    name: `Abyssal Dungeon 1325/1370 (Aira's Oculus)`,
     quantity: 1,
     tier: 3,
     ilvl: 1340,
@@ -93,7 +93,7 @@ const WEEKLY_ABYSSAL_DUNGEON_1325_1 = {
 };
 const WEEKLY_ABYSSAL_DUNGEON_1340_1 = {
     id: 'abyssal_dungeon_1340_1',
-    name: 'Abyssal Dungeon 1340 (Oreha Prevaza)',
+    name: 'Abyssal Dungeon 1340/1370 (Oreha Prevaza)',
     quantity: 1,
     tier: 3,
     ilvl: 1340,

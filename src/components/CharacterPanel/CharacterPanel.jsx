@@ -15,6 +15,7 @@ export default function CharacterPanel({ characters, onUpdate }) {
     const handleSubmitCreate = (character) => {
         createCharacter(character);
         onUpdate();
+        setCreatePanel(false);
     };
 
     const handleDelete = (character) => {
@@ -40,7 +41,9 @@ export default function CharacterPanel({ characters, onUpdate }) {
                     onClose={() => setCreatePanel(false)}
                 />
             )}
-            <Button onClick={() => setCreatePanel(true)}>Add Character</Button>
+            {!showCreatePanel && (
+                <Button onClick={() => setCreatePanel(true)}>Add Character</Button>
+            )}
             <Button onClick={handleResetCharacters}>Reset Sample Data</Button>
         </div>
     );
