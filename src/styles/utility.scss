@@ -18,17 +18,25 @@
 }
 
 // SPACING
-.m-ts {
-    margin-top: 1rem;
-}
-.m-ls {
-    margin-left: 1rem;
-}
-.m-rs {
-    margin-right: 1rem;
-}
-.m-bs {
-    margin-bottom: 1rem;
+$sizes: (
+    s: 1rem,
+    xs: 0.5rem,
+    0: 0,
+);
+
+@each $size, $value in $sizes {
+    .m-t#{$size} {
+        margin-top: $value;
+    }
+    .m-b#{$size} {
+        margin-bottom: $value;
+    }
+    .m-l#{$size} {
+        margin-left: $value;
+    }
+    .m-r#{$size} {
+        margin-right: $value;
+    }
 }
 
 // FONTS

@@ -1,3 +1,4 @@
+import { DAILIES, WEEKLIES } from 'src/data/events';
 import { getLocal, setLocal } from './localStorage';
 
 const STORAGE_KEY = 'checklist';
@@ -28,4 +29,31 @@ export const setChecklistItem = ({ value, index, character, event }) => {
     setLocal(STORAGE_KEY, newChecklist);
 };
 
-export const resetChecklist = () => {};
+export const resetChecklistDailies = () => {
+    const checklist = getLocal(STORAGE_KEY);
+    const newChecklist = { ...checklist };
+
+    Object.keys(newChecklist).forEach((characterName) => {
+        Object.keys(newChecklist[characterName]).forEach((eventName) => {
+            if (DAILIES.find((daily) => eventName === daily.id)) {
+                delete newChecklist[characterName][eventName];
+            }
+        });
+    });
+
+    setLocal(STORAGE_KEY, newChecklist);
+};
+export const resetChecklistWeeklies = () => {
+    const checklist = getLocal(STORAGE_KEY);
+    const newChecklist = { ...checklist };
+
+    Object.keys(newChecklist).forEach((characterName) => {
+        Object.keys(newChecklist[characterName]).forEach((eventName) => {
+            if (WEEKLIES.find((weekly) => eventName === weekly.id)) {
+                delete newChecklist[characterName][eventName];
+            }
+        });
+    });
+
+    setLocal(STORAGE_KEY, newChecklist);
+};

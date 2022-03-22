@@ -1,7 +1,12 @@
-import { Checkbox, Table } from 'antd';
+import { Button, Checkbox, Table } from 'antd';
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
-import { getChecklist, setChecklistItem } from 'src/api/checklist';
+import {
+    getChecklist,
+    resetChecklistDailies,
+    resetChecklistWeeklies,
+    setChecklistItem,
+} from 'src/api/checklist';
 import { DAILIES, WEEKLIES } from 'src/data/events';
 import styles from './Checklist.module.scss';
 
@@ -22,13 +27,17 @@ export default function ChecklistPanel({ characters }) {
 
     const buildTableData = (events) => {
         return events.map((event) => {
-            const baseFields = { event: event.name, key: event.id };
+            const baseFields = { event: renderEventField(event), key: event.id };
             const characterFields = {};
             characters.forEach((char) => {
                 return (characterFields[char.name] = renderCharacterField(char, event));
             });
             return { ...characterFields, ...baseFields };
         });
+    };
+
+    const renderEventField = (event) => {
+        return <div className={classNames(styles.cell)}>{event.name}</div>;
     };
 
     const renderCharacterField = (char, event) => {
@@ -54,16 +63,32 @@ export default function ChecklistPanel({ characters }) {
         getChecklist().then(setChecklist);
     };
 
+    const handleReset = (type) => {
+        if (type === 'daily') resetChecklistDailies();
+        if (type === 'weekly') resetChecklistWeeklies();
+        getChecklist().then(setChecklist);
+    };
+
     return (
         <div className={styles.checklist}>
-            <h3>Dailies</h3>
+            <div className="d-flex-center">
+                <h3>Dailies</h3>
+                <Button size="small" className="m-lxs" onClick={() => handleReset('daily')}>
+                    Reset
+                </Button>
+            </div>
             <Table
                 columns={columns}
                 dataSource={buildTableData(DAILIES)}
                 size="small"
                 pagination={false}
             />
-            <h3 className="m-ts">Weeklies</h3>
+            <div className="d-flex-center m-ts">
+                <h3>Weeklies</h3>
+                <Button size="small" className="m-lxs" onClick={() => handleReset('weekly')}>
+                    Reset
+                </Button>
+            </div>
             <Table
                 columns={columns}
                 dataSource={buildTableData(WEEKLIES)}
