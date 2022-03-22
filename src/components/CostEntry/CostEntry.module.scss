@@ -1,0 +1,9 @@
+.input {
+  width: 80px;
+  margin-right: 0.5rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}

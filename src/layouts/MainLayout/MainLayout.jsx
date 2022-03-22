@@ -15,7 +15,7 @@ export default function MainLayout({ children }) {
         <div className={styles.layout}>
             <Menu onClick={handleClickNav} className={styles.nav} selectedKeys={[activeKey]} mode="horizontal">
                 <Menu.Item key="/checklist">Checklist</Menu.Item>
-                <Menu.Item key="/calculator">Economy Calculator (WIP)</Menu.Item>
+                <Menu.Item key="/calculator">Calculators</Menu.Item>
                 <Menu.Item key="/islands">Island Tracker (WIP)</Menu.Item>
                 <Menu.Item key="/rapport">Rapport Tracker (WIP)</Menu.Item>
                 <Menu.SubMenu key="links" title="Useful Links (WIP)">

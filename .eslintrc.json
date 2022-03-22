@@ -9,6 +9,7 @@
         "no-unused-vars": 1,
         "operator-linebreak": 0,
         "object-curly-newline": 0,
+        "comma-dangle": 0,
 
         "import/no-unresolved": 0,
 

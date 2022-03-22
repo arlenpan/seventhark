@@ -19,3 +19,20 @@
       }
   }
 ```
+
+`tiers`
+```
+  {
+    1: true,
+    2: false,
+    3: true
+  }
+```
+
+`costs`
+```
+  {
+    destruction_stone: 47,
+    crystals: 400
+  }
+```
