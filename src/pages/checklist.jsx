@@ -17,10 +17,10 @@ const Checklist = () => {
     return (
         <div>
             <Row>
-                <Col xs={18}>
+                <Col xs={24} sm={18}>
                     <ChecklistPanel characters={characters} />
                 </Col>
-                <Col xs={6}>
+                <Col xs={24} sm={6}>
                     <CharacterPanel characters={characters} onUpdate={getCharacters} />
                 </Col>
             </Row>
