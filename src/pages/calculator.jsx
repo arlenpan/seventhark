@@ -42,9 +42,12 @@ const Calculator = () => {
             </div>
 
             <CostEntry tiers={tiers} costs={costs} className="m-ts" onChange={handleCostChange} />
-            <MariShopView tiers={tiers} costs={costs} className="m-ts" />
 
-            <div className="faded">
+            {Object.values(tiers).find((tierValue) => tierValue) && (
+                <MariShopView tiers={tiers} costs={costs} className="m-ts" />
+            )}
+
+            <div className="faded m-ts">
                 <h3>T3 Infinite Chaos Calculator</h3>
                 <span>WIP</span>
                 <h3>Honing Calculator</h3>

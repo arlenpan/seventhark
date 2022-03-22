@@ -10,7 +10,7 @@ export default function CostEntry({ tiers, costs = {}, onChange, className }) {
 
     return (
         <div className={className}>
-            Mari's Shop:
+            <strong>Mari's Shop:</strong>
             <div>
                 <Input
                     type="number"
@@ -20,8 +20,11 @@ export default function CostEntry({ tiers, costs = {}, onChange, className }) {
                 />
                 95 Crystals
             </div>
-            Action House Costs:
+            <strong>Action House Costs:</strong>
             <div className={styles.container}>
+                {!Object.values(tiers).find((tierValue) => tierValue) && (
+                    <em>Please Select Tiers</em>
+                )}
                 {HONING_MATERIALS.map((material) => {
                     if (!tiers[material.tier]) return null;
                     return (
