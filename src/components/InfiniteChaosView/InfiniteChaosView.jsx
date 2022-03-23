@@ -90,7 +90,7 @@ export default function InfiniteChaosView({ costs, className }) {
             id: item.id,
             goldCost: costs[item.id],
             purificationCost,
-            goldPerShard: !Number.isNaN(goldPerShard) && goldPerShard,
+            goldPerShard: !Number.isNaN(goldPerShard) && Math.round(goldPerShard * 1000) / 1000,
             exchangeCurve: item.exchangeCurve,
         };
     });

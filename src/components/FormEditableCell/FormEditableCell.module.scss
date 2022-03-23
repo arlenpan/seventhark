@@ -3,7 +3,7 @@
     padding: 0.25rem;
     cursor: pointer;
     transition: border 0.33s;
-    border: 1px solid transparent;
+    border: 1px solid rgba(lightgray, 0.5);
     border-radius: 2px;
     width: 100px;
     &:hover {
