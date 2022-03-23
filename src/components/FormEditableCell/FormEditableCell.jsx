@@ -1,6 +1,6 @@
 import { Input } from 'antd';
+import { useEffect, useRef, useState } from 'react';
 import styles from './FormEditableCell.module.scss';
-import { useState, useRef, useEffect } from 'react';
 
 export default function FormEditableCell({ value, record, onChange }) {
     const [editing, setEditing] = useState(false);
