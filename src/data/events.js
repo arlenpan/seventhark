@@ -2,11 +2,17 @@ const DAILY_CHAOS_DUNGEON = { id: 'chaos_dungeon', name: 'Chaos Dungeon', quanti
 const DAILY_GUARDIAN_RAID = { id: 'guardian_raid', name: 'Guardian Raid', quantity: 2 };
 const DAILY_GUILD_DONATION = { id: 'guild_donation', name: 'Guild Donation', quantity: 1 };
 const DAILY_GUILD_SUPPORT = { id: 'guild_support', name: 'Guild Support', quantity: 1 };
-const DAILY_UNAS_TASK = { id: 'unas_task', name: `Una's Task`, quantity: 3 };
+const DAILY_UNAS_TASK = { id: 'unas_task', name: "Una's Task", quantity: 3 };
 const DAILY_WORLD_BOSS = { id: 'world_boss', name: 'World Boss', quantity: 1 };
 const DAILY_CHAOS_GATE = { id: 'chaos_gate', name: 'Chaos Gate', quantity: 1 };
 const DAILY_ADVENTURE_ISLAND = { id: 'adventure_island', name: 'Adventure Island', quantity: 1 };
-const DAILY_ANGUISHED_ISLE = { id: 'anguished_isle', name: 'Anguished Isle', quantity: 1, tier: 3, ilvl: 1100 };
+const DAILY_ANGUISHED_ISLE = {
+    id: 'anguished_isle',
+    name: 'Anguished Isle',
+    quantity: 1,
+    tier: 3,
+    ilvl: 1100,
+};
 
 export const DAILIES = [
     DAILY_CHAOS_DUNGEON,
@@ -29,7 +35,7 @@ const WEEKLY_ABYSSAL_DUNGEON_340_1 = {
 };
 const WEEKLY_ABYSSAL_DUNGEON_340_2 = {
     id: 'abyssal_dungeon_340_2',
-    name: `Abyssal Dungeon 340 (Necromancer's Origin)`,
+    name: "Abyssal Dungeon 340 (Necromancer's Origin)",
     quantity: 1,
     tier: 1,
     ilvl: 340,
@@ -78,14 +84,14 @@ const WEEKLY_ABYSSAL_DUNGEON_960_2 = {
 };
 const WEEKLY_ABYSSAL_DUNGEON_960_3 = {
     id: 'abyssal_dungeon_960_3',
-    name: `Abyssal Dungeon 960 (Alaric's Sanctuary)`,
+    name: "Abyssal Dungeon 960 (Alaric's Sanctuary)",
     quantity: 1,
     tier: 2,
     ilvl: 960,
 };
 const WEEKLY_ABYSSAL_DUNGEON_1325_1 = {
     id: 'abyssal_dungeon_1325_1',
-    name: `Abyssal Dungeon 1325/1370 (Aira's Oculus)`,
+    name: "Abyssal Dungeon 1325/1370 (Aira's Oculus)",
     quantity: 1,
     tier: 3,
     ilvl: 1340,
@@ -138,10 +144,18 @@ export const ABYSSALS = [
     WEEKLY_ABYSS_RAID_1400,
 ];
 
-const TRADE_SYLMAEL_BLOODSTONE = { id: 'trade_sylmael_bloodstone', name: 'Sylmael Bloodstone Exchange', quantity: 1 };
-const TRADE_MERCHANT_SHIPS = { id: 'trade_merchant_ships', name: 'Traveling Merchant Ships', quantity: 1 };
+const TRADE_SYLMAEL_BLOODSTONE = {
+    id: 'trade_sylmael_bloodstone',
+    name: 'Sylmael Bloodstone Exchange',
+    quantity: 1,
+};
+const TRADE_MERCHANT_SHIPS = {
+    id: 'trade_merchant_ships',
+    name: 'Traveling Merchant Ships',
+    quantity: 1,
+};
 const WEEKLY_GHOST_SHIP = { id: 'weekly_ghost_ship', name: 'Ghost Ship', quantity: 1 };
-const WEEKLY_UNAS_TASK = { id: 'weekly_unas_task', name: `Una's Task (Weekly)`, quantity: 3 };
+const WEEKLY_UNAS_TASK = { id: 'weekly_unas_task', name: "Una's Task (Weekly)", quantity: 3 };
 const WEEKLY_GUILD_TASKS = { id: 'weekly_guild_tasks', name: 'Guild Tasks (Weekly)', quantity: 1 };
 
 export const WEEKLIES = [

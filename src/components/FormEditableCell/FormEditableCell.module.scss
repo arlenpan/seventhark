@@ -1,0 +1,18 @@
+.editable-value {
+    margin: 0.25rem;
+    padding: 0.25rem;
+    cursor: pointer;
+    transition: border 0.33s;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    width: 100px;
+    &:hover {
+        border: 1px solid lightgray;
+    }
+}
+
+.editable-input {
+    margin: 0.25rem;
+    padding: 0.25rem;
+    width: 100px;
+}

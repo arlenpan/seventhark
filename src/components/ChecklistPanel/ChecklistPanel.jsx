@@ -83,6 +83,9 @@ export default function ChecklistPanel({ characters }) {
                 size="small"
                 pagination={false}
             />
+            <div className="d-flex-center faded m-ts">
+                <h3>Rapport Dailies (WIP)</h3>
+            </div>
             <div className="d-flex-center m-ts">
                 <h3>Weeklies</h3>
                 <Button size="small" className="m-lxs" onClick={() => handleReset('weekly')}>

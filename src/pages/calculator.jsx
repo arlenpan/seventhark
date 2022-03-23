@@ -1,9 +1,9 @@
-import { Checkbox, Input } from 'antd';
+import { Checkbox, Tabs } from 'antd';
 import { useEffect, useState } from 'react';
 import { getActiveTiers, getCosts, setActiveTier, setCost } from 'src/api/economy';
 import CostEntry from 'src/components/CostEntry';
+import InfiniteChaosView from 'src/components/InfiniteChaosView';
 import MariShopView from 'src/components/MariShopView';
-import { HONING_MATERIALS } from 'src/data/economy';
 import MainLayout from 'src/layouts/MainLayout';
 
 const Calculator = () => {
@@ -28,7 +28,6 @@ const Calculator = () => {
 
     return (
         <div>
-            <h3>Mari's Shop Economy Calculator</h3>
             <div className="d-flex-center">
                 {[...Array(3).keys()].map((n) => (
                     <div className="d-flex-center" key={n}>
@@ -43,18 +42,17 @@ const Calculator = () => {
 
             <CostEntry tiers={tiers} costs={costs} className="m-ts" onChange={handleCostChange} />
 
-            {Object.values(tiers).find((tierValue) => tierValue) && (
-                <MariShopView tiers={tiers} costs={costs} className="m-ts" />
-            )}
-
-            <div className="faded m-ts">
-                <h3>T3 Infinite Chaos Calculator</h3>
-                <span>WIP</span>
-                <h3>Honing Calculator</h3>
-                <span>WIP</span>
-                <h3>Ability Stone Calculator</h3>
-                <span>WIP</span>
-            </div>
+            <Tabs className="m-ts">
+                <Tabs.TabPane tab="Mari's Shop" key="mari">
+                    <MariShopView tiers={tiers} costs={costs} />
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="T3 Infinite Chaos" key="infinite">
+                    <InfiniteChaosView costs={costs} />
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Item Honing" key="honing">
+                    <div>WIP</div>
+                </Tabs.TabPane>
+            </Tabs>
         </div>
     );
 };

@@ -86,6 +86,7 @@ const DESTRUCTION_STONE_CRYSTAL = {
     bundle: 10,
     quantityMari: 30,
     gemCostMari: 240,
+    exchangeCurve: [60, 90, 120],
 };
 const GUARDIAN_STONE_CRYSTAL = {
     id: 'guardian_stone_crystal',
@@ -94,6 +95,7 @@ const GUARDIAN_STONE_CRYSTAL = {
     bundle: 10,
     quantityMari: 80,
     gemCostMari: 240,
+    exchangeCurve: [10, 40, 60, 80, 100],
 };
 const HONOR_LEAPSTONE = {
     id: 'honor_leapstone',
@@ -101,6 +103,7 @@ const HONOR_LEAPSTONE = {
     tier: 3,
     quantityMari: 5,
     gemCostMari: 10,
+    exchangeCurve: [100, 130],
 };
 const HONOR_SHARD_POUCH_S = {
     id: 'honor_shard_pouch_s',
@@ -109,12 +112,19 @@ const HONOR_SHARD_POUCH_S = {
     quantityMari: 10,
     gemCostMari: 56,
 };
+const HONOR_SHARD_POUCH_L = {
+    id: 'honor_shard_pouch_l',
+    name: 'Honor Shard Pouch (L)',
+    tier: 3,
+    exchangeCurve: [500],
+};
 const SOLAR_GRACE = {
     id: 'solar_grace',
     name: 'Solar Grace',
     tier: 3,
     quantityMari: 20,
     gemCostMari: 80,
+    exchangeCurve: [550],
 };
 const SOLAR_BLESSING = {
     id: 'solar_blessing',
@@ -122,6 +132,7 @@ const SOLAR_BLESSING = {
     tier: 3,
     quantityMari: 15,
     gemCostMari: 150,
+    exchangeCurve: [570],
 };
 const SOLAR_PROTECTION = {
     id: 'solar_protection',
@@ -129,6 +140,7 @@ const SOLAR_PROTECTION = {
     tier: 3,
     quantityMari: 3,
     gemCostMari: 150,
+    exchangeCurve: [590],
 };
 const GREAT_HONOR_LEAPSTONE = {
     id: 'great_honor_leapstone',
@@ -136,6 +148,7 @@ const GREAT_HONOR_LEAPSTONE = {
     tier: 3,
     quantityMari: 5,
     gemCostMari: 50,
+    exchangeCurve: [130, 170, 200],
 };
 const SIMPLE_OREHA_FUSION_MATERIAL = {
     id: 'simple_oreha_fusion_material',
@@ -150,6 +163,12 @@ const BASIC_OREHA_FUSION_MATERIAL = {
     tier: 3,
     quantityMari: 10,
     gemCostMari: 40,
+};
+const POWDER_OF_SAGE = {
+    id: 'powder_of_sage',
+    name: 'Powder of Sage',
+    tier: 3,
+    exchangeCurve: [1470],
 };
 
 export const CRYSTALS = {
@@ -179,12 +198,14 @@ export const T3_MATERIALS = [
     GUARDIAN_STONE_CRYSTAL,
     HONOR_LEAPSTONE,
     HONOR_SHARD_POUCH_S,
+    HONOR_SHARD_POUCH_L,
     SOLAR_GRACE,
     SOLAR_BLESSING,
     SOLAR_PROTECTION,
     SIMPLE_OREHA_FUSION_MATERIAL,
     GREAT_HONOR_LEAPSTONE,
     BASIC_OREHA_FUSION_MATERIAL,
+    POWDER_OF_SAGE,
 ];
 
-export const HONING_MATERIALS = [...T1_MATERIALS, ...T2_MATERIALS, ...T3_MATERIALS];
+export const ALL_MATERIALS = [...T1_MATERIALS, ...T2_MATERIALS, ...T3_MATERIALS];

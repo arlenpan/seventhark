@@ -1,5 +1,7 @@
 import { Input } from 'antd';
-import { CRYSTALS, HONING_MATERIALS } from 'src/data/economy';
+import classNames from 'classnames';
+import { ALL_MATERIALS, CRYSTALS } from 'src/data/economy';
+import tierStyles from 'src/styles/tiers.module.scss';
 import styles from './CostEntry.module.scss';
 
 export default function CostEntry({ tiers, costs = {}, onChange, className }) {
@@ -9,8 +11,8 @@ export default function CostEntry({ tiers, costs = {}, onChange, className }) {
     };
 
     return (
-        <div className={className}>
-            <strong>Mari's Shop:</strong>
+        <div className={classNames(className, styles.container)}>
+            <strong>Gem Cost in Gold:</strong>
             <div>
                 <Input
                     type="number"
@@ -20,12 +22,12 @@ export default function CostEntry({ tiers, costs = {}, onChange, className }) {
                 />
                 95 Crystals
             </div>
-            <strong>Action House Costs:</strong>
-            <div className={styles.container}>
+            <strong>Action House Costs in Gold:</strong>
+            <div className={styles.grid}>
                 {!Object.values(tiers).find((tierValue) => tierValue) && (
                     <em>Please Select Tiers</em>
                 )}
-                {HONING_MATERIALS.map((material) => {
+                {ALL_MATERIALS.map((material) => {
                     if (!tiers[material.tier]) return null;
                     return (
                         <div className="d-flex-center" key={material.id}>
@@ -35,7 +37,15 @@ export default function CostEntry({ tiers, costs = {}, onChange, className }) {
                                 value={costs[material.id]}
                                 onChange={(e) => handleInputChange(e, material)}
                             />
-                            {material.name}
+                            <span
+                                className={classNames(
+                                    material.tier === 1 && tierStyles.tier1,
+                                    material.tier === 2 && tierStyles.tier2,
+                                    material.tier === 3 && tierStyles.tier3
+                                )}
+                            >
+                                {material.name}
+                            </span>
                         </div>
                     );
                 })}

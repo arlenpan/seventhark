@@ -24,7 +24,7 @@ export default function CharacterPanel({ characters, onUpdate }) {
     };
 
     return (
-        <div>
+        <div className="m-bs">
             <h3>Characters</h3>
             {characters.map((char) => (
                 <div key={char.name} className="d-flex-center justify-between m-bs">

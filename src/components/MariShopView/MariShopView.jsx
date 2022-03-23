@@ -1,6 +1,7 @@
 import { Table } from 'antd';
 import classNames from 'classnames';
-import { CRYSTALS, HONING_MATERIALS } from 'src/data/economy';
+import { ALL_MATERIALS, CRYSTALS } from 'src/data/economy';
+import tierStyles from 'src/styles/tiers.module.scss';
 import styles from './MariShopView.module.scss';
 
 export default function MariShopView({ costs, tiers, className }) {
@@ -8,9 +9,9 @@ export default function MariShopView({ costs, tiers, className }) {
         return (
             <div
                 className={classNames(
-                    record.tier === 1 && styles.tier1,
-                    record.tier === 2 && styles.tier2,
-                    record.tier === 3 && styles.tier3
+                    record.tier === 1 && tierStyles.tier1,
+                    record.tier === 2 && tierStyles.tier2,
+                    record.tier === 3 && tierStyles.tier3
                 )}
             >
                 {name}
@@ -58,23 +59,25 @@ export default function MariShopView({ costs, tiers, className }) {
         { title: 'Gold Difference', dataIndex: 'goldDiff', key: 'goldDiff' },
     ];
 
-    const data = HONING_MATERIALS.filter((item) => tiers[item.tier]).map((item) => {
-        const goldValueAH = item.quantityMari * costs[item.id];
-        const goldDiff = Math.round(
-            item.quantityMari * costs[item.id] - (costs[CRYSTALS.id] / 95) * item.gemCostMari
-        );
+    const data = ALL_MATERIALS.filter((item) => tiers[item.tier] && item.quantityMari).map(
+        (item) => {
+            const goldValueAH = item.quantityMari * costs[item.id];
+            const goldDiff = Math.round(
+                item.quantityMari * costs[item.id] - (costs[CRYSTALS.id] / 95) * item.gemCostMari
+            );
 
-        return {
-            item: item.name,
-            goldCost: costs[item.id],
-            quantity: item.quantityMari,
-            gemCost: item.gemCostMari,
-            goldValueAH: !Number.isNaN(goldValueAH) && goldValueAH,
-            goldValueMari: Math.round((costs[CRYSTALS.id] / 95) * item.gemCostMari),
-            goldDiff: !Number.isNaN(goldDiff) && goldDiff,
-            tier: item.tier,
-        };
-    });
+            return {
+                item: item.name,
+                goldCost: costs[item.id],
+                quantity: item.quantityMari,
+                gemCost: item.gemCostMari,
+                goldValueAH: !Number.isNaN(goldValueAH) && goldValueAH,
+                goldValueMari: Math.round((costs[CRYSTALS.id] / 95) * item.gemCostMari),
+                goldDiff: !Number.isNaN(goldDiff) && goldDiff,
+                tier: item.tier,
+            };
+        }
+    );
 
     return (
         <div className={className}>
