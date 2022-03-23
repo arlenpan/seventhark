@@ -1,7 +1,6 @@
 const DAILY_CHAOS_DUNGEON = { id: 'chaos_dungeon', name: 'Chaos Dungeon', quantity: 2 };
 const DAILY_GUARDIAN_RAID = { id: 'guardian_raid', name: 'Guardian Raid', quantity: 2 };
-const DAILY_GUILD_DONATION = { id: 'guild_donation', name: 'Guild Donation', quantity: 1 };
-const DAILY_GUILD_SUPPORT = { id: 'guild_support', name: 'Guild Support', quantity: 1 };
+const DAILY_GUILD_DONATION = { id: 'guild', name: 'Guild Donation/Support', quantity: 1 };
 const DAILY_UNAS_TASK = { id: 'unas_task', name: "Una's Task", quantity: 3 };
 const DAILY_WORLD_BOSS = { id: 'world_boss', name: 'World Boss', quantity: 1 };
 const DAILY_CHAOS_GATE = { id: 'chaos_gate', name: 'Chaos Gate', quantity: 1 };
@@ -18,7 +17,6 @@ export const DAILIES = [
     DAILY_CHAOS_DUNGEON,
     DAILY_GUARDIAN_RAID,
     DAILY_GUILD_DONATION,
-    DAILY_GUILD_SUPPORT,
     DAILY_UNAS_TASK,
     DAILY_WORLD_BOSS,
     DAILY_CHAOS_GATE,
@@ -94,7 +92,7 @@ const WEEKLY_ABYSSAL_DUNGEON_1325_1 = {
     name: "Abyssal Dungeon 1325/1370 (Aira's Oculus)",
     quantity: 1,
     tier: 3,
-    ilvl: 1340,
+    ilvl: 1325,
     hardMode: 1370,
 };
 const WEEKLY_ABYSSAL_DUNGEON_1340_1 = {

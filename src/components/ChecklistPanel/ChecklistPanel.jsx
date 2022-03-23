@@ -48,7 +48,7 @@ export default function ChecklistPanel({ characters }) {
                 {[...Array(event.quantity).keys()].map((v, i) => (
                     <Checkbox
                         key={i}
-                        disabled={event.ilvl && char.ilvl < event.ilvl}
+                        disabled={event.ilvl && char.ilvl && char.ilvl < event.ilvl}
                         checked={charEvent && charEvent.find((index) => index === i) !== undefined}
                         onClick={(e) => handleClickCheckbox(e, i, char, event)}
                     />

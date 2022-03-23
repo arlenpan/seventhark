@@ -5,7 +5,14 @@ const STORAGE_KEY = 'characters';
 
 export const getAllCharacters = async () => {
     const characters = getLocal(STORAGE_KEY);
-    if (characters) return Object.values(characters).sort((a, b) => a.order - b.order);
+    if (characters) {
+        return Object.values(characters)
+            .sort((a, b) => a.order - b.order)
+            .map((char) => {
+                if (char.ilvl) return { ...char, ilvl: parseInt(char.ilvl, 10) };
+                return char;
+            });
+    }
     return [];
 };
 
