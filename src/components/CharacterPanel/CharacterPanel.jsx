@@ -1,11 +1,28 @@
-import { CloseOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
-import { useState } from 'react';
-import { createCharacter, deleteCharacter, resetSampleCharacters } from 'src/api/character';
+import dynamic from 'next/dynamic';
+import { useEffect, useState } from 'react';
+import {
+    createCharacter,
+    deleteCharacter,
+    resetSampleCharacters,
+    updateAllCharacters,
+} from 'src/api/character';
 import CreateCharacterForm from './CreateCharacterForm';
+
+const DraggableCharacters = dynamic(import('./DraggableCharacters'));
 
 export default function CharacterPanel({ characters, onUpdate }) {
     const [showCreatePanel, setCreatePanel] = useState(false);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(false);
+    }, []);
+
+    const handleReorderCharacters = (newCharacters) => {
+        updateAllCharacters(newCharacters);
+        onUpdate();
+    };
 
     const handleResetCharacters = () => {
         resetSampleCharacters();
@@ -26,15 +43,13 @@ export default function CharacterPanel({ characters, onUpdate }) {
     return (
         <div className="m-bs">
             <h3>Characters</h3>
-            {characters.map((char) => (
-                <div key={char.name} className="d-flex-center justify-between m-bs">
-                    <div className="d-flex-column">
-                        <span>Name: {char.name}</span>
-                        <span>Item Level: {char.ilvl}</span>
-                    </div>
-                    <CloseOutlined onClick={() => handleDelete(char)} />
-                </div>
-            ))}
+            {!loading && (
+                <DraggableCharacters
+                    characters={characters}
+                    onDelete={handleDelete}
+                    onReorder={handleReorderCharacters}
+                />
+            )}
             {showCreatePanel && (
                 <CreateCharacterForm
                     onSubmit={handleSubmitCreate}

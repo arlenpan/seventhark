@@ -37,6 +37,15 @@ export const deleteCharacter = async ({ name }) => {
 
 export const updateCharacter = async () => {};
 
+export const updateAllCharacters = async (charactersArr) => {
+    const newCharacters = {};
+    charactersArr.forEach((char) => {
+        newCharacters[char.name] = char;
+    });
+
+    setLocal(STORAGE_KEY, newCharacters);
+};
+
 export const resetSampleCharacters = async () => {
     setLocal(STORAGE_KEY, SAMPLE_DATA_CHARACTERS);
 };
