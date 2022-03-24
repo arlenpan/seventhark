@@ -2,22 +2,28 @@ const DAILY_CHAOS_DUNGEON = { id: 'chaos_dungeon', name: 'Chaos Dungeon', quanti
 const DAILY_GUARDIAN_RAID = { id: 'guardian_raid', name: 'Guardian Raid', quantity: 2 };
 const DAILY_GUILD_DONATION = { id: 'guild', name: 'Guild Donation/Support', quantity: 1 };
 const DAILY_UNAS_TASK = { id: 'unas_task', name: "Una's Task", quantity: 3 };
-const DAILY_WORLD_BOSS = { id: 'world_boss', name: 'World Boss', quantity: 1 };
-const DAILY_CHAOS_GATE = { id: 'chaos_gate', name: 'Chaos Gate', quantity: 1 };
-const DAILY_ADVENTURE_ISLAND = { id: 'adventure_island', name: 'Adventure Island', quantity: 1 };
+const DAILY_WORLD_BOSS = { id: 'world_boss', name: 'World Boss', quantity: 1, rosterWide: true };
+const DAILY_CHAOS_GATE = { id: 'chaos_gate', name: 'Chaos Gate', quantity: 1, rosterWide: true };
+const DAILY_ADVENTURE_ISLAND = {
+    id: 'adventure_island',
+    name: 'Adventure Island',
+    quantity: 1,
+    rosterWide: true,
+};
 const DAILY_ANGUISHED_ISLE = {
     id: 'anguished_isle',
     name: 'Anguished Isle',
     quantity: 1,
     tier: 3,
     ilvl: 1100,
+    rosterWide: true,
 };
 
 export const DAILIES = [
+    DAILY_UNAS_TASK,
     DAILY_CHAOS_DUNGEON,
     DAILY_GUARDIAN_RAID,
     DAILY_GUILD_DONATION,
-    DAILY_UNAS_TASK,
     DAILY_WORLD_BOSS,
     DAILY_CHAOS_GATE,
     DAILY_ADVENTURE_ISLAND,
@@ -152,15 +158,24 @@ const TRADE_MERCHANT_SHIPS = {
     name: 'Traveling Merchant Ships',
     quantity: 1,
 };
-const WEEKLY_GHOST_SHIP = { id: 'weekly_ghost_ship', name: 'Ghost Ship', quantity: 1 };
+const WEEKLY_GHOST_SHIP = {
+    id: 'weekly_ghost_ship',
+    name: 'Ghost Ship',
+    quantity: 1,
+    rosterWide: true,
+};
 const WEEKLY_UNAS_TASK = { id: 'weekly_unas_task', name: "Una's Task (Weekly)", quantity: 3 };
 const WEEKLY_GUILD_TASKS = { id: 'weekly_guild_tasks', name: 'Guild Tasks (Weekly)', quantity: 1 };
+const TRADE_EVENT_EXCHANGE = { id: 'trade_event', name: 'Event Exchange', quantity: 1 };
+const TRADE_PVP_EXCHANGE = { id: 'trade_pvp', name: 'PvP Exchange', quantity: 1 };
 
 export const WEEKLIES = [
-    ...ABYSSALS,
-    TRADE_SYLMAEL_BLOODSTONE,
-    TRADE_MERCHANT_SHIPS,
-    WEEKLY_GHOST_SHIP,
     WEEKLY_UNAS_TASK,
     WEEKLY_GUILD_TASKS,
+    TRADE_SYLMAEL_BLOODSTONE,
+    TRADE_MERCHANT_SHIPS,
+    TRADE_EVENT_EXCHANGE,
+    TRADE_PVP_EXCHANGE,
+    WEEKLY_GHOST_SHIP,
+    ...ABYSSALS,
 ];

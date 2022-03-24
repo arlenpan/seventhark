@@ -2,6 +2,7 @@ import { Input } from 'antd';
 import classNames from 'classnames';
 import { ALL_MATERIALS, CRYSTALS } from 'src/data/economy';
 import tierStyles from 'src/styles/tiers.module.scss';
+import formStyles from 'src/styles/forms.module.scss';
 import styles from './CostEntry.module.scss';
 
 export default function CostEntry({ tiers, costs = {}, onChange, className }) {
@@ -11,7 +12,7 @@ export default function CostEntry({ tiers, costs = {}, onChange, className }) {
     };
 
     return (
-        <div className={classNames(className, styles.container)}>
+        <div className={classNames(className, styles.container, formStyles['input-panel'])}>
             <strong>Gem Cost in Gold:</strong>
             <div>
                 <Input

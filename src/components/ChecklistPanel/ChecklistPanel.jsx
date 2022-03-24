@@ -43,12 +43,19 @@ export default function ChecklistPanel({ characters }) {
     const renderCharacterField = (char, event) => {
         const charEvent = checklist && checklist[char.name] && checklist[char.name][event.id];
         const isComplete = charEvent && charEvent.length === event.quantity;
+        const charTooLowLevel = event.ilvl && char.ilvl && char.ilvl < event.ilvl;
+        const rosterComplete =
+            event.rosterWide &&
+            Object.entries(checklist).find(([name, checks]) => {
+                return name !== char.name && checks[event.id] && checks[event.id].length > 0;
+            });
+
         return (
             <div className={classNames(isComplete && styles.complete, styles.cell)}>
                 {[...Array(event.quantity).keys()].map((v, i) => (
                     <Checkbox
                         key={i}
-                        disabled={event.ilvl && char.ilvl && char.ilvl < event.ilvl}
+                        disabled={charTooLowLevel || rosterComplete}
                         checked={charEvent && charEvent.find((index) => index === i) !== undefined}
                         onClick={(e) => handleClickCheckbox(e, i, char, event)}
                     />

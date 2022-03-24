@@ -18,8 +18,6 @@ export default function InfiniteChaosView({ costs, className }) {
         setTempQuantities(newQuantities);
     };
 
-    console.log(tempQuantities);
-
     const handleCostChange = (value, record) => {
         const newTempValues = { ...tempValues };
         newTempValues[record.id] = value;

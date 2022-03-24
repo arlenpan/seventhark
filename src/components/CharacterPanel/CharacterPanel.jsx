@@ -59,7 +59,7 @@ export default function CharacterPanel({ characters, onUpdate }) {
             {!showCreatePanel && (
                 <Button onClick={() => setCreatePanel(true)}>Add Character</Button>
             )}
-            <Button onClick={handleResetCharacters}>Reset Sample Data</Button>
+            {/* <Button onClick={handleResetCharacters}>Reset Sample Data</Button> */}
         </div>
     );
 }

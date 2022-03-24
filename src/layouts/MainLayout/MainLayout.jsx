@@ -18,7 +18,7 @@ export default function MainLayout({ children }) {
                 <Menu.Item key="/calculator">Calculators</Menu.Item>
                 <Menu.Item key="/islands">Island Tracker (WIP)</Menu.Item>
                 <Menu.Item key="/rapport">Rapport Tracker (WIP)</Menu.Item>
-                <Menu.Item key="/logs">Economy Log (WIP)</Menu.Item>
+                <Menu.Item key="/logger">Economy Log (WIP)</Menu.Item>
                 <Menu.SubMenu key="links" title="Useful Links (WIP)">
                     <Menu.ItemGroup title="Item 1">
                         <Menu.Item key="setting:1">Option 1</Menu.Item>
