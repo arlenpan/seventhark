@@ -18,6 +18,11 @@ const DAILY_ANGUISHED_ISLE = {
     ilvl: 1100,
     rosterWide: true,
 };
+const DAILY_EVENT_GUARDIAN_RAID = {
+    id: 'event_guardian_raid',
+    name: 'Event Guardian Raid',
+    quantity: 1,
+};
 
 export const DAILIES = [
     DAILY_UNAS_TASK,
@@ -28,6 +33,7 @@ export const DAILIES = [
     DAILY_CHAOS_GATE,
     DAILY_ADVENTURE_ISLAND,
     DAILY_ANGUISHED_ISLE,
+    DAILY_EVENT_GUARDIAN_RAID,
 ];
 
 const WEEKLY_ABYSSAL_DUNGEON_340_1 = {
