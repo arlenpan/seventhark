@@ -25,22 +25,32 @@ export default function ChecklistPanel({ characters }) {
         width: '80px',
     }));
     const columns = [...checkboxColumns, { title: 'Event', dataIndex: 'event', key: 'event' }];
-    const rapportColumns = [
-        ...checkboxColumns,
-        { title: 'NPC', dataIndex: 'rapport', key: 'rapport' },
-    ];
+    const rapportColumns = [...checkboxColumns, { title: 'NPC', dataIndex: 'npc', key: 'npc' }];
 
-    const buildTableData = (events) => {
+    // BUILD DATA
+    const buildEventTableData = (events) => {
         return events.map((event) => {
             const baseFields = { event: renderEventField(event), key: event.id };
             const characterFields = {};
             characters.forEach((char) => {
-                return (characterFields[char.name] = renderCharacterEventField(char, event));
+                characterFields[char.name] = renderCharacterEventField(char, event);
             });
             return { ...characterFields, ...baseFields };
         });
     };
 
+    const buildRapportTableData = () => {
+        return [...Array(6).keys()].map((index) => {
+            const baseFields = { npc: 'WIP' };
+            const characterFields = {};
+            characters.forEach((char) => {
+                characterFields[char.name] = renderCharacterRapportField(char);
+            });
+            return { ...characterFields, ...baseFields };
+        });
+    };
+
+    // RENDER STUFF
     const renderEventField = (event) => {
         return <div className={classNames(styles.cell)}>{event.name}</div>;
     };
@@ -69,6 +79,15 @@ export default function ChecklistPanel({ characters }) {
         );
     };
 
+    const renderCharacterRapportField = (char) => {
+        return (
+            <div className={classNames(styles.cell)}>
+                <Checkbox onClick={(e) => {}} />
+            </div>
+        );
+    };
+
+    // HANDLERS
     const handleClickCheckbox = (e, index, character, event) => {
         const value = e.target.checked;
         setChecklistItem({ value, index, character, event });
@@ -91,7 +110,7 @@ export default function ChecklistPanel({ characters }) {
             </div>
             <Table
                 columns={columns}
-                dataSource={buildTableData(DAILIES)}
+                dataSource={buildEventTableData(DAILIES)}
                 size="small"
                 pagination={false}
             />
@@ -99,7 +118,12 @@ export default function ChecklistPanel({ characters }) {
             <div className="d-flex-center m-ts">
                 <h3>Rapport Dailies</h3>
             </div>
-            <Table columns={rapportColumns} dataSource={[]} size="small" pagination={false} />
+            <Table
+                columns={rapportColumns}
+                dataSource={buildRapportTableData()}
+                size="small"
+                pagination={false}
+            />
 
             <div className="d-flex-center m-ts">
                 <h3>Weeklies</h3>
@@ -109,7 +133,7 @@ export default function ChecklistPanel({ characters }) {
             </div>
             <Table
                 columns={columns}
-                dataSource={buildTableData(WEEKLIES)}
+                dataSource={buildEventTableData(WEEKLIES)}
                 size="small"
                 pagination={false}
             />

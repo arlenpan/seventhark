@@ -11,7 +11,7 @@ import CreateCharacterForm from './CreateCharacterForm';
 
 const DraggableCharacters = dynamic(import('./DraggableCharacters'));
 
-export default function CharacterPanel({ characters, onUpdate }) {
+export default function CharacterPanel({ characters = [], onUpdate }) {
     const [showCreatePanel, setCreatePanel] = useState(false);
     const [loading, setLoading] = useState(true);
 
@@ -42,7 +42,12 @@ export default function CharacterPanel({ characters, onUpdate }) {
 
     return (
         <div className="m-bs">
-            <h3>Characters</h3>
+            <div className="d-flex-center m-bxs">
+                <h3>Characters</h3>
+                {characters.length > 1 && (
+                    <span className="font-small m-lxs">(drag to reorder)</span>
+                )}
+            </div>
             {!loading && (
                 <DraggableCharacters
                     characters={characters}
