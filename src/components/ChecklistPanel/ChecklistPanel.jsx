@@ -17,6 +17,7 @@ export default function ChecklistPanel({ characters }) {
         getChecklist().then(setChecklist);
     }, []);
 
+    // BUILD COLUMNS
     const checkboxColumns = characters.map((char) => ({
         title: char.name,
         dataIndex: char.name,
@@ -24,13 +25,17 @@ export default function ChecklistPanel({ characters }) {
         width: '80px',
     }));
     const columns = [...checkboxColumns, { title: 'Event', dataIndex: 'event', key: 'event' }];
+    const rapportColumns = [
+        ...checkboxColumns,
+        { title: 'NPC', dataIndex: 'rapport', key: 'rapport' },
+    ];
 
     const buildTableData = (events) => {
         return events.map((event) => {
             const baseFields = { event: renderEventField(event), key: event.id };
             const characterFields = {};
             characters.forEach((char) => {
-                return (characterFields[char.name] = renderCharacterField(char, event));
+                return (characterFields[char.name] = renderCharacterEventField(char, event));
             });
             return { ...characterFields, ...baseFields };
         });
@@ -40,7 +45,7 @@ export default function ChecklistPanel({ characters }) {
         return <div className={classNames(styles.cell)}>{event.name}</div>;
     };
 
-    const renderCharacterField = (char, event) => {
+    const renderCharacterEventField = (char, event) => {
         const charEvent = checklist && checklist[char.name] && checklist[char.name][event.id];
         const isComplete = charEvent && charEvent.length === event.quantity;
         const charTooLowLevel = event.ilvl && char.ilvl && char.ilvl < event.ilvl;
@@ -90,9 +95,12 @@ export default function ChecklistPanel({ characters }) {
                 size="small"
                 pagination={false}
             />
-            <div className="d-flex-center faded m-ts">
-                <h3>Rapport Dailies (WIP)</h3>
+
+            <div className="d-flex-center m-ts">
+                <h3>Rapport Dailies</h3>
             </div>
+            <Table columns={rapportColumns} dataSource={[]} size="small" pagination={false} />
+
             <div className="d-flex-center m-ts">
                 <h3>Weeklies</h3>
                 <Button size="small" className="m-lxs" onClick={() => handleReset('weekly')}>
