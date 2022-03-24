@@ -10,14 +10,21 @@ export default function InfiniteChaosView({ costs, className }) {
     const INFINITE_CHAOS_MATERIALS = ALL_MATERIALS.filter((item) => item.exchangeCurve);
 
     const [tempValues, setTempValues] = useState({});
+    const [tempQuantities, setTempQuantities] = useState({});
 
-    const handleFieldChange = (value, record) => {
+    const handleQuantityChange = (value, record) => {
+        const newQuantities = { ...tempQuantities };
+        newQuantities[record.id] = value;
+        setTempQuantities(newQuantities);
+    };
+
+    console.log(tempQuantities);
+
+    const handleCostChange = (value, record) => {
         const newTempValues = { ...tempValues };
         newTempValues[record.id] = value;
         setTempValues(newTempValues);
     };
-
-    console.log(tempValues);
 
     const renderNameCell = (name, record) => {
         return (
@@ -55,18 +62,25 @@ export default function InfiniteChaosView({ costs, className }) {
             key: 'item',
             render: (name, record) => renderNameCell(name, record),
         },
-        // {
-        //     title: 'Number to Buy',
-        //     dataIndex: 'buyCount',
-        //     key: 'buyCount',
-        //     editable: true,
-        // },
+        {
+            title: 'Buy Count',
+            dataIndex: 'buyCount',
+            key: 'buyCount',
+            render: (value, record) => (
+                <FormEditableCell value={value} record={record} onChange={handleQuantityChange} />
+            ),
+        },
+        {
+            title: 'Quantity',
+            dataIndex: 'quantity',
+            key: 'quantity',
+        },
         {
             title: 'Purification Shard Cost',
             dataIndex: 'purificationCost',
             key: 'purificationCost',
             render: (value, record) => (
-                <FormEditableCell value={value} record={record} onChange={handleFieldChange} />
+                <FormEditableCell value={value} record={record} onChange={handleCostChange} />
             ),
         },
         {
@@ -82,16 +96,21 @@ export default function InfiniteChaosView({ costs, className }) {
     ];
 
     const data = INFINITE_CHAOS_MATERIALS.map((item) => {
+        const buyCount = tempQuantities[item.id] || 1;
+        const quantity = item.exchangeQuantity || 1;
         const purificationCost = tempValues[item.id] || item.exchangeCurve[0];
-        const goldPerShard = costs[item.id] / purificationCost;
+        const goldCost = costs[item.id] && costs[item.id] * buyCount * quantity;
+        const goldPerShard = goldCost / purificationCost;
         return {
+            id: item.id,
             item: item.name,
             tier: item.tier,
-            id: item.id,
-            goldCost: costs[item.id],
-            purificationCost,
-            goldPerShard: !Number.isNaN(goldPerShard) && Math.round(goldPerShard * 1000) / 1000,
             exchangeCurve: item.exchangeCurve,
+            buyCount,
+            quantity,
+            purificationCost,
+            goldCost,
+            goldPerShard: !Number.isNaN(goldPerShard) && Math.round(goldPerShard * 1000) / 1000,
         };
     });
 

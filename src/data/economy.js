@@ -86,7 +86,7 @@ const DESTRUCTION_STONE_CRYSTAL = {
     bundle: 10,
     quantityMari: 30,
     gemCostMari: 240,
-    exchangeCurve: [60, 90, 120],
+    exchangeCurve: [60, 90, 120, 140, 170, 200, 230, 260],
 };
 const GUARDIAN_STONE_CRYSTAL = {
     id: 'guardian_stone_crystal',
@@ -95,7 +95,7 @@ const GUARDIAN_STONE_CRYSTAL = {
     bundle: 10,
     quantityMari: 80,
     gemCostMari: 240,
-    exchangeCurve: [10, 40, 60, 80, 100],
+    exchangeCurve: [10, 40, 60, 80, 100, 120, 140, 160, 190, 210, 230],
 };
 const HONOR_LEAPSTONE = {
     id: 'honor_leapstone',
@@ -103,7 +103,7 @@ const HONOR_LEAPSTONE = {
     tier: 3,
     quantityMari: 5,
     gemCostMari: 10,
-    exchangeCurve: [100, 130],
+    exchangeCurve: [100, 130, 170, 200, 230, 270],
 };
 const HONOR_SHARD_POUCH_S = {
     id: 'honor_shard_pouch_s',
@@ -116,7 +116,7 @@ const HONOR_SHARD_POUCH_L = {
     id: 'honor_shard_pouch_l',
     name: 'Honor Shard Pouch (L)',
     tier: 3,
-    exchangeCurve: [500],
+    exchangeCurve: [500, 570],
 };
 const SOLAR_GRACE = {
     id: 'solar_grace',
@@ -124,7 +124,8 @@ const SOLAR_GRACE = {
     tier: 3,
     quantityMari: 20,
     gemCostMari: 80,
-    exchangeCurve: [550],
+    exchangeCurve: [550, 630],
+    exchangeQuantity: 7,
 };
 const SOLAR_BLESSING = {
     id: 'solar_blessing',
@@ -132,7 +133,8 @@ const SOLAR_BLESSING = {
     tier: 3,
     quantityMari: 15,
     gemCostMari: 150,
-    exchangeCurve: [570],
+    exchangeCurve: [570, 650],
+    exchangeQuantity: 2,
 };
 const SOLAR_PROTECTION = {
     id: 'solar_protection',
@@ -140,7 +142,7 @@ const SOLAR_PROTECTION = {
     tier: 3,
     quantityMari: 3,
     gemCostMari: 150,
-    exchangeCurve: [590],
+    exchangeCurve: [590, 670],
 };
 const GREAT_HONOR_LEAPSTONE = {
     id: 'great_honor_leapstone',
@@ -148,7 +150,7 @@ const GREAT_HONOR_LEAPSTONE = {
     tier: 3,
     quantityMari: 5,
     gemCostMari: 50,
-    exchangeCurve: [130, 170, 200],
+    exchangeCurve: [130, 170, 200, 240, 280, 310, 360],
 };
 const SIMPLE_OREHA_FUSION_MATERIAL = {
     id: 'simple_oreha_fusion_material',

@@ -72,7 +72,8 @@ export default function MariShopView({ costs, tiers, className }) {
                 quantity: item.quantityMari,
                 gemCost: item.gemCostMari,
                 goldValueAH: !Number.isNaN(goldValueAH) && goldValueAH,
-                goldValueMari: Math.round((costs[CRYSTALS.id] / 95) * item.gemCostMari),
+                goldValueMari:
+                    costs[CRYSTALS.id] && Math.round((costs[CRYSTALS.id] / 95) * item.gemCostMari),
                 goldDiff: !Number.isNaN(goldDiff) && goldDiff,
                 tier: item.tier,
             };

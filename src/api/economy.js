@@ -1,7 +1,19 @@
 import { getLocal, setLocal } from './localStorage';
 
 const TIERS_KEY = 'tiers';
-export const getActiveTiers = async () => getLocal(TIERS_KEY) || {};
+const TIERS_DEFAULT = { 1: true, 2: true, 3: true };
+export const getActiveTiers = async () => {
+    const tiers = getLocal(TIERS_KEY);
+
+    // initialize
+    if (!tiers) {
+        setLocal(TIERS_KEY, TIERS_DEFAULT);
+        return TIERS_DEFAULT;
+    }
+
+    return tiers;
+};
+
 export const setActiveTier = async (tier, value) => {
     const tiers = getLocal(TIERS_KEY);
     const newTiers = tiers ? { ...tiers } : {};
