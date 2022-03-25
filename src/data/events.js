@@ -117,24 +117,12 @@ const WEEKLY_ABYSSAL_DUNGEON_1340_1 = {
 };
 const WEEKLY_ABYSS_RAID_1370 = {
     id: 'abyss_raid_1370',
-    name: 'Argos Phase 1',
+    name: 'Argos',
     quantity: 1,
     tier: 3,
     ilvl: 1370,
-};
-const WEEKLY_ABYSS_RAID_1385 = {
-    id: 'abyss_raid_1385',
-    name: 'Argos Phase 2',
-    quantity: 1,
-    tier: 3,
-    ilvl: 1385,
-};
-const WEEKLY_ABYSS_RAID_1400 = {
-    id: 'abyss_raid_1400',
-    name: 'Argos Phase 3',
-    quantity: 1,
-    tier: 3,
-    ilvl: 1400,
+    ilvl2: 1385,
+    ilvl3: 1400,
 };
 
 export const ABYSSALS = [
@@ -150,8 +138,6 @@ export const ABYSSALS = [
     WEEKLY_ABYSSAL_DUNGEON_1325_1,
     WEEKLY_ABYSSAL_DUNGEON_1340_1,
     WEEKLY_ABYSS_RAID_1370,
-    WEEKLY_ABYSS_RAID_1385,
-    WEEKLY_ABYSS_RAID_1400,
 ];
 
 const TRADE_SYLMAEL_BLOODSTONE = {
