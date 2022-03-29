@@ -16,6 +16,9 @@
 .justify-between {
     justify-content: space-between;
 }
+.w-100 {
+    width: 100%;
+}
 
 // SPACING
 $sizes: (
@@ -43,6 +46,9 @@ $sizes: (
 // FONTS
 .font-small {
     font-size: 80%;
+}
+.capitalize {
+    text-transform: capitalize;
 }
 
 // DISPLAY

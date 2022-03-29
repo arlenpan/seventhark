@@ -1,7 +1,25 @@
+import { useEffect, useState } from 'react';
+import { getIslands, setIsland } from 'src/api/islands';
+import IslandTable from 'src/components/IslandTable';
 import MainLayout from 'src/layouts/MainLayout';
 
 const Islands = () => {
-    return <div>Hi</div>;
+    const [islands, setIslands] = useState({});
+
+    useEffect(() => {
+        getIslands().then(setIslands);
+    }, []);
+
+    const handleChange = (value, island) => {
+        setIsland({ value, island });
+        getIslands().then(setIslands);
+    };
+
+    return (
+        <div>
+            <IslandTable completed={islands} onChange={handleChange} />
+        </div>
+    );
 };
 
 Islands.getLayout = (page) => <MainLayout>{page}</MainLayout>;

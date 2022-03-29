@@ -1,0 +1,422 @@
+{
+  "Aiwana Island": {
+    "ilvl": 250,
+    "acquisition": "quest"
+  },
+  "Alakkir": {
+    "ilvl": 250,
+    "acquisition": "monsters"
+  },
+  "Alteisen": {
+    "ilvl": 302,
+    "acquisition": "monsters"
+  },
+  "Anguished Isle": {
+    "ilvl": 1100,
+    "acquisition": "monsters"
+  },
+  "Argon": {
+    "ilvl": 460,
+    "acquisition": "rng"
+  },
+  "Astella Island": {
+    "ilvl": 250,
+    "acquisition": "rng"
+  },
+  "Asura Island": {
+    "ilvl": 250,
+    "isAdventure": true,
+    "acquisition": "collection"
+  },
+  "Atlas": {
+    "ilvl": 250,
+    "acquisition": "collection"
+  },
+  "Atropos": {
+    "ilvl": 460,
+    "acquisition": "rng"
+  },
+  "Azure Wind Island": {
+    "ilvl": 802,
+    "acquisition": "quest"
+  },
+  "Blackfang's Den": {
+    "ilvl": 250,
+    "acquisition": "rapport"
+  },
+  "Boombling Island": {
+    "ilvl": 250,
+    "noSoul": true
+  },
+  "Cradle of the Sea Fermata": {
+    "ilvl": 460,
+    "acquisition": "rng"
+  },
+  "Crescent Isle": {
+    "ilvl": 250,
+    "acquisition": "collection"
+  },
+  "Death's Hold Island": {
+    "ilvl": 250,
+    "acquisition": "pvp"
+  },
+  "Distorted Island": {
+    "ilvl": 460,
+    "acquisition": "quest"
+  },
+  "Dreamgull Island": {
+    "ilvl": 250,
+    "acquisition": "quest"
+  },
+  "Drumbeat Island": {
+    "ilvl": 250,
+    "isAdventure": true,
+    "acquisition": "rng"
+  },
+  "Erasmo's Island": {
+    "ilvl": 460,
+    "acquisition": "monsters"
+  },
+  "Eternity Isle": {
+    "ilvl": 802,
+    "acquisition": "rapport"
+  },
+  "Facility X-301": {
+    "ilvl": 250,
+    "acquisition": "monsters"
+  },
+  "Fantasm Island": {
+    "ilvl": 600,
+    "acquisition": "una's task"
+  },
+  "Foggy Ridge": {
+    "ilvl": 250,
+    "noSoul": true
+  },
+  "Fomona Island": {
+    "ilvl": 250,
+    "acquisition": "quest"
+  },
+  "Forpe": {
+    "ilvl": 250,
+    "isAdventure": true,
+    "acquisition": "monsters"
+  },
+  "Fortuna": {
+    "ilvl": 460,
+    "acquisition": "rng"
+  },
+  "Freedom Isle": {
+    "ilvl": 250,
+    "acquisition": "exchange"
+  },
+  "Frost Haven": {
+    "ilvl": 250,
+    "noSoul": true
+  },
+  "Frostfire Island": {
+    "ilvl": 460,
+    "acquisition": "monsters"
+  },
+  "Gesbroy": {
+    "ilvl": 600,
+    "acquisition": "una's task"
+  },
+  "Giant Mushroom Island": {
+    "ilvl": 250,
+    "acquisition": "rng"
+  },
+  "Glacier Isle": {
+    "ilvl": 250,
+    "acquisition": "quest"
+  },
+  "Goblin Island": {
+    "ilvl": 460,
+    "acquisition": "rng"
+  },
+  "Golden Wave Island": {
+    "ilvl": 250,
+    "acquisition": "rng"
+  },
+  "Gravis": {
+    "ilvl": 460,
+    "acquisition": "quest"
+  },
+  "Harmony Island": {
+    "ilvl": 250,
+    "isAdventure": true,
+    "acquisition": "rng"
+  },
+  "Hope Island": {
+    "ilvl": 460,
+    "acquisition": "quest"
+  },
+  "Hypnos's Eyes": {
+    "ilvl": 460,
+    "acquisition": "rapport"
+  },
+  "Ice Maze Isle": {
+    "ilvl": 460,
+    "acquisition": "quest"
+  },
+  "Illusion Bamboo Island": {
+    "ilvl": 1100,
+    "acquisition": "rapport"
+  },
+  "Illusion Isle": {
+    "ilvl": 250,
+    "acquisition": "pvp"
+  },
+  "Island of Mist": {
+    "ilvl": 960,
+    "acquisition": "quest"
+  },
+  "Island of Time": {
+    "ilvl": 250,
+    "acquisition": "monsters"
+  },
+  "Isle of Yearning": {
+    "ilvl": 460,
+    "acquisition": "monsters"
+  },
+  "Isteri": {
+    "ilvl": 1100,
+    "acquisition": "una's task"
+  },
+  "Kalthertz": {
+    "ilvl": 250,
+    "acquisition": "rng"
+  },
+  "Kharmine's Lair": {
+    "ilvl": 460,
+    "acquisition": "quest"
+  },
+  "Lagoon Island": {
+    "ilvl": 250,
+    "isAdventure": true,
+    "acquisition": "monsters"
+  },
+  "Liebeheim": {
+    "ilvl": 250,
+    "acquisition": "rapport"
+  },
+  "Little Luck Island": {
+    "ilvl": 250,
+    "acquisition": "rng"
+  },
+  "Lopang Island": {
+    "ilvl": 250,
+    "noSoul": true
+  },
+  "Lost City": {
+    "ilvl": 250,
+    "acquisition": "rng"
+  },
+  "Lullaby Island": {
+    "ilvl": 250,
+    "acquisition": "rng"
+  },
+  "Lush Reed Island": {
+    "ilvl": 250,
+    "acquisition": "pvp",
+    "isAdventure": true
+  },
+  "Medeia": {
+    "ilvl": 250,
+    "acquisition": "pvp"
+  },
+  "Mercia": {
+    "ilvl": 250,
+    "noSoul": true
+  },
+  "Meteora": {
+    "ilvl": 250,
+    "noSoul": true
+  },
+  "Metus Islands": {
+    "ilvl": 960,
+    "acquisition": "quest"
+  },
+  "Monte Island": {
+    "ilvl": 250,
+    "isAdventure": true,
+    "acquisition": "rng"
+  },
+  "Naruni Island": {
+    "ilvl": 960,
+    "acquisition": "quest"
+  },
+  "Niheltalop's Thoughts": {
+    "ilvl": 1100,
+    "noSoul": true
+  },
+  "Notos Island": {
+    "ilvl": 250,
+    "acquisition": "una's task"
+  },
+  "Oblivion Isle": {
+    "ilvl": 250,
+    "isAdventure": true,
+    "acquisition": "monsters"
+  },
+  "Opher, the Lonely Island": {
+    "ilvl": 250,
+    "acquisition": "quest"
+  },
+  "Opportunity Isle": {
+    "ilvl": 250,
+    "isAdventure": true,
+    "acquisition": "rng"
+  },
+  "Orvis Island": {
+    "ilvl": 802,
+    "acquisition": "monsters"
+  },
+  "Outlaw Isle": {
+    "ilvl": 460,
+    "acquisition": "rng"
+  },
+  "Panda Island": {
+    "ilvl": 250,
+    "acquisition": "rapport"
+  },
+  "Peyto": {
+    "ilvl": 250,
+    "acquisition": "una's task"
+  },
+  "Phantomwing Island": {
+    "ilvl": 250,
+    "isAdventure": true,
+    "acquisition": "monsters"
+  },
+  "Primal Island": {
+    "ilvl": 250,
+    "noSoul": true
+  },
+  "Promise Isle": {
+    "ilvl": 460,
+    "acquisition": "quest"
+  },
+  "Reminiscence Isle": {
+    "ilvl": 460,
+    "acquisition": "quest"
+  },
+  "Revelry Row": {
+    "ilvl": 250,
+    "acquisition": "una's task"
+  },
+  "Runaways Island": {
+    "ilvl": 250,
+    "acquisition": "una's task"
+  },
+  "Scarred Crimson Land": {
+    "ilvl": 250,
+    "noSoul": true
+  },
+  "Serenity Isle": {
+    "ilvl": 250,
+    "acquisition": "quest"
+  },
+  "Shadow Island": {
+    "ilvl": 250,
+    "acquisition": "quest"
+  },
+  "Shadowmoon Market": {
+    "ilvl": 802,
+    "acquisition": "quest"
+  },
+  "Shangra": {
+    "ilvl": 460,
+    "acquisition": "collection"
+  },
+  "Slime Island": {
+    "ilvl": 250,
+    "acquisition": "monsters"
+  },
+  "Snowpang Island": {
+    "ilvl": 250,
+    "isAdventure": true,
+    "acquisition": "pvp"
+  },
+  "Spida Island": {
+    "ilvl": 250,
+    "acquisition": "monsters"
+  },
+  "Starlight Isle": {
+    "ilvl": 250,
+    "acquisition": "quest"
+  },
+  "Sublime Isle": {
+    "ilvl": 460,
+    "acquisition": "rapport"
+  },
+  "Sunflower Island": {
+    "ilvl": 250,
+    "acquisition": "collection"
+  },
+  "Tooki Corporation": {
+    "ilvl": 960,
+    "acquisition": "quest"
+  },
+  "Tooki Island": {
+    "ilvl": 250,
+    "acquisition": "monsters"
+  },
+  "Toto Silver Island": {
+    "ilvl": 250,
+    "acquisition": "rapport"
+  },
+  "Totopia": {
+    "ilvl": 250,
+    "acquisition": "una's task"
+  },
+  "Tranquil Isle": {
+    "ilvl": 250,
+    "acquisition": "monsters"
+  },
+  "Turtle Island": {
+    "ilvl": 250,
+    "acquisition": "quest"
+  },
+  "Twilight Isle": {
+    "ilvl": 460,
+    "acquisition": "monsters"
+  },
+  "Unknown Island": {
+    "ilvl": 460,
+    "acquisition": "monsters"
+  },
+  "Vairgrys's Nest": {
+    "ilvl": 460,
+    "acquisition": "monsters"
+  },
+  "Volare Island": {
+    "ilvl": 250,
+    "isAdventure": true,
+    "acquisition": "monsters"
+  },
+  "Walpurgis": {
+    "ilvl": 460,
+    "acquisition": "monsters"
+  },
+  "Whispering Islet": {
+    "ilvl": 960,
+    "acquisition": "rapport"
+  },
+  "White Wave Island": {
+    "ilvl": 250,
+    "acquisition": "rapport"
+  },
+  "Wildwater Island": {
+    "ilvl": 960,
+    "acquisition": "monsters"
+  },
+  "Wisdom Isle": {
+    "ilvl": 250,
+    "acquisition": "quest"
+  },
+  "Woeful Drylands": {
+    "ilvl": 250,
+    "noSoul": true
+  }
+}
