@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { ALL_MATERIALS } from 'src/data/economy';
 import tierStyles from 'src/styles/tiers.module.scss';
 import FormEditableCell from '../FormEditableCell';
-import styles from './InfiniteChaos.module.scss';
+import styles from './InfiniteChaosTable.module.scss';
 
-export default function InfiniteChaosView({ costs, className }) {
+export default function InfiniteChaosTable({ costs, className }) {
     const INFINITE_CHAOS_MATERIALS = ALL_MATERIALS.filter((item) => item.exchangeCurve);
 
     const [tempValues, setTempValues] = useState({});

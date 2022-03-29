@@ -1,11 +1,7 @@
 import MainLayout from 'src/layouts/MainLayout';
 
 const Islands = () => {
-    return (
-        <div>
-            <h1>Island Tracker (WIP)</h1>
-        </div>
-    );
+    return <div>Hi</div>;
 };
 
 Islands.getLayout = (page) => <MainLayout>{page}</MainLayout>;

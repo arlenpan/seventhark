@@ -3,7 +3,7 @@ import CharacterPanel from 'src/components/CharacterPanel';
 import MainLayout from 'src/layouts/MainLayout';
 import { useState, useEffect } from 'react';
 import { getAllCharacters } from 'src/api/character';
-import ChecklistPanel from 'src/components/ChecklistPanel';
+import ChecklistTables from 'src/components/ChecklistTables';
 
 const Checklist = () => {
     const [characters, setCharacters] = useState([]);
@@ -19,7 +19,7 @@ const Checklist = () => {
             <Row>
                 {characters.length ? (
                     <Col xs={{ span: 24, order: 2 }} sm={{ span: 18, order: 1 }}>
-                        <ChecklistPanel characters={characters} />
+                        <ChecklistTables characters={characters} />
                     </Col>
                 ) : null}
 

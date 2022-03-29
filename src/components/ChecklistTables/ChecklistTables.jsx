@@ -8,9 +8,9 @@ import {
     setChecklistItem,
 } from 'src/api/checklist';
 import { DAILIES, WEEKLIES } from 'src/data/events';
-import styles from './Checklist.module.scss';
+import styles from './ChecklistTables.module.scss';
 
-export default function ChecklistPanel({ characters }) {
+export default function ChecklistTables({ characters }) {
     const [checklist, setChecklist] = useState({});
 
     useEffect(() => {

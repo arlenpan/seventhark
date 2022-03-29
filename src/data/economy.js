@@ -77,6 +77,8 @@ const CALDARR_FUSION_MATERIAL = {
     id: 'caldarr_fusion_material',
     name: 'Caldarr Fusion Material',
     tier: 2,
+    quantityMari: 10,
+    gemCostMari: 70,
 };
 
 const DESTRUCTION_STONE_CRYSTAL = {

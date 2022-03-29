@@ -2,9 +2,9 @@ import { Table } from 'antd';
 import classNames from 'classnames';
 import { ALL_MATERIALS, CRYSTALS } from 'src/data/economy';
 import tierStyles from 'src/styles/tiers.module.scss';
-import styles from './MariShopView.module.scss';
+import styles from './MariShopTable.module.scss';
 
-export default function MariShopView({ costs, tiers, className }) {
+export default function MariShopTable({ costs, tiers, className }) {
     const renderNameCell = (name, record) => {
         return (
             <div

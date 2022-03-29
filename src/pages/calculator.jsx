@@ -2,8 +2,8 @@ import { Checkbox, Tabs } from 'antd';
 import { useEffect, useState } from 'react';
 import { getActiveTiers, getCosts, setActiveTier, setCost } from 'src/api/economy';
 import CostEntry from 'src/components/CostEntry';
-import InfiniteChaosView from 'src/components/InfiniteChaosView';
-import MariShopView from 'src/components/MariShopView';
+import InfiniteChaosTable from 'src/components/InfiniteChaosTable';
+import MariShopTable from 'src/components/MariShopTable';
 import MainLayout from 'src/layouts/MainLayout';
 
 const Calculator = () => {
@@ -44,10 +44,10 @@ const Calculator = () => {
 
             <Tabs className="m-ts">
                 <Tabs.TabPane tab="Mari's Shop" key="mari">
-                    <MariShopView tiers={tiers} costs={costs} />
+                    <MariShopTable tiers={tiers} costs={costs} />
                 </Tabs.TabPane>
                 <Tabs.TabPane tab="T3 Infinite Chaos" key="infinite">
-                    <InfiniteChaosView costs={costs} />
+                    <InfiniteChaosTable costs={costs} />
                 </Tabs.TabPane>
                 <Tabs.TabPane tab="Item Honing" key="honing">
                     <div>WIP</div>
