@@ -64,8 +64,8 @@ export default function IslandTable({ className, completed = {}, onChange }) {
                 </div>
             ),
             filters: [
-                { text: 'Yes', value: true },
-                { text: 'No', value: false },
+                { text: 'yes', value: true },
+                { text: 'no', value: false },
             ],
             onFilter: (value, record) => record.isAdventure === value,
             sorter: (a) => (a.isAdventure ? -1 : 1),
