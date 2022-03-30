@@ -67,6 +67,7 @@ export default function MariShopTable({ costs, tiers, className }) {
             );
 
             return {
+                key: item.id,
                 item: item.name,
                 goldCost: costs[item.id],
                 quantity: item.quantityMari,

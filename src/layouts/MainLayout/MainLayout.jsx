@@ -23,9 +23,7 @@ export default function MainLayout({ children }) {
                 <Menu.Item key="/checklist">Checklist</Menu.Item>
                 <Menu.Item key="/calculator">Calculators</Menu.Item>
                 <Menu.Item key="/islands">Island Tracker</Menu.Item>
-                <Menu.Item key="/rapport" disabled>
-                    Rapport Tracker (WIP)
-                </Menu.Item>
+                <Menu.Item key="/rapport">Rapport Tracker</Menu.Item>
                 <Menu.Item key="/logger" disabled>
                     Economy Log (WIP)
                 </Menu.Item>

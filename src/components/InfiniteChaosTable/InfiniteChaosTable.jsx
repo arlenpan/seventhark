@@ -100,6 +100,7 @@ export default function InfiniteChaosTable({ costs, className }) {
         const goldCost = costs[item.id] && costs[item.id] * buyCount * quantity;
         const goldPerShard = goldCost / purificationCost;
         return {
+            key: item.id,
             id: item.id,
             item: item.name,
             tier: item.tier,
