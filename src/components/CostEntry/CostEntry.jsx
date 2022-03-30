@@ -6,6 +6,8 @@ import formStyles from 'src/styles/forms.module.scss';
 import styles from './CostEntry.module.scss';
 
 export default function CostEntry({ tiers, costs = {}, onChange, className }) {
+    const noTiersSelected = !Object.values(tiers).find((tierValue) => tierValue);
+
     const handleInputChange = (e, material) => {
         const { value } = e.target;
         onChange(value, material);
@@ -24,33 +26,48 @@ export default function CostEntry({ tiers, costs = {}, onChange, className }) {
                 95 Crystals
             </div>
             <strong>Action House Costs in Gold:</strong>
-            <div className={styles.grid}>
-                {!Object.values(tiers).find((tierValue) => tierValue) && (
-                    <em>Please Select Tiers</em>
-                )}
-                {ALL_MATERIALS.map((material) => {
-                    if (!tiers[material.tier]) return null;
-                    return (
-                        <div className="d-flex-center" key={material.id}>
-                            <Input
-                                type="number"
-                                className={styles.input}
-                                value={costs[material.id]}
-                                onChange={(e) => handleInputChange(e, material)}
-                            />
-                            <span
-                                className={classNames(
-                                    material.tier === 1 && tierStyles.tier1,
-                                    material.tier === 2 && tierStyles.tier2,
-                                    material.tier === 3 && tierStyles.tier3
-                                )}
-                            >
-                                {material.name}
-                            </span>
+            <div>
+                {noTiersSelected && <em>Please Select Tiers</em>}
+                {Object.keys(tiers)
+                    .filter((tier) => tiers[tier])
+                    .map((tier) => (
+                        <div className={styles.grid} key={tier}>
+                            {ALL_MATERIALS.filter(
+                                (item) => Math.floor(item.tier) === parseInt(tier, 10)
+                            ).map((item) => (
+                                <InputCell
+                                    key={item.id}
+                                    item={item}
+                                    costs={costs}
+                                    onChange={(e) => handleInputChange(e, item)}
+                                />
+                            ))}
                         </div>
-                    );
-                })}
+                    ))}
             </div>
         </div>
     );
 }
+
+const InputCell = ({ item, costs, onChange }) => {
+    return (
+        <div className="d-flex-center" key={item.id}>
+            <Input
+                type="number"
+                className={styles.input}
+                value={costs[item.id]}
+                onChange={onChange}
+            />
+            <span
+                className={classNames(
+                    item.tier === 1 && tierStyles.tier1,
+                    item.tier === 2 && tierStyles.tier2,
+                    item.tier === 3 && tierStyles.tier3,
+                    item.tier === 3.5 && tierStyles['tier3-5']
+                )}
+            >
+                {item.name}
+            </span>
+        </div>
+    );
+};

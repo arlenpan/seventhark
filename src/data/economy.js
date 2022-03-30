@@ -149,7 +149,7 @@ const SOLAR_PROTECTION = {
 const GREAT_HONOR_LEAPSTONE = {
     id: 'great_honor_leapstone',
     name: 'Great Honor Leapstone',
-    tier: 3,
+    tier: 3.5,
     quantityMari: 5,
     gemCostMari: 50,
     exchangeCurve: [130, 170, 200, 240, 280, 310, 360],
@@ -164,14 +164,14 @@ const SIMPLE_OREHA_FUSION_MATERIAL = {
 const BASIC_OREHA_FUSION_MATERIAL = {
     id: 'basic_oreha_fusion_material',
     name: 'Basic Oreha Fusion Material',
-    tier: 3,
+    tier: 3.5,
     quantityMari: 10,
     gemCostMari: 40,
 };
 const POWDER_OF_SAGE = {
     id: 'powder_of_sage',
     name: 'Powder of Sage',
-    tier: 3,
+    tier: 3.5,
     exchangeCurve: [1470],
 };
 
