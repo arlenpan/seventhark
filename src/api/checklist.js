@@ -1,14 +1,14 @@
 import { DAILIES, WEEKLIES } from 'src/data/events';
 import { getLocal, setLocal } from './localStorage';
 
-const STORAGE_KEY = 'checklist';
+export const CHECKLIST_KEY = 'checklist';
 
 export const getChecklist = async () => {
-    return getLocal(STORAGE_KEY) ?? {};
+    return getLocal(CHECKLIST_KEY) ?? {};
 };
 
 export const setChecklistItem = ({ value, index, character, event }) => {
-    const checklist = getLocal(STORAGE_KEY);
+    const checklist = getLocal(CHECKLIST_KEY);
     const newChecklist = { ...checklist };
     const characterChecklist = newChecklist[character.name];
 
@@ -26,11 +26,11 @@ export const setChecklistItem = ({ value, index, character, event }) => {
         newChecklist[character.name] = { [event.id]: [index] };
     }
 
-    setLocal(STORAGE_KEY, newChecklist);
+    setLocal(CHECKLIST_KEY, newChecklist);
 };
 
 export const resetChecklistDailies = () => {
-    const checklist = getLocal(STORAGE_KEY);
+    const checklist = getLocal(CHECKLIST_KEY);
     const newChecklist = { ...checklist };
 
     Object.keys(newChecklist).forEach((characterName) => {
@@ -41,10 +41,10 @@ export const resetChecklistDailies = () => {
         });
     });
 
-    setLocal(STORAGE_KEY, newChecklist);
+    setLocal(CHECKLIST_KEY, newChecklist);
 };
 export const resetChecklistWeeklies = () => {
-    const checklist = getLocal(STORAGE_KEY);
+    const checklist = getLocal(CHECKLIST_KEY);
     const newChecklist = { ...checklist };
 
     Object.keys(newChecklist).forEach((characterName) => {
@@ -55,5 +55,5 @@ export const resetChecklistWeeklies = () => {
         });
     });
 
-    setLocal(STORAGE_KEY, newChecklist);
+    setLocal(CHECKLIST_KEY, newChecklist);
 };

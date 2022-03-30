@@ -1,10 +1,10 @@
 import { SAMPLE_DATA_CHARACTERS } from 'src/data/sample';
 import { getLocal, setLocal } from './localStorage';
 
-const STORAGE_KEY = 'characters';
+export const CHARACTER_KEY = 'characters';
 
 export const getAllCharacters = async () => {
-    const characters = getLocal(STORAGE_KEY);
+    const characters = getLocal(CHARACTER_KEY);
     if (characters) {
         return Object.values(characters)
             .sort((a, b) => a.order - b.order)
@@ -17,7 +17,7 @@ export const getAllCharacters = async () => {
 };
 
 export const createCharacter = async ({ name, ilvl }) => {
-    const characters = getLocal(STORAGE_KEY) ?? {};
+    const characters = getLocal(CHARACTER_KEY) ?? {};
     const newCharacters = { ...characters };
 
     const newCharacter = {
@@ -25,14 +25,14 @@ export const createCharacter = async ({ name, ilvl }) => {
         ilvl: Number.isNaN(parseInt(ilvl, 10)) ? null : ilvl,
     };
     newCharacters[name] = newCharacter;
-    setLocal(STORAGE_KEY, newCharacters);
+    setLocal(CHARACTER_KEY, newCharacters);
 };
 
 export const deleteCharacter = async ({ name }) => {
-    const characters = getLocal(STORAGE_KEY) ?? {};
+    const characters = getLocal(CHARACTER_KEY) ?? {};
     const newCharacters = { ...characters };
     delete newCharacters[name];
-    setLocal(STORAGE_KEY, newCharacters);
+    setLocal(CHARACTER_KEY, newCharacters);
 };
 
 export const updateCharacter = async () => {};
@@ -43,9 +43,9 @@ export const updateAllCharacters = async (charactersArr) => {
         newCharacters[char.name] = char;
     });
 
-    setLocal(STORAGE_KEY, newCharacters);
+    setLocal(CHARACTER_KEY, newCharacters);
 };
 
 export const resetSampleCharacters = async () => {
-    setLocal(STORAGE_KEY, SAMPLE_DATA_CHARACTERS);
+    setLocal(CHARACTER_KEY, SAMPLE_DATA_CHARACTERS);
 };

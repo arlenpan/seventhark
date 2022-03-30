@@ -1,15 +1,26 @@
 import { Menu } from 'antd';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import Footer from 'src/components/Footer';
+import ImportExportModal from 'src/components/ImportExportModal/ImportExportModal';
 import styles from './MainLayout.module.scss';
 
 export default function MainLayout({ children }) {
     const router = useRouter();
     const activeKey = router.pathname === '/' ? '/checklist' : router.pathname;
 
+    const [modals, setModals] = useState({});
+
     const handleClickNav = ({ key }) => {
         if (key.startsWith('/')) router.push(key);
-        else window.open(key, '_blank');
+        else if (key.startsWith('https://')) window.open(key, '_blank');
+        else setModals({ ...modals, [key]: true });
+    };
+
+    const handleCloseModal = (key) => {
+        const newModals = { ...modals };
+        delete newModals[key];
+        setModals(newModals);
     };
 
     return (
@@ -35,15 +46,14 @@ export default function MainLayout({ children }) {
                         Maxroll - Rapport Tool
                     </Menu.Item>
                     <Menu.Divider />
-                    <Menu.Item key="/importexport" disabled>
-                        Import/Export Data (WIP)
-                    </Menu.Item>
+                    <Menu.Item key="import">Import/Export Data</Menu.Item>
                 </Menu.SubMenu>
             </Menu>
             <section className={styles['page-container']}>
                 <div className={styles.page}>{children}</div>
                 <Footer />
             </section>
+            <ImportExportModal visible={modals.import} onClose={() => handleCloseModal('import')} />
         </div>
     );
 }

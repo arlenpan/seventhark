@@ -1,15 +1,15 @@
 import { getLocal, setLocal } from './localStorage';
 
-const STORAGE_KEY = 'islands';
+export const ISLAND_KEY = 'islands';
 
 export const getIslands = async () => {
-    const islands = getLocal(STORAGE_KEY);
+    const islands = getLocal(ISLAND_KEY);
     return islands || {};
 };
 
 export const setIsland = async ({ value, island }) => {
-    const islands = getLocal(STORAGE_KEY) || {};
+    const islands = getLocal(ISLAND_KEY) || {};
     const newIslands = { ...islands };
     newIslands[island.name] = value;
-    setLocal(STORAGE_KEY, newIslands);
+    setLocal(ISLAND_KEY, newIslands);
 };
