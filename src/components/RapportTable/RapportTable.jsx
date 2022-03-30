@@ -2,8 +2,6 @@ import { Checkbox, Table } from 'antd';
 import NPCS from 'src/data/npc.json';
 import { generateTableColumns } from 'src/lib/formUtils';
 
-const BASE_URL = 'https://lost-ark.maxroll.gg/island/';
-
 export default function RapportTable({ className, completed, onChange }) {
     const numCompleted = Object.values(completed).filter((i) => i).length;
 
@@ -30,7 +28,6 @@ export default function RapportTable({ className, completed, onChange }) {
             title: `Rapport NPC (${numCompleted}/${Object.values(NPCS).length})`,
             dataIndex: 'name',
             key: 'name',
-            render: (name, record) => <NameCell name={name} record={record} />,
             sorter: (a, b) => a.name.localeCompare(b.name),
         },
         ...generateTableColumns(
@@ -65,14 +62,3 @@ export default function RapportTable({ className, completed, onChange }) {
         />
     );
 }
-
-const NameCell = ({ name, record }) => {
-    const url = BASE_URL + name.toLowerCase().split(' ').join('-');
-    return (
-        <div>
-            <a href={url} rel="noreferrer" target="_blank">
-                {name}
-            </a>
-        </div>
-    );
-};

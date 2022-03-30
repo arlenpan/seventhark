@@ -41,7 +41,7 @@ export default function ChecklistTables({ characters }) {
 
     const buildRapportTableData = () => {
         return [...Array(6).keys()].map((index) => {
-            const baseFields = { npc: 'WIP' };
+            const baseFields = { npc: 'WIP', key: index };
             const characterFields = {};
             characters.forEach((char) => {
                 characterFields[char.name] = renderCharacterRapportField(char);

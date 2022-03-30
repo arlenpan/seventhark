@@ -29,14 +29,12 @@ export default function MainLayout({ children }) {
                 </Menu.Item>
                 <Menu.SubMenu key="links" title="Useful Links">
                     <Menu.Item key="https://lost-ark.maxroll.gg/resources/unas-tasks">
-                        <a
-                            href="https://lost-ark.maxroll.gg/resources/unas-tasks"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            Important Una's Tasks
-                        </a>
+                        Maxroll - Important Una's Tasks
                     </Menu.Item>
+                    <Menu.Item key="https://lost-ark.maxroll.gg/resources/rapport-guide">
+                        Maxroll - Rapport Tool
+                    </Menu.Item>
+                    <Menu.Divider />
                     <Menu.Item key="/importexport" disabled>
                         Import/Export Data (WIP)
                     </Menu.Item>
