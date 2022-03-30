@@ -30,7 +30,8 @@ export default function InfiniteChaosTable({ costs, className }) {
                 className={classNames(
                     record.tier === 1 && tierStyles.tier1,
                     record.tier === 2 && tierStyles.tier2,
-                    record.tier === 3 && tierStyles.tier3
+                    record.tier === 3 && tierStyles.tier3,
+                    record.tier === 3.5 && tierStyles['tier3-5']
                 )}
             >
                 {name}
