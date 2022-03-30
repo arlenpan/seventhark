@@ -40,8 +40,14 @@ export default function ChecklistTables({ characters }) {
     };
 
     const buildRapportTableData = () => {
-        return [...Array(6).keys()].map((index) => {
-            const baseFields = { npc: 'WIP', key: index };
+        return [...Array(12).keys()].map((index) => {
+            const name = index < 6 ? 'Song' : 'Emote';
+            const baseFields = {
+                npc: `${name} ${(index % 6) + 1} ${
+                    (index + 1) % 6 === 0 ? '(Crystalline Aura)' : ''
+                }`,
+                key: index,
+            };
             const characterFields = {};
             characters.forEach((char) => {
                 characterFields[char.name] = renderCharacterRapportField(char);
@@ -115,7 +121,7 @@ export default function ChecklistTables({ characters }) {
                 pagination={false}
             />
 
-            <div className="d-flex-center m-ts">
+            {/* <div className="d-flex-center m-ts">
                 <h3>Rapport Dailies</h3>
             </div>
             <Table
@@ -123,7 +129,7 @@ export default function ChecklistTables({ characters }) {
                 dataSource={buildRapportTableData()}
                 size="small"
                 pagination={false}
-            />
+            /> */}
 
             <div className="d-flex-center m-ts">
                 <h3>Weeklies</h3>

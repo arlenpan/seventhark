@@ -49,7 +49,7 @@ const Calculator = () => {
                 <Tabs.TabPane tab="T3 Infinite Chaos" key="infinite">
                     <InfiniteChaosTable costs={costs} />
                 </Tabs.TabPane>
-                <Tabs.TabPane tab="Item Honing" key="honing">
+                <Tabs.TabPane tab="Item Honing (WIP)" key="honing" disabled>
                     <div>WIP</div>
                 </Tabs.TabPane>
             </Tabs>
