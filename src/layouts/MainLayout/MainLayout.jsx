@@ -2,6 +2,7 @@ import { Menu } from 'antd';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Footer from 'src/components/Footer';
+import Head from 'src/components/Head';
 import ImportExportModal from 'src/components/ImportExportModal/ImportExportModal';
 import styles from './MainLayout.module.scss';
 
@@ -25,6 +26,7 @@ export default function MainLayout({ children }) {
 
     return (
         <div className={styles.layout}>
+            <Head />
             <Menu
                 onClick={handleClickNav}
                 className={styles.nav}
