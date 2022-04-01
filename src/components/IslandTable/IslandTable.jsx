@@ -17,7 +17,7 @@ export default function IslandTable({ className, completed = {}, onChange }) {
                 return (
                     !record.noSoul && (
                         <Checkbox
-                            className="m-ls"
+                            className="ml-s"
                             checked={record.isComplete}
                             onChange={(e) => onChange(e.target.checked, record)}
                         />

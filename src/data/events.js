@@ -147,7 +147,7 @@ const TRADE_SYLMAEL_BLOODSTONE = {
 };
 const TRADE_MERCHANT_SHIPS = {
     id: 'trade_merchant_ships',
-    name: 'Traveling Merchant Ships',
+    name: 'Pirate Merchant Ships',
     quantity: 1,
 };
 const WEEKLY_GHOST_SHIP = {

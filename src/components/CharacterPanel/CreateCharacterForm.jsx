@@ -12,7 +12,7 @@ export default function CreateCharacterForm({ onSubmit, onClose }) {
             </Form.Item>
             <div className="d-flex-center">
                 <Button onClick={() => onClose()}>Cancel</Button>
-                <Button className="m-lauto" htmlType="submit" type="primary">
+                <Button className="ml-auto" htmlType="submit" type="primary">
                     Add
                 </Button>
             </div>

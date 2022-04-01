@@ -108,9 +108,9 @@ export default function ChecklistTables({ characters }) {
 
     return (
         <div className={styles.checklist}>
-            <div className="d-flex-center">
+            <div className="d-flex-center mb-xs">
                 <h3>Dailies</h3>
-                <Button size="small" className="m-lxs" onClick={() => handleReset('daily')}>
+                <Button size="small" className="ml-xs" onClick={() => handleReset('daily')}>
                     Reset
                 </Button>
             </div>
@@ -121,7 +121,7 @@ export default function ChecklistTables({ characters }) {
                 pagination={false}
             />
 
-            {/* <div className="d-flex-center m-ts">
+            {/* <div className="d-flex-center mt-s">
                 <h3>Rapport Dailies</h3>
             </div>
             <Table
@@ -131,9 +131,9 @@ export default function ChecklistTables({ characters }) {
                 pagination={false}
             /> */}
 
-            <div className="d-flex-center m-ts">
+            <div className="d-flex-center mt-s mb-xs">
                 <h3>Weeklies</h3>
-                <Button size="small" className="m-lxs" onClick={() => handleReset('weekly')}>
+                <Button size="small" className="ml-xs" onClick={() => handleReset('weekly')}>
                     Reset
                 </Button>
             </div>

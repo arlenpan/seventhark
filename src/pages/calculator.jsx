@@ -35,14 +35,14 @@ const Calculator = () => {
                             onClick={(e) => handleTierCheck(e, n + 1)}
                             checked={tiers[n + 1]}
                         />
-                        <span className="m-lxs m-rs">Tier {n + 1}</span>
+                        <span className="ml-xs mr-s">Tier {n + 1}</span>
                     </div>
                 ))}
             </div>
 
-            <CostEntry tiers={tiers} costs={costs} className="m-ts" onChange={handleCostChange} />
+            <CostEntry tiers={tiers} costs={costs} className="mt-s" onChange={handleCostChange} />
 
-            <Tabs className="m-ts">
+            <Tabs className="mt-s">
                 <Tabs.TabPane tab="Mari's Shop" key="mari">
                     <MariShopTable tiers={tiers} costs={costs} />
                 </Tabs.TabPane>

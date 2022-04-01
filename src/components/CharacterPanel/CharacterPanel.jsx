@@ -41,11 +41,11 @@ export default function CharacterPanel({ characters = [], onUpdate }) {
     };
 
     return (
-        <div className="m-bs">
-            <div className="d-flex-center m-bxs">
+        <div className="mb-s">
+            <div className="d-flex-center mb-xs">
                 <h3>Characters</h3>
                 {characters.length > 1 && (
-                    <span className="font-small m-lxs">(drag to reorder)</span>
+                    <span className="font-small ml-xs">(drag to reorder)</span>
                 )}
             </div>
             {!loading && (

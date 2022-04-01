@@ -12,7 +12,7 @@ export default function RapportTable({ className, completed, onChange }) {
             width: 25,
             render: (name, record) => (
                 <Checkbox
-                    className="m-ls"
+                    className="ml-s"
                     checked={record.isComplete}
                     onChange={(e) => onChange(e.target.checked, record)}
                 />

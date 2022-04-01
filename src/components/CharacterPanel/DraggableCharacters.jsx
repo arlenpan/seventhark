@@ -27,7 +27,7 @@ export default function DraggableCharacters({ characters, onDelete, onReorder })
                                     {(dragProvided) => {
                                         return (
                                             <div
-                                                className="d-flex-center justify-between m-bs"
+                                                className="d-flex-center justify-between mb-s"
                                                 ref={dragProvided.innerRef}
                                                 {...dragProvided.draggableProps}
                                                 {...dragProvided.dragHandleProps}

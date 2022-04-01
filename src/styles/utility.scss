@@ -23,22 +23,24 @@
 // SPACING
 $sizes: (
     auto: auto,
+    l: 3rem,
+    m: 2rem,
     s: 1rem,
     xs: 0.5rem,
     0: 0,
 );
 
 @each $size, $value in $sizes {
-    .m-t#{$size} {
+    .mt-#{$size} {
         margin-top: $value;
     }
-    .m-b#{$size} {
+    .mb-#{$size} {
         margin-bottom: $value;
     }
-    .m-l#{$size} {
+    .ml-#{$size} {
         margin-left: $value;
     }
-    .m-r#{$size} {
+    .mr-#{$size} {
         margin-right: $value;
     }
 }
