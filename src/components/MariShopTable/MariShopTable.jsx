@@ -2,6 +2,7 @@ import { Table } from 'antd';
 import classNames from 'classnames';
 import { ALL_MATERIALS, CRYSTALS } from 'src/data/economy';
 import tierStyles from 'src/styles/tiers.module.scss';
+import ItemIcon from '../ItemIcon';
 import styles from './MariShopTable.module.scss';
 
 export default function MariShopTable({ costs, tiers, className }) {
@@ -37,9 +38,16 @@ export default function MariShopTable({ costs, tiers, className }) {
 
     const columns = [
         {
+            dataIndex: 'icon',
+            key: 'icon',
+            render: (name, record) => (
+                <ItemIcon item={record} className="mr-xs" tooltipPlacement="right" />
+            ),
+        },
+        {
             title: 'Item',
-            dataIndex: 'item',
-            key: 'item',
+            dataIndex: 'name',
+            key: 'name',
             render: (name, record) => renderNameCell(name, record),
         },
         { title: 'Gold Cost (AH)', dataIndex: 'goldCost', key: 'goldCost' },
@@ -70,7 +78,7 @@ export default function MariShopTable({ costs, tiers, className }) {
 
         return {
             key: item.id,
-            item: item.name,
+            name: item.name,
             goldCost: costs[item.id],
             quantity: item.quantityMari,
             gemCost: item.gemCostMari,
@@ -79,6 +87,7 @@ export default function MariShopTable({ costs, tiers, className }) {
                 costs[CRYSTALS.id] && Math.round((costs[CRYSTALS.id] / 95) * item.gemCostMari),
             goldDiff: !Number.isNaN(goldDiff) && goldDiff,
             tier: item.tier,
+            imgUrl: item.imgUrl,
         };
     });
 

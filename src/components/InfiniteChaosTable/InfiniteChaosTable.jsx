@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { ALL_MATERIALS } from 'src/data/economy';
 import tierStyles from 'src/styles/tiers.module.scss';
 import FormEditableCell from '../FormEditableCell';
+import ItemIcon from '../ItemIcon';
 import styles from './InfiniteChaosTable.module.scss';
 
 export default function InfiniteChaosTable({ costs, className }) {
@@ -56,9 +57,16 @@ export default function InfiniteChaosTable({ costs, className }) {
 
     const columns = [
         {
+            dataIndex: 'icon',
+            key: 'icon',
+            render: (name, record) => (
+                <ItemIcon item={record} className="mr-xs" tooltipPlacement="right" />
+            ),
+        },
+        {
             title: 'Item',
-            dataIndex: 'item',
-            key: 'item',
+            dataIndex: 'name',
+            key: 'name',
             render: (name, record) => renderNameCell(name, record),
         },
         {
@@ -103,7 +111,7 @@ export default function InfiniteChaosTable({ costs, className }) {
         return {
             key: item.id,
             id: item.id,
-            item: item.name,
+            name: item.name,
             tier: item.tier,
             exchangeCurve: item.exchangeCurve,
             buyCount,
@@ -111,6 +119,7 @@ export default function InfiniteChaosTable({ costs, className }) {
             purificationCost,
             goldCost,
             goldPerShard: !Number.isNaN(goldPerShard) && Math.round(goldPerShard * 1000) / 1000,
+            imgUrl: item.imgUrl,
         };
     });
 

@@ -1,13 +1,25 @@
-.input {
-    width: 80px;
-    margin-right: 0.5rem;
-}
-
 .container {
     font-size: small;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    border-radius: 5px;
+    &:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    background: rgba(lightgray, 0.4);
+    margin-right: 0.5rem;
+    border-radius: 4px;
+}
+
+.input {
+    width: 80px;
 }
