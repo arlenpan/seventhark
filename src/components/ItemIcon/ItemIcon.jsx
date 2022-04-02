@@ -8,13 +8,7 @@ export default function Icon({ item, className, tooltipPlacement }) {
         <div className={classNames(styles['icon-wrapper'], className)}>
             {item.imgUrl && (
                 <Tooltip title={item.name} placement={tooltipPlacement}>
-                    <Image
-                        className={styles.icon}
-                        src={item.imgUrl}
-                        style={{ margin: '0 0.5rem' }}
-                        width={32}
-                        height={32}
-                    />
+                    <Image className={styles.icon} src={item.imgUrl} width={32} height={32} />
                 </Tooltip>
             )}
         </div>

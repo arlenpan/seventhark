@@ -1,4 +1,4 @@
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.dark.css';
 import 'src/styles/globals.scss';
 import 'src/styles/utility.scss';
 import { hotjar } from 'react-hotjar';

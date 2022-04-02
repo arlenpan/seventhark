@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { ALL_MATERIALS, CRYSTALS } from 'src/data/economy';
 import tierStyles from 'src/styles/tiers.module.scss';
 import ItemIcon from '../ItemIcon';
-import styles from './MariShopTable.module.scss';
+import formStyles from 'src/styles/forms.module.scss';
 
 export default function MariShopTable({ costs, tiers, className }) {
     const renderNameCell = (name, record) => {
@@ -25,11 +25,10 @@ export default function MariShopTable({ costs, tiers, className }) {
         const isCheaper =
             (cellType === 'ah' && item.goldValueAH < item.goldValueMari) ||
             (cellType === 'mari' && item.goldValueMari < item.goldValueAH);
-        const isNaN =
-            (cellType === 'ah' && Number.isNaN(item.goldValueAH)) ||
-            (cellType === 'mari' && Number.isNaN(item.goldValueMari));
+        if (cellType === 'ah' && !item.goldValueAH) return null;
+        if (cellType === 'mari' && !item.goldValueMari) return null;
         return (
-            <div className={classNames(isCheaper && styles.cheaper, isNaN && 'faded')}>
+            <div className={classNames(isCheaper && formStyles['highlight-cell'])}>
                 {cellType === 'ah' && item.goldValueAH}
                 {cellType === 'mari' && item.goldValueMari}
             </div>

@@ -5,9 +5,10 @@ import {
     getChecklist,
     resetChecklistDailies,
     resetChecklistWeeklies,
-    setChecklistItem,
+    setChecklistItem
 } from 'src/api/checklist';
 import { DAILIES, WEEKLIES } from 'src/data/events';
+import formStyles from 'src/styles/forms.module.scss';
 import styles from './ChecklistTables.module.scss';
 
 export default function ChecklistTables({ characters }) {
@@ -72,7 +73,7 @@ export default function ChecklistTables({ characters }) {
             });
 
         return (
-            <div className={classNames(isComplete && styles.complete, styles.cell)}>
+            <div className={classNames(isComplete && formStyles['highlight-cell'], styles.cell)}>
                 {[...Array(event.quantity).keys()].map((v, i) => (
                     <Checkbox
                         key={i}
