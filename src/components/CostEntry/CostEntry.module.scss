@@ -7,7 +7,7 @@
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     border-radius: 5px;
     &:not(:last-child) {
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
 }
 

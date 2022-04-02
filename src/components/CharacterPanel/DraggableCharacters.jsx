@@ -1,5 +1,6 @@
 import { CloseOutlined } from '@ant-design/icons';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
+import styles from './CharacterPanel.module.scss';
 
 export default function DraggableCharacters({ characters, onDelete, onReorder }) {
     const handleDragEnd = (result) => {
@@ -27,7 +28,7 @@ export default function DraggableCharacters({ characters, onDelete, onReorder })
                                     {(dragProvided) => {
                                         return (
                                             <div
-                                                className="d-flex-center justify-between mb-s"
+                                                className={styles.character}
                                                 ref={dragProvided.innerRef}
                                                 {...dragProvided.draggableProps}
                                                 {...dragProvided.dragHandleProps}
