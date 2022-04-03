@@ -48,9 +48,9 @@ export default function MainLayout({ children }) {
                 <Menu.Item key="/calculator">Calculators</Menu.Item>
                 <Menu.Item key="/islands">Island Tracker</Menu.Item>
                 <Menu.Item key="/rapport">Rapport Tracker</Menu.Item>
-                <Menu.Item key="/logger" disabled>
+                {/* <Menu.Item key="/logger" disabled>
                     Economy Log (WIP)
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.SubMenu key="links" title="Useful Links">
                     <Menu.Item key="https://lost-ark.maxroll.gg/resources/unas-tasks">
                         Maxroll - Important Una's Tasks

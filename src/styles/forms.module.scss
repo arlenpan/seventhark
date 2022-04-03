@@ -1,10 +1,14 @@
 .input-panel {
     padding: 1rem;
-    border: 1px solid lightgray;
+    border: 1px solid rgba(lightgray, 0.2);
     border-radius: 5px;
     background: rgba(lightgray, 0.1);
 }
 
 .highlight-cell {
     border: 1px solid lightgreen;
+}
+
+.highlight-star svg {
+    fill: gold;
 }

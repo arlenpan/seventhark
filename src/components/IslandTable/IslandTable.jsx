@@ -1,17 +1,47 @@
-import { Checkbox, Table } from 'antd';
+import { StarFilled, StarOutlined } from '@ant-design/icons';
+import { Button, Checkbox, Table } from 'antd';
 import ISLANDS from 'src/data/islands.json';
 import { generateTableColumns } from 'src/lib/formUtils';
+import formStyles from 'src/styles/forms.module.scss';
 
 const BASE_URL = 'https://lost-ark.maxroll.gg/island/';
 
-export default function IslandTable({ className, completed = {}, onChange }) {
-    const numCompletedIslands = Object.values(completed).filter((i) => i).length;
+export default function IslandTable({ className, islands = {}, onChange, onFavorite }) {
+    const numCompletedIslands = Object.values(islands).filter((i) => i).length;
     const numValidIslands = Object.values(ISLANDS).filter((i) => !i.noSoul).length;
 
     const columns = [
         {
-            dataIndex: 'isSoulComplete',
-            key: 'isSoulComplete',
+            dataIndex: 'isFavorite',
+            key: 'isFavorite',
+            width: 25,
+            render: (name, record) => {
+                return (
+                    <Button
+                        type="text"
+                        shape="circle"
+                        icon={
+                            record.isFavorite ? (
+                                <StarFilled className={formStyles['highlight-star']} />
+                            ) : (
+                                <StarOutlined />
+                            )
+                        }
+                        onClick={(e) => onFavorite(!record.isFavorite, record)}
+                    />
+                );
+            },
+            filters: [
+                { text: 'Favorite', value: true },
+                { text: 'Not Favorite', value: false },
+            ],
+            onFilter: (value, record) => record.isFavorite === value,
+            sorter: (a, b) => (a.isFavorite ? -1 : 1),
+            defaultSortOrder: 'ascend',
+        },
+        {
+            dataIndex: 'isComplete',
+            key: 'isComplete',
             width: 25,
             render: (name, record) => {
                 return (
@@ -66,7 +96,8 @@ export default function IslandTable({ className, completed = {}, onChange }) {
         noSoul: ISLANDS[name].noSoul,
         acquisition: ISLANDS[name].acquisition || '',
         isAdventure: Boolean(ISLANDS[name].isAdventure),
-        isComplete: completed[name] && Boolean(completed[name].isComplete),
+        isComplete: islands[name] && Boolean(islands[name].isComplete),
+        isFavorite: islands[name] && Boolean(islands[name].isFavorite),
     }));
 
     return (

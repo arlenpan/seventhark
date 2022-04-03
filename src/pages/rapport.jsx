@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getRapport, setRapportComplete } from 'src/api/rapport';
+import { getRapport, setRapportComplete, setRapportFavorite } from 'src/api/rapport';
 import RapportTable from 'src/components/RapportTable';
 import MainLayout from 'src/layouts/MainLayout';
 
@@ -15,9 +15,14 @@ const Rapport = () => {
         getRapport().then(setRapport);
     };
 
+    const handleFavorite = (value, npc) => {
+        setRapportFavorite({ value, npc });
+        getRapport().then(setRapport);
+    };
+
     return (
         <div>
-            <RapportTable completed={rapport} onChange={handleChange} />
+            <RapportTable rapport={rapport} onChange={handleChange} onFavorite={handleFavorite} />
         </div>
     );
 };

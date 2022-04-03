@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getIslands, setIslandComplete } from 'src/api/islands';
+import { getIslands, setIslandComplete, setIslandFavorite } from 'src/api/islands';
 import IslandTable from 'src/components/IslandTable';
 import MainLayout from 'src/layouts/MainLayout';
 
@@ -15,9 +15,14 @@ const Islands = () => {
         getIslands().then(setIslands);
     };
 
+    const handleFavorite = (value, island) => {
+        setIslandFavorite({ value, island });
+        getIslands().then(setIslands);
+    };
+
     return (
         <div>
-            <IslandTable completed={islands} onChange={handleChange} />
+            <IslandTable islands={islands} onChange={handleChange} onFavorite={handleFavorite} />
         </div>
     );
 };

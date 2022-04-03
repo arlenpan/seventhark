@@ -1,14 +1,44 @@
-import { Checkbox, Table } from 'antd';
+import { StarFilled, StarOutlined } from '@ant-design/icons';
+import { Button, Checkbox, Table } from 'antd';
 import NPCS from 'src/data/npc.json';
 import { generateTableColumns } from 'src/lib/formUtils';
+import formStyles from 'src/styles/forms.module.scss';
 
-export default function RapportTable({ className, completed, onChange }) {
-    const numCompleted = Object.values(completed).filter((i) => i).length;
+export default function RapportTable({ className, rapport = {}, onChange, onFavorite }) {
+    const numCompleted = Object.values(rapport).filter((i) => i).length;
 
     const columns = [
         {
-            dataIndex: 'isRapportComplete',
-            key: 'isRapportComplete',
+            dataIndex: 'isFavorite',
+            key: 'isFavorite',
+            width: 25,
+            render: (name, record) => {
+                return (
+                    <Button
+                        type="text"
+                        shape="circle"
+                        icon={
+                            record.isFavorite ? (
+                                <StarFilled className={formStyles['highlight-star']} />
+                            ) : (
+                                <StarOutlined />
+                            )
+                        }
+                        onClick={(e) => onFavorite(!record.isFavorite, record)}
+                    />
+                );
+            },
+            filters: [
+                { text: 'Favorite', value: true },
+                { text: 'Not Favorite', value: false },
+            ],
+            onFilter: (value, record) => record.isFavorite === value,
+            sorter: (a, b) => (a.isFavorite ? -1 : 1),
+            defaultSortOrder: 'ascend',
+        },
+        {
+            dataIndex: 'isComplete',
+            key: 'isComplete',
             width: 25,
             render: (name, record) => (
                 <Checkbox
@@ -49,7 +79,8 @@ export default function RapportTable({ className, completed, onChange }) {
         key: name,
         name,
         ...NPCS[name],
-        isComplete: completed[name] && Boolean(completed[name].isComplete),
+        isComplete: rapport[name] && Boolean(rapport[name].isComplete),
+        isFavorite: rapport[name] && Boolean(rapport[name].isFavorite),
     }));
 
     return (
