@@ -28,7 +28,7 @@ const Calculator = () => {
 
     return (
         <div>
-            <div className="d-flex-center">
+            <div className="d-flex-center mb-s">
                 {[...Array(3).keys()].map((n) => (
                     <div className="d-flex-center" key={n}>
                         <Checkbox
@@ -40,7 +40,7 @@ const Calculator = () => {
                 ))}
             </div>
 
-            <CostEntry tiers={tiers} costs={costs} className="mt-s" onChange={handleCostChange} />
+            <CostEntry tiers={tiers} costs={costs} onChange={handleCostChange} />
 
             <Tabs className="mt-s">
                 <Tabs.TabPane tab="Mari's Shop" key="mari">

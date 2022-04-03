@@ -1,4 +1,5 @@
-import { Input } from 'antd';
+import { CaretRightOutlined } from '@ant-design/icons';
+import { Collapse, Input } from 'antd';
 import classNames from 'classnames';
 import { ALL_MATERIALS, CRYSTALS } from 'src/data/economy';
 import formStyles from 'src/styles/forms.module.scss';
@@ -14,46 +15,54 @@ export default function CostEntry({ tiers, costs = {}, onChange, className }) {
     };
 
     return (
-        <div className={classNames(className, styles.container, formStyles['input-panel'])}>
-            <strong>Gem Cost in Gold:</strong>
-            <div className="d-flex-center mb-s">
-                <div className={styles['input-wrapper']}>
-                    <Input
-                        type="number"
-                        className={styles.input}
-                        value={costs[CRYSTALS.id]}
-                        onChange={(e) => handleInputChange(e, CRYSTALS)}
-                    />
-                    <span className="mr-xs ml-xs">95</span>
-                    <ItemIcon item={CRYSTALS} />
+        <Collapse defaultActiveKey={['1']}>
+            <Collapse.Panel key="1" header="Enter Gold Costs">
+                <div className={classNames(className, styles.container)}>
+                    <strong>Gem Cost in Gold:</strong>
+                    <div className="d-flex-center mb-s">
+                        <div className={styles['input-wrapper']}>
+                            <Input
+                                type="number"
+                                className={styles.input}
+                                value={costs[CRYSTALS.id]}
+                                onChange={(e) => handleInputChange(e, CRYSTALS)}
+                            />
+                            <span className="mr-xs ml-xs">95</span>
+                            <ItemIcon item={CRYSTALS} />
+                        </div>
+                    </div>
+
+                    <strong>Action House Costs in Gold:</strong>
+                    <div>
+                        {noTiersSelected && <em>Please Select Tiers</em>}
+                        {tiers[1] && (
+                            <TierGrid tiers={[1]} costs={costs} onInputChange={handleInputChange} />
+                        )}
+                        {tiers[2] && (
+                            <TierGrid tiers={[2]} costs={costs} onInputChange={handleInputChange} />
+                        )}
+                        {tiers[3] && (
+                            <TierGrid
+                                tiers={[3, 3.5]}
+                                costs={costs}
+                                onInputChange={handleInputChange}
+                            />
+                        )}
+
+                        {Object.keys(tiers)
+                            .filter((tier) => tiers[tier])
+                            .map((tier) => (
+                                <TierGrid
+                                    key={tier}
+                                    tier={tier}
+                                    costs={costs}
+                                    onInputChange={handleInputChange}
+                                />
+                            ))}
+                    </div>
                 </div>
-            </div>
-
-            <strong>Action House Costs in Gold:</strong>
-            <div>
-                {noTiersSelected && <em>Please Select Tiers</em>}
-                {tiers[1] && (
-                    <TierGrid tiers={[1]} costs={costs} onInputChange={handleInputChange} />
-                )}
-                {tiers[2] && (
-                    <TierGrid tiers={[2]} costs={costs} onInputChange={handleInputChange} />
-                )}
-                {tiers[3] && (
-                    <TierGrid tiers={[3, 3.5]} costs={costs} onInputChange={handleInputChange} />
-                )}
-
-                {Object.keys(tiers)
-                    .filter((tier) => tiers[tier])
-                    .map((tier) => (
-                        <TierGrid
-                            key={tier}
-                            tier={tier}
-                            costs={costs}
-                            onInputChange={handleInputChange}
-                        />
-                    ))}
-            </div>
-        </div>
+            </Collapse.Panel>
+        </Collapse>
     );
 }
 
