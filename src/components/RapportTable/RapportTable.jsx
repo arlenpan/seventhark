@@ -49,7 +49,7 @@ export default function RapportTable({ className, completed, onChange }) {
         key: name,
         name,
         ...NPCS[name],
-        isComplete: Boolean(completed[name]),
+        isComplete: completed[name] && Boolean(completed[name].isComplete),
     }));
 
     return (

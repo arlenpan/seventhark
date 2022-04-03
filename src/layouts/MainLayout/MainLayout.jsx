@@ -1,6 +1,7 @@
-import { Menu } from 'antd';
+import { Menu, Modal } from 'antd';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { resetAllData } from 'src/api/importExport';
 import Footer from 'src/components/Footer';
 import Head from 'src/components/Head';
 import ImportExportModal from 'src/components/ImportExportModal/ImportExportModal';
@@ -22,6 +23,16 @@ export default function MainLayout({ children }) {
         const newModals = { ...modals };
         delete newModals[key];
         setModals(newModals);
+    };
+
+    const handleConfirmModal = () => {
+        Modal.confirm({
+            title: 'Do you want to reset all data?',
+            content: 'This will remove characters, checklists, favorites, completions and more.',
+            onOk() {
+                resetAllData().then(() => router.reload(window.location.pathname));
+            },
+        });
     };
 
     return (
@@ -49,6 +60,9 @@ export default function MainLayout({ children }) {
                     </Menu.Item>
                     <Menu.Divider />
                     <Menu.Item key="import">Import/Export Data</Menu.Item>
+                    <Menu.Item key="wipe" onClick={handleConfirmModal}>
+                        Reset All Data
+                    </Menu.Item>
                 </Menu.SubMenu>
             </Menu>
             <section className={styles['page-container']}>

@@ -24,11 +24,15 @@ export const importLocalData = async (data) => {
     });
 };
 
-export const exportLocalData = () => {
+export const exportLocalData = async () => {
     const allData = {};
     STORAGE_KEYS.forEach((key) => {
         const data = getLocal(key);
         allData[key] = data;
     });
     downloadObjectAsJson(allData, FILENAME);
+};
+
+export const resetAllData = async () => {
+    localStorage.clear();
 };

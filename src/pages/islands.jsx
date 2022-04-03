@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getIslands, setIsland } from 'src/api/islands';
+import { getIslands, setIslandComplete } from 'src/api/islands';
 import IslandTable from 'src/components/IslandTable';
 import MainLayout from 'src/layouts/MainLayout';
 
@@ -11,7 +11,7 @@ const Islands = () => {
     }, []);
 
     const handleChange = (value, island) => {
-        setIsland({ value, island });
+        setIslandComplete({ value, island });
         getIslands().then(setIslands);
     };
 

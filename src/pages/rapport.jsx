@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getRapport, setNPC } from 'src/api/rapport';
+import { getRapport, setRapportComplete } from 'src/api/rapport';
 import RapportTable from 'src/components/RapportTable';
 import MainLayout from 'src/layouts/MainLayout';
 
@@ -11,7 +11,7 @@ const Rapport = () => {
     }, []);
 
     const handleChange = (value, npc) => {
-        setNPC({ value, npc });
+        setRapportComplete({ value, npc });
         getRapport().then(setRapport);
     };
 

@@ -7,9 +7,14 @@ export const getRapport = async () => {
     return rapport || {};
 };
 
-export const setNPC = async ({ value, npc }) => {
+export const setRapportComplete = async ({ value, npc }) => {
     const rapport = getLocal(RAPPORT_KEY) || {};
     const newRapport = { ...rapport };
-    newRapport[npc.name] = value;
+
+    if (!newRapport[npc.name] || typeof newRapport[npc.name] !== 'object') {
+        newRapport[npc.name] = {};
+    }
+    newRapport[npc.name].isComplete = value;
+
     setLocal(RAPPORT_KEY, newRapport);
 };

@@ -66,7 +66,7 @@ export default function IslandTable({ className, completed = {}, onChange }) {
         noSoul: ISLANDS[name].noSoul,
         acquisition: ISLANDS[name].acquisition || '',
         isAdventure: Boolean(ISLANDS[name].isAdventure),
-        isComplete: Boolean(completed[name]),
+        isComplete: completed[name] && Boolean(completed[name].isComplete),
     }));
 
     return (
