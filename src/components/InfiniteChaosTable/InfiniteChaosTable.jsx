@@ -2,10 +2,10 @@ import { Table } from 'antd';
 import classNames from 'classnames';
 import { useState } from 'react';
 import { ALL_MATERIALS } from 'src/data/economy';
+import formStyles from 'src/styles/forms.module.scss';
 import tierStyles from 'src/styles/tiers.module.scss';
 import FormEditableCell from '../FormEditableCell';
 import ItemIcon from '../ItemIcon';
-import styles from './InfiniteChaosTable.module.scss';
 
 export default function InfiniteChaosTable({ costs, className }) {
     const INFINITE_CHAOS_MATERIALS = ALL_MATERIALS.filter((item) => item.exchangeCurve);
@@ -123,12 +123,16 @@ export default function InfiniteChaosTable({ costs, className }) {
         };
     });
 
-    const bestItemId = calculateBestItem();
-
     return (
         <div className={className}>
             <Table
-                rowClassName={(record) => record.id === bestItemId && styles.best}
+                rowClassName={(record) => {
+                    return (
+                        record.goldCost &&
+                        record.id === calculateBestItem() &&
+                        formStyles['highlight-cell']
+                    );
+                }}
                 columns={columns}
                 dataSource={data}
                 size="small"

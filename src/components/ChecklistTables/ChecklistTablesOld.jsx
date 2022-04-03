@@ -1,4 +1,5 @@
 import { Button, Checkbox, Table } from 'antd';
+import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import {
     getChecklist,
@@ -23,25 +24,47 @@ export default function ChecklistTables({ characters }) {
         dataIndex: char.name,
         key: char.name,
         width: '80px',
-        render: (item, record) => renderCharacterEventField(char, record.event),
-        onCell: (record) => renderCharacterEventFieldClassName(char, record.event),
     }));
-    const columns = [...checkboxColumns, { title: 'Event', dataIndex: 'name', key: 'name' }];
+    const columns = [...checkboxColumns, { title: 'Event', dataIndex: 'event', key: 'event' }];
+    const rapportColumns = [...checkboxColumns, { title: 'NPC', dataIndex: 'npc', key: 'npc' }];
 
     // BUILD DATA
     const buildEventTableData = (events) => {
         return events.map((event) => {
+            const baseFields = { event: renderEventField(event), key: event.id };
             const characterFields = {};
             characters.forEach((char) => {
-                characterFields[char.name] = checklist[char.name] && checklist[char.name][event.id];
+                characterFields[char.name] = renderCharacterEventField(char, event);
             });
-            return { ...characterFields, event, key: event.id, name: event.name };
+            return { ...characterFields, ...baseFields };
+        });
+    };
+
+    const buildRapportTableData = () => {
+        return [...Array(12).keys()].map((index) => {
+            const name = index < 6 ? 'Song' : 'Emote';
+            const baseFields = {
+                npc: `${name} ${(index % 6) + 1} ${
+                    (index + 1) % 6 === 0 ? '(Crystalline Aura)' : ''
+                }`,
+                key: index,
+            };
+            const characterFields = {};
+            characters.forEach((char) => {
+                characterFields[char.name] = renderCharacterRapportField(char);
+            });
+            return { ...characterFields, ...baseFields };
         });
     };
 
     // RENDER STUFF
+    const renderEventField = (event) => {
+        return <div className={classNames(styles.cell)}>{event.name}</div>;
+    };
+
     const renderCharacterEventField = (char, event) => {
         const charEvent = checklist && checklist[char.name] && checklist[char.name][event.id];
+        const isComplete = charEvent && charEvent.length === event.quantity;
         const charTooLowLevel = event.ilvl && char.ilvl && char.ilvl < event.ilvl;
         const rosterComplete =
             event.rosterWide &&
@@ -50,7 +73,7 @@ export default function ChecklistTables({ characters }) {
             });
 
         return (
-            <div>
+            <div className={classNames(isComplete && formStyles['highlight-cell'])}>
                 {[...Array(event.quantity).keys()].map((v, i) => (
                     <Checkbox
                         key={i}
@@ -63,10 +86,12 @@ export default function ChecklistTables({ characters }) {
         );
     };
 
-    const renderCharacterEventFieldClassName = (char, event) => {
-        const charEvent = checklist && checklist[char.name] && checklist[char.name][event.id];
-        const isComplete = charEvent && charEvent.length === event.quantity;
-        return { className: isComplete && formStyles['highlight-cell'] };
+    const renderCharacterRapportField = (char) => {
+        return (
+            <div className={classNames(styles.cell)}>
+                <Checkbox onClick={(e) => {}} />
+            </div>
+        );
     };
 
     // HANDLERS
@@ -96,6 +121,16 @@ export default function ChecklistTables({ characters }) {
                 size="small"
                 pagination={false}
             />
+
+            {/* <div className="d-flex-center mt-s">
+                <h3>Rapport Dailies</h3>
+            </div>
+            <Table
+                columns={rapportColumns}
+                dataSource={buildRapportTableData()}
+                size="small"
+                pagination={false}
+            /> */}
 
             <div className="d-flex-center mt-s mb-xs">
                 <h3>Weeklies</h3>

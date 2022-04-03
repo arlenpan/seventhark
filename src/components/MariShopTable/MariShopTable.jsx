@@ -22,17 +22,23 @@ export default function MariShopTable({ costs, tiers, className }) {
     };
 
     const renderValueCell = (item, cellType) => {
-        const isCheaper =
-            (cellType === 'ah' && item.goldValueAH < item.goldValueMari) ||
-            (cellType === 'mari' && item.goldValueMari < item.goldValueAH);
         if (cellType === 'ah' && !item.goldValueAH) return null;
         if (cellType === 'mari' && !item.goldValueMari) return null;
         return (
-            <div className={classNames(isCheaper && formStyles['highlight-cell'])}>
+            <div>
                 {cellType === 'ah' && item.goldValueAH}
                 {cellType === 'mari' && item.goldValueMari}
             </div>
         );
+    };
+
+    const getValueCellClassname = (item, cellType) => {
+        const isCheaper =
+            (cellType === 'ah' && item.goldValueAH < item.goldValueMari) ||
+            (cellType === 'mari' && item.goldValueMari < item.goldValueAH);
+        if (cellType === 'ah' && !item.goldValueAH) return {};
+        if (cellType === 'mari' && !item.goldValueMari) return {};
+        return { className: isCheaper && formStyles['highlight-cell'] };
     };
 
     const columns = [
@@ -57,12 +63,14 @@ export default function MariShopTable({ costs, tiers, className }) {
             dataIndex: 'goldValueAH',
             key: 'goldValueAH',
             render: (value, record) => renderValueCell(record, 'ah'),
+            onCell: (record) => getValueCellClassname(record, 'ah'),
         },
         {
             title: 'Total Gold Cost (Mari)',
             dataIndex: 'goldValueMari',
             key: 'goldValueMari',
             render: (value, record) => renderValueCell(record, 'mari'),
+            onCell: (record) => getValueCellClassname(record, 'mari'),
         },
         { title: 'Gold Difference', dataIndex: 'goldDiff', key: 'goldDiff' },
     ];
