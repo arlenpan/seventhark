@@ -4,6 +4,7 @@ import { getActiveTiers, getCosts, setActiveTier, setCost } from 'src/api/econom
 import CostEntry from 'src/components/CostEntry';
 import InfiniteChaosTable from 'src/components/InfiniteChaosTable';
 import MariShopTable from 'src/components/MariShopTable';
+import PVPExchangeTable from 'src/components/PVPExchangeTable';
 import MainLayout from 'src/layouts/MainLayout';
 
 const Calculator = () => {
@@ -46,8 +47,11 @@ const Calculator = () => {
                 <Tabs.TabPane tab="Mari's Shop" key="mari">
                     <MariShopTable tiers={tiers} costs={costs} />
                 </Tabs.TabPane>
-                <Tabs.TabPane tab="T3 Infinite Chaos" key="infinite">
+                <Tabs.TabPane tab="Chaos Exchange" key="chaos">
                     <InfiniteChaosTable costs={costs} />
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="PvP Exchange" key="pvp">
+                    <PVPExchangeTable costs={costs} />
                 </Tabs.TabPane>
                 <Tabs.TabPane tab="Item Honing (WIP)" key="honing" disabled>
                     <div>WIP</div>

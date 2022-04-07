@@ -8,7 +8,7 @@ import FormEditableCell from '../FormEditableCell';
 import ItemIcon from '../ItemIcon';
 
 export default function InfiniteChaosTable({ costs, className }) {
-    const INFINITE_CHAOS_MATERIALS = ALL_MATERIALS.filter((item) => item.exchangeCurve);
+    const INFINITE_CHAOS_MATERIALS = ALL_MATERIALS.filter((item) => item.chaosExchangeCost);
 
     const [tempValues, setTempValues] = useState({});
     const [tempQuantities, setTempQuantities] = useState({});
@@ -43,7 +43,7 @@ export default function InfiniteChaosTable({ costs, className }) {
     const calculateBestItem = () => {
         const bestItem = { itemId: null, value: null };
         INFINITE_CHAOS_MATERIALS.forEach((item) => {
-            const purificationCost = tempValues[item.id] || item.exchangeCurve[0];
+            const purificationCost = tempValues[item.id] || item.chaosExchangeCost[0];
             const goldPerShard = costs[item.id] / purificationCost;
             if (!Number.isNaN(goldPerShard)) {
                 if (!bestItem.itemId || goldPerShard > bestItem.value) {
@@ -105,7 +105,7 @@ export default function InfiniteChaosTable({ costs, className }) {
     const data = INFINITE_CHAOS_MATERIALS.map((item) => {
         const buyCount = tempQuantities[item.id] || 1;
         const quantity = item.exchangeQuantity || 1;
-        const purificationCost = tempValues[item.id] || item.exchangeCurve[0];
+        const purificationCost = tempValues[item.id] || item.chaosExchangeCost[0];
         const goldCost = costs[item.id] && costs[item.id] * buyCount * quantity;
         const goldPerShard = goldCost / purificationCost;
         return {
@@ -113,7 +113,7 @@ export default function InfiniteChaosTable({ costs, className }) {
             id: item.id,
             name: item.name,
             tier: item.tier,
-            exchangeCurve: item.exchangeCurve,
+            chaosExchangeCost: item.chaosExchangeCost,
             buyCount,
             quantity,
             purificationCost,

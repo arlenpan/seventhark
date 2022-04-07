@@ -5,6 +5,7 @@ const DESTRUCTION_STONE_FRAGMENT = {
     bundle: 10,
     quantityMari: 15,
     gemCostMari: 60,
+    pvpExchangeCost: 20,
     imgUrl: '/icons/destruction_stone_fragment.webp',
 };
 const GUARDIAN_STONE_FRAGMENT = {
@@ -14,6 +15,7 @@ const GUARDIAN_STONE_FRAGMENT = {
     bundle: 10,
     quantityMari: 40,
     gemCostMari: 36,
+    pvpExchangeCost: 10,
     imgUrl: '/icons/guardian_stone_fragment.png',
 };
 const HARMONY_LEAPSTONE = {
@@ -22,6 +24,7 @@ const HARMONY_LEAPSTONE = {
     tier: 1,
     quantityMari: 15,
     gemCostMari: 15,
+    pvpExchangeCost: 20,
     imgUrl: '/icons/harmony_leapstone.png',
 };
 const HARMONY_SHARD_POUCH_S = {
@@ -31,6 +34,13 @@ const HARMONY_SHARD_POUCH_S = {
     quantityMari: 5,
     gemCostMari: 23,
     imgUrl: '/icons/harmony_shard_pouch_s.png',
+};
+const HARMONY_SHARD_POUCH_L = {
+    id: 'harmony_shard_pouch_l',
+    name: 'Harmony Shard Pouch (L)',
+    tier: 1,
+    pvpExchangeCost: 130,
+    imgUrl: '/icons/harmony_shard_pouch_l.webp',
 };
 const STARS_BREATH = {
     id: 'stars_breath',
@@ -48,6 +58,7 @@ const DESTRUCTION_STONE = {
     bundle: 10,
     quantityMari: 15,
     gemCostMari: 84,
+    pvpExchangeCost: 40,
     imgUrl: '/icons/destruction_stone.webp',
 };
 const GUARDIAN_STONE = {
@@ -57,6 +68,7 @@ const GUARDIAN_STONE = {
     bundle: 10,
     quantityMari: 40,
     gemCostMari: 80,
+    pvpExchangeCost: 20,
     imgUrl: '/icons/guardian_stone.png',
 };
 const LIFE_LEAPSTONE = {
@@ -65,6 +77,7 @@ const LIFE_LEAPSTONE = {
     tier: 2,
     quantityMari: 40,
     gemCostMari: 56,
+    pvpExchangeCost: 30,
     imgUrl: '/icons/life_leapstone.png',
 };
 const LIFE_SHARD_POUCH_S = {
@@ -74,6 +87,13 @@ const LIFE_SHARD_POUCH_S = {
     quantityMari: 5,
     gemCostMari: 19,
     imgUrl: '/icons/life_shard_pouch_s.png',
+};
+const LIFE_SHARD_POUCH_L = {
+    id: 'life_shard_pouch_l',
+    name: 'Life Shard Pouch (L)',
+    tier: 2,
+    pvpExchangeCost: 200,
+    imgUrl: '/icons/life_shard_pouch_l.webp',
 };
 const MOONS_BREATH = {
     id: 'moons_breath',
@@ -99,7 +119,8 @@ const DESTRUCTION_STONE_CRYSTAL = {
     bundle: 10,
     quantityMari: 30,
     gemCostMari: 240,
-    exchangeCurve: [60, 90, 120, 140, 170, 200, 230, 260],
+    pvpExchangeCost: 60,
+    chaosExchangeCost: [60, 90, 120, 140, 170, 200, 230, 260],
     imgUrl: '/icons/destruction_stone_crystal.webp',
 };
 const GUARDIAN_STONE_CRYSTAL = {
@@ -109,7 +130,8 @@ const GUARDIAN_STONE_CRYSTAL = {
     bundle: 10,
     quantityMari: 80,
     gemCostMari: 240,
-    exchangeCurve: [10, 40, 60, 80, 100, 120, 140, 160, 190, 210, 230],
+    pvpExchangeCost: 20,
+    chaosExchangeCost: [10, 40, 60, 80, 100, 120, 140, 160, 190, 210, 230],
     imgUrl: '/icons/guardian_stone_crystal.png',
 };
 const HONOR_LEAPSTONE = {
@@ -118,7 +140,8 @@ const HONOR_LEAPSTONE = {
     tier: 3,
     quantityMari: 5,
     gemCostMari: 10,
-    exchangeCurve: [100, 130, 170, 200, 230, 270],
+    pvpExchangeCost: 40,
+    chaosExchangeCost: [100, 130, 170, 200, 230, 270],
     imgUrl: '/icons/honor_leapstone.png',
 };
 const HONOR_SHARD_POUCH_S = {
@@ -133,7 +156,8 @@ const HONOR_SHARD_POUCH_L = {
     id: 'honor_shard_pouch_l',
     name: 'Honor Shard Pouch (L)',
     tier: 3,
-    exchangeCurve: [500, 570],
+    pvpExchangeCost: 670,
+    chaosExchangeCost: [500, 570],
     imgUrl: '/icons/honor_shard_pouch_l.png',
 };
 const SOLAR_GRACE = {
@@ -142,8 +166,9 @@ const SOLAR_GRACE = {
     tier: 3,
     quantityMari: 20,
     gemCostMari: 80,
-    exchangeCurve: [550, 630],
+    chaosExchangeCost: [550, 630],
     exchangeQuantity: 7,
+    pvpExchangeCost: 80,
     imgUrl: '/icons/solar_grace.png',
 };
 const SOLAR_BLESSING = {
@@ -152,8 +177,9 @@ const SOLAR_BLESSING = {
     tier: 3,
     quantityMari: 15,
     gemCostMari: 150,
-    exchangeCurve: [570, 650],
+    chaosExchangeCost: [570, 650],
     exchangeQuantity: 2,
+    pvpExchangeCost: 250,
     imgUrl: '/icons/solar_blessing.png',
 };
 const SOLAR_PROTECTION = {
@@ -162,7 +188,8 @@ const SOLAR_PROTECTION = {
     tier: 3,
     quantityMari: 3,
     gemCostMari: 150,
-    exchangeCurve: [590, 670],
+    pvpExchangeCost: 360,
+    chaosExchangeCost: [590, 670],
     imgUrl: '/icons/solar_protection.png',
 };
 const GREAT_HONOR_LEAPSTONE = {
@@ -171,7 +198,8 @@ const GREAT_HONOR_LEAPSTONE = {
     tier: 3.5,
     quantityMari: 5,
     gemCostMari: 50,
-    exchangeCurve: [130, 170, 200, 240, 280, 310, 360],
+    pvpExchangeCost: 40,
+    chaosExchangeCost: [130, 170, 200, 240, 280, 310, 360],
     imgUrl: '/icons/great_honor_leapstone.webp',
 };
 const SIMPLE_OREHA_FUSION_MATERIAL = {
@@ -194,7 +222,7 @@ const POWDER_OF_SAGE = {
     id: 'powder_of_sage',
     name: 'Powder of Sage',
     tier: 3.5,
-    exchangeCurve: [1470],
+    chaosExchangeCost: [1470],
     imgUrl: '/icons/powder_of_sage.png',
 };
 
@@ -209,6 +237,7 @@ export const T1_MATERIALS = [
     DESTRUCTION_STONE_FRAGMENT,
     GUARDIAN_STONE_FRAGMENT,
     HARMONY_SHARD_POUCH_S,
+    HARMONY_SHARD_POUCH_L,
     STARS_BREATH,
 ];
 
@@ -217,6 +246,7 @@ export const T2_MATERIALS = [
     DESTRUCTION_STONE,
     GUARDIAN_STONE,
     LIFE_SHARD_POUCH_S,
+    LIFE_SHARD_POUCH_L,
     MOONS_BREATH,
     CALDARR_FUSION_MATERIAL,
 ];

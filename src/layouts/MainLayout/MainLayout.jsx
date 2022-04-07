@@ -45,7 +45,7 @@ export default function MainLayout({ children }) {
                 mode="horizontal"
             >
                 <Menu.Item key="/checklist">Checklist</Menu.Item>
-                <Menu.Item key="/calculator">Calculators</Menu.Item>
+                <Menu.Item key="/calculator">Economy Calculators</Menu.Item>
                 <Menu.Item key="/islands">Island Tracker</Menu.Item>
                 <Menu.Item key="/rapport">Rapport Tracker</Menu.Item>
                 {/* <Menu.Item key="/logger" disabled>
