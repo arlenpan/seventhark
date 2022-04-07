@@ -59,9 +59,8 @@ export default function InfiniteChaosTable({ costs, className }) {
         {
             dataIndex: 'icon',
             key: 'icon',
-            render: (name, record) => (
-                <ItemIcon item={record} className="mr-xs" tooltipPlacement="right" />
-            ),
+            render: (name, record) => <ItemIcon item={record} tooltipPlacement="right" />,
+            width: 50,
         },
         {
             title: 'Item',
@@ -91,7 +90,7 @@ export default function InfiniteChaosTable({ costs, className }) {
             ),
         },
         {
-            title: 'Gold Cost (AH)',
+            title: 'Gold Value (AH)',
             dataIndex: 'goldCost',
             key: 'goldCost',
         },
@@ -99,12 +98,13 @@ export default function InfiniteChaosTable({ costs, className }) {
             title: 'Gold Value per Shard',
             dataIndex: 'goldPerShard',
             key: 'goldPerShard',
+            sorter: (a, b) => b.goldPerShard - a.goldPerShard,
         },
     ];
 
     const data = INFINITE_CHAOS_MATERIALS.map((item) => {
         const buyCount = tempQuantities[item.id] || 1;
-        const quantity = item.exchangeQuantity || 1;
+        const quantity = item.chaosExchangeQuantity || 1;
         const purificationCost = tempValues[item.id] || item.chaosExchangeCost[0];
         const goldCost = costs[item.id] && costs[item.id] * buyCount * quantity;
         const goldPerShard = goldCost / purificationCost;

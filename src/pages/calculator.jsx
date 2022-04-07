@@ -1,6 +1,7 @@
 import { Checkbox, Tabs } from 'antd';
 import { useEffect, useState } from 'react';
 import { getActiveTiers, getCosts, setActiveTier, setCost } from 'src/api/economy';
+import BloodstoneExchangeTable from 'src/components/BloodstoneExchangeTable';
 import CostEntry from 'src/components/CostEntry';
 import InfiniteChaosTable from 'src/components/InfiniteChaosTable';
 import MariShopTable from 'src/components/MariShopTable';
@@ -52,6 +53,9 @@ const Calculator = () => {
                 </Tabs.TabPane>
                 <Tabs.TabPane tab="PvP Exchange" key="pvp">
                     <PVPExchangeTable costs={costs} />
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Sylmael Bloodstone Exchange" key="guild">
+                    <BloodstoneExchangeTable costs={costs} />
                 </Tabs.TabPane>
                 <Tabs.TabPane tab="Item Honing (WIP)" key="honing" disabled>
                     <div>WIP</div>

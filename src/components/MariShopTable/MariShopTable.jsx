@@ -45,9 +45,8 @@ export default function MariShopTable({ costs, tiers, className }) {
         {
             dataIndex: 'icon',
             key: 'icon',
-            render: (name, record) => (
-                <ItemIcon item={record} className="mr-xs" tooltipPlacement="right" />
-            ),
+            render: (name, record) => <ItemIcon item={record} tooltipPlacement="right" />,
+            width: 50,
         },
         {
             title: 'Item',
@@ -76,22 +75,22 @@ export default function MariShopTable({ costs, tiers, className }) {
     ];
 
     const data = ALL_MATERIALS.filter(
-        (item) => tiers[Math.floor(item.tier)] && item.quantityMari
+        (item) => tiers[Math.floor(item.tier)] && item.mariQuantity
     ).map((item) => {
-        const goldValueAH = item.quantityMari * costs[item.id];
+        const goldValueAH = item.mariQuantity * costs[item.id];
         const goldDiff = Math.round(
-            item.quantityMari * costs[item.id] - (costs[CRYSTALS.id] / 95) * item.gemCostMari
+            item.mariQuantity * costs[item.id] - (costs[CRYSTALS.id] / 95) * item.mariGemCost
         );
 
         return {
             key: item.id,
             name: item.name,
             goldCost: costs[item.id],
-            quantity: item.quantityMari,
-            gemCost: item.gemCostMari,
+            quantity: item.mariQuantity,
+            gemCost: item.mariGemCost,
             goldValueAH: !Number.isNaN(goldValueAH) && goldValueAH,
             goldValueMari:
-                costs[CRYSTALS.id] && Math.round((costs[CRYSTALS.id] / 95) * item.gemCostMari),
+                costs[CRYSTALS.id] && Math.round((costs[CRYSTALS.id] / 95) * item.mariGemCost),
             goldDiff: !Number.isNaN(goldDiff) && goldDiff,
             tier: item.tier,
             imgUrl: item.imgUrl,
