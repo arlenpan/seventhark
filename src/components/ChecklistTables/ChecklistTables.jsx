@@ -9,6 +9,7 @@ import {
 import { DAILIES, WEEKLIES } from 'src/data/events';
 import formStyles from 'src/styles/forms.module.scss';
 import styles from './ChecklistTables.module.scss';
+import DailyRapportTable from './DailyRapportTable';
 
 export default function ChecklistTables({ characters }) {
     const [checklist, setChecklist] = useState({});
@@ -96,6 +97,8 @@ export default function ChecklistTables({ characters }) {
                 size="small"
                 pagination={false}
             />
+
+            <DailyRapportTable characters={characters} />
 
             <div className="d-flex-center mt-s mb-xs">
                 <h3>Weeklies</h3>
