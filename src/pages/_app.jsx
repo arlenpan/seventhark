@@ -1,8 +1,8 @@
 import 'antd/dist/antd.dark.css';
+import { useEffect } from 'react';
+import { hotjar } from 'react-hotjar';
 import 'src/styles/globals.scss';
 import 'src/styles/utility.scss';
-import { hotjar } from 'react-hotjar';
-import { useEffect } from 'react';
 
 const HJID = 2900319;
 const HJSV = 6;

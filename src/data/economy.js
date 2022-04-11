@@ -66,6 +66,8 @@ const DESTRUCTION_STONE = {
     mariGemCost: 84,
     pvpExchangeCost: 40,
     imgUrl: '/icons/destruction_stone.webp',
+    bloodstoneCost: 150,
+    bloodstoneQuantity: 2,
 };
 const GUARDIAN_STONE = {
     id: 'guardian_stone',
@@ -76,6 +78,8 @@ const GUARDIAN_STONE = {
     mariGemCost: 80,
     pvpExchangeCost: 20,
     imgUrl: '/icons/guardian_stone.png',
+    bloodstoneCost: 50,
+    bloodstoneQuantity: 2,
 };
 const LIFE_LEAPSTONE = {
     id: 'life_leapstone',
@@ -85,6 +89,7 @@ const LIFE_LEAPSTONE = {
     mariGemCost: 56,
     pvpExchangeCost: 30,
     imgUrl: '/icons/life_leapstone.png',
+    bloodstoneCost: 60,
 };
 const LIFE_SHARD_POUCH_S = {
     id: 'life_shard_pouch_s',
@@ -93,6 +98,7 @@ const LIFE_SHARD_POUCH_S = {
     mariQuantity: 5,
     mariGemCost: 19,
     imgUrl: '/icons/life_shard_pouch_s.png',
+    bloodstoneCost: 480,
 };
 const LIFE_SHARD_POUCH_L = {
     id: 'life_shard_pouch_l',
@@ -128,6 +134,8 @@ const DESTRUCTION_STONE_CRYSTAL = {
     pvpExchangeCost: 60,
     chaosExchangeCost: [60, 90, 120, 140, 170, 200, 230, 260],
     imgUrl: '/icons/destruction_stone_crystal.webp',
+    bloodstoneCost: 240,
+    bloodstoneQuantity: 2,
 };
 const GUARDIAN_STONE_CRYSTAL = {
     id: 'guardian_stone_crystal',
@@ -139,6 +147,8 @@ const GUARDIAN_STONE_CRYSTAL = {
     pvpExchangeCost: 20,
     chaosExchangeCost: [10, 40, 60, 80, 100, 120, 140, 160, 190, 210, 230],
     imgUrl: '/icons/guardian_stone_crystal.png',
+    bloodstoneCost: 80,
+    bloodstoneQuantity: 2,
 };
 const HONOR_LEAPSTONE = {
     id: 'honor_leapstone',
@@ -149,6 +159,7 @@ const HONOR_LEAPSTONE = {
     pvpExchangeCost: 40,
     chaosExchangeCost: [100, 130, 170, 200, 230, 270],
     imgUrl: '/icons/honor_leapstone.png',
+    bloodstoneCost: 80,
 };
 const HONOR_SHARD_POUCH_S = {
     id: 'honor_shard_pouch_s',
@@ -157,6 +168,7 @@ const HONOR_SHARD_POUCH_S = {
     mariQuantity: 10,
     mariGemCost: 56,
     imgUrl: '/icons/honor_shard_pouch_s.png',
+    bloodstoneCost: 830,
 };
 const HONOR_SHARD_POUCH_L = {
     id: 'honor_shard_pouch_l',
@@ -207,6 +219,7 @@ const GREAT_HONOR_LEAPSTONE = {
     pvpExchangeCost: 40,
     chaosExchangeCost: [130, 170, 200, 240, 280, 310, 360],
     imgUrl: '/icons/great_honor_leapstone.webp',
+    bloodstoneCost: 90,
 };
 const SIMPLE_OREHA_FUSION_MATERIAL = {
     id: 'simple_oreha_fusion_material',

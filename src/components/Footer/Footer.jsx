@@ -24,7 +24,7 @@ export default function Footer() {
                     onReset={() => setWeeklyReset(getWeeklyResetTimeUTC())}
                 />
             </span>
-            <span>Built by @Vynnr</span>
+            <span>Built by Vynnr</span>
         </footer>
     );
 }

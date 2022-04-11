@@ -12,11 +12,18 @@ const DAILY_ADVENTURE_ISLAND = {
 };
 const DAILY_ANGUISHED_ISLE = {
     id: 'anguished_isle',
-    name: 'Anguished Isle',
+    name: 'Island - Anguished Isle',
     quantity: 1,
     tier: 3,
     ilvl: 1100,
     rosterWide: true,
+    island: true,
+};
+const DAILY_FERMATA = {
+    id: 'fermata',
+    name: 'Island - Cradle of the Sea Fermata',
+    quantity: 1,
+    island: true,
 };
 const DAILY_EVENT_GUARDIAN_RAID = {
     id: 'event_guardian_raid',
@@ -33,6 +40,7 @@ export const DAILIES = [
     DAILY_CHAOS_GATE,
     DAILY_ADVENTURE_ISLAND,
     DAILY_ANGUISHED_ISLE,
+    DAILY_FERMATA,
     DAILY_EVENT_GUARDIAN_RAID,
 ];
 
