@@ -164,6 +164,14 @@ const WEEKLY_GHOST_SHIP = {
     quantity: 1,
     rosterWide: true,
 };
+const WEEKLY_CHAOS_LINE = {
+    id: 'weekly_chaos_line',
+    name: 'Chaos Line',
+    quantity: 1,
+    ilvl: 1340,
+    rosterWide: true,
+};
+
 const WEEKLY_UNAS_TASK = { id: 'weekly_unas_task', name: "Una's Task (Weekly)", quantity: 3 };
 const WEEKLY_GUILD_TASKS = { id: 'weekly_guild_tasks', name: 'Guild Tasks (Weekly)', quantity: 1 };
 const TRADE_EVENT_EXCHANGE = { id: 'trade_event', name: 'Event Exchange', quantity: 1 };
@@ -177,5 +185,6 @@ export const WEEKLIES = [
     TRADE_EVENT_EXCHANGE,
     TRADE_PVP_EXCHANGE,
     WEEKLY_GHOST_SHIP,
+    WEEKLY_CHAOS_LINE,
     ...ABYSSALS,
 ];
