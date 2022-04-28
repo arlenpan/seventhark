@@ -50,6 +50,8 @@ const WEEKLY_ABYSSAL_DUNGEON_340_1 = {
     quantity: 1,
     tier: 1,
     ilvl: 340,
+    ilvlGoldCutoff: 840,
+    gold: 80,
 };
 const WEEKLY_ABYSSAL_DUNGEON_340_2 = {
     id: 'abyssal_dungeon_340_2',
@@ -57,6 +59,8 @@ const WEEKLY_ABYSSAL_DUNGEON_340_2 = {
     quantity: 1,
     tier: 1,
     ilvl: 340,
+    ilvlGoldCutoff: 840,
+    gold: 80,
 };
 const WEEKLY_ABYSSAL_DUNGEON_460_1 = {
     id: 'abyssal_dungeon_460_1',
@@ -64,6 +68,8 @@ const WEEKLY_ABYSSAL_DUNGEON_460_1 = {
     quantity: 1,
     tier: 1,
     ilvl: 460,
+    ilvlGoldCutoff: 960,
+    gold: 80,
 };
 const WEEKLY_ABYSSAL_DUNGEON_460_2 = {
     id: 'abyssal_dungeon_460_2',
@@ -71,6 +77,8 @@ const WEEKLY_ABYSSAL_DUNGEON_460_2 = {
     quantity: 1,
     tier: 1,
     ilvl: 460,
+    ilvlGoldCutoff: 960,
+    gold: 80,
 };
 const WEEKLY_ABYSSAL_DUNGEON_840_1 = {
     id: 'abyssal_dungeon_840_1',
@@ -78,6 +86,8 @@ const WEEKLY_ABYSSAL_DUNGEON_840_1 = {
     quantity: 1,
     tier: 2,
     ilvl: 840,
+    ilvlGoldCutoff: 1325,
+    gold: 100,
 };
 const WEEKLY_ABYSSAL_DUNGEON_840_2 = {
     id: 'abyssal_dungeon_840_2',
@@ -85,6 +95,8 @@ const WEEKLY_ABYSSAL_DUNGEON_840_2 = {
     quantity: 1,
     tier: 2,
     ilvl: 840,
+    ilvlGoldCutoff: 1325,
+    gold: 100,
 };
 const WEEKLY_ABYSSAL_DUNGEON_960_1 = {
     id: 'abyssal_dungeon_960_1',
@@ -92,6 +104,8 @@ const WEEKLY_ABYSSAL_DUNGEON_960_1 = {
     quantity: 1,
     tier: 2,
     ilvl: 960,
+    ilvlGoldCutoff: 1370,
+    gold: 100,
 };
 const WEEKLY_ABYSSAL_DUNGEON_960_2 = {
     id: 'abyssal_dungeon_960_2',
@@ -99,6 +113,8 @@ const WEEKLY_ABYSSAL_DUNGEON_960_2 = {
     quantity: 1,
     tier: 2,
     ilvl: 960,
+    ilvlGoldCutoff: 1370,
+    gold: 100,
 };
 const WEEKLY_ABYSSAL_DUNGEON_960_3 = {
     id: 'abyssal_dungeon_960_3',
@@ -106,22 +122,44 @@ const WEEKLY_ABYSSAL_DUNGEON_960_3 = {
     quantity: 1,
     tier: 2,
     ilvl: 960,
+    ilvlGoldCutoff: 1370,
+    gold: 100,
 };
 const WEEKLY_ABYSSAL_DUNGEON_1325_1 = {
     id: 'abyssal_dungeon_1325_1',
-    name: "Abyssal Dungeon 1325/1370 (Aira's Oculus)",
+    name: "Abyssal Dungeon 1325 (Aira's Oculus)",
     quantity: 1,
     tier: 3,
     ilvl: 1325,
-    hardMode: 1370,
+    hardMode: 'abyssal_dungeon_1370_1',
+    gold: 600,
 };
 const WEEKLY_ABYSSAL_DUNGEON_1340_1 = {
     id: 'abyssal_dungeon_1340_1',
-    name: 'Abyssal Dungeon 1340/1370 (Oreha Prevaza)',
+    name: 'Abyssal Dungeon 1340 (Oreha Prevaza)',
     quantity: 1,
     tier: 3,
     ilvl: 1340,
-    hardMode: 1370,
+    hardMode: 'abyssal_dungeon_1370_2',
+    gold: 900,
+};
+const WEEKLY_ABYSSAL_DUNGEON_1370_1 = {
+    id: 'abyssal_dungeon_1370_1',
+    name: "Abyssal Dungeon 1370 (Aira's Oculus Hard)",
+    quantity: 1,
+    tier: 3,
+    ilvl: 1370,
+    normalMode: 'abyssal_dungeon_1325_1',
+    gold: 900,
+};
+const WEEKLY_ABYSSAL_DUNGEON_1370_2 = {
+    id: 'abyssal_dungeon_1370_2',
+    name: 'Abyssal Dungeon 1370 (Oreha Prevaza Hard)',
+    quantity: 1,
+    tier: 3,
+    ilvl: 1370,
+    normalMode: 'abyssal_dungeon_1340_1',
+    gold: 1200,
 };
 const WEEKLY_ABYSS_RAID_1370 = {
     id: 'abyss_raid_1370',
@@ -132,21 +170,30 @@ const WEEKLY_ABYSS_RAID_1370 = {
     ilvl2: 1385,
     ilvl3: 1400,
 };
-
-export const ABYSSALS = [
-    WEEKLY_ABYSSAL_DUNGEON_340_1,
-    WEEKLY_ABYSSAL_DUNGEON_340_2,
-    WEEKLY_ABYSSAL_DUNGEON_460_1,
-    WEEKLY_ABYSSAL_DUNGEON_460_2,
-    WEEKLY_ABYSSAL_DUNGEON_840_1,
-    WEEKLY_ABYSSAL_DUNGEON_840_2,
-    WEEKLY_ABYSSAL_DUNGEON_960_1,
-    WEEKLY_ABYSSAL_DUNGEON_960_2,
-    WEEKLY_ABYSSAL_DUNGEON_960_3,
-    WEEKLY_ABYSSAL_DUNGEON_1325_1,
-    WEEKLY_ABYSSAL_DUNGEON_1340_1,
-    WEEKLY_ABYSS_RAID_1370,
-];
+const WEEKLY_ABYSS_RAID_1370_1 = {
+    id: 'abyss_raid_1370_1',
+    name: 'Argos Phase 1',
+    quantity: 1,
+    tier: 3,
+    ilvl: 1370,
+    gold: 800,
+};
+const WEEKLY_ABYSS_RAID_1370_2 = {
+    id: 'abyss_raid_1370_2',
+    name: 'Argos Phase 2',
+    quantity: 1,
+    tier: 3,
+    ilvl: 1370,
+    gold: 900,
+};
+const WEEKLY_ABYSS_RAID_1370_3 = {
+    id: 'abyss_raid_1370_3',
+    name: 'Argos Phase 3',
+    quantity: 1,
+    tier: 3,
+    ilvl: 1370,
+    gold: 1000,
+};
 
 const TRADE_SYLMAEL_BLOODSTONE = {
     id: 'trade_sylmael_bloodstone',
@@ -176,6 +223,21 @@ const WEEKLY_GUILD_TASKS = { id: 'weekly_guild_tasks', name: 'Guild Tasks (Weekl
 const TRADE_EVENT_EXCHANGE = { id: 'trade_event', name: 'Event Exchange', quantity: 1 };
 const TRADE_PVP_EXCHANGE = { id: 'trade_pvp', name: 'PvP Exchange', quantity: 1 };
 
+export const ABYSSALS = [
+    WEEKLY_ABYSSAL_DUNGEON_340_1,
+    WEEKLY_ABYSSAL_DUNGEON_340_2,
+    WEEKLY_ABYSSAL_DUNGEON_460_1,
+    WEEKLY_ABYSSAL_DUNGEON_460_2,
+    WEEKLY_ABYSSAL_DUNGEON_840_1,
+    WEEKLY_ABYSSAL_DUNGEON_840_2,
+    WEEKLY_ABYSSAL_DUNGEON_960_1,
+    WEEKLY_ABYSSAL_DUNGEON_960_2,
+    WEEKLY_ABYSSAL_DUNGEON_960_3,
+    WEEKLY_ABYSSAL_DUNGEON_1325_1,
+    WEEKLY_ABYSSAL_DUNGEON_1340_1,
+    WEEKLY_ABYSS_RAID_1370,
+];
+
 export const WEEKLIES = [
     WEEKLY_UNAS_TASK,
     WEEKLY_GUILD_TASKS,
@@ -186,4 +248,40 @@ export const WEEKLIES = [
     WEEKLY_GHOST_SHIP,
     WEEKLY_CHAOS_LINE,
     ...ABYSSALS,
+];
+
+const UNAS_GOLD_CHEST_LARGE = {
+    id: 'unas_gold_chest_large',
+    name: "Large Gold Chest - Una's Token",
+    quantity: 3,
+    rosterWide: true,
+    gold: 1000,
+};
+const ADVENTURE_ISLAND_GOLD = {
+    id: 'adventure_island_gold',
+    name: 'Adventure Island (Gold Reward)',
+    quantity: 3,
+    rosterWide: true,
+    gold: 600,
+};
+
+export const GOLD_GENERATION = [
+    WEEKLY_ABYSSAL_DUNGEON_340_1,
+    WEEKLY_ABYSSAL_DUNGEON_340_2,
+    WEEKLY_ABYSSAL_DUNGEON_460_1,
+    WEEKLY_ABYSSAL_DUNGEON_460_2,
+    WEEKLY_ABYSSAL_DUNGEON_840_1,
+    WEEKLY_ABYSSAL_DUNGEON_840_2,
+    WEEKLY_ABYSSAL_DUNGEON_960_1,
+    WEEKLY_ABYSSAL_DUNGEON_960_2,
+    WEEKLY_ABYSSAL_DUNGEON_960_3,
+    WEEKLY_ABYSSAL_DUNGEON_1325_1,
+    WEEKLY_ABYSSAL_DUNGEON_1340_1,
+    WEEKLY_ABYSSAL_DUNGEON_1370_1,
+    WEEKLY_ABYSSAL_DUNGEON_1370_2,
+    WEEKLY_ABYSS_RAID_1370_1,
+    WEEKLY_ABYSS_RAID_1370_2,
+    WEEKLY_ABYSS_RAID_1370_3,
+    UNAS_GOLD_CHEST_LARGE,
+    ADVENTURE_ISLAND_GOLD,
 ];

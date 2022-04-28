@@ -1,4 +1,5 @@
 import { Button, Checkbox, Table } from 'antd';
+import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import {
     getChecklist,
@@ -8,6 +9,7 @@ import {
 } from 'src/api/checklist';
 import { DAILIES, WEEKLIES } from 'src/data/events';
 import formStyles from 'src/styles/forms.module.scss';
+import WeeklyGold from '../WeeklyGold';
 import styles from './ChecklistTables.module.scss';
 
 export default function ChecklistTables({ characters }) {
@@ -50,7 +52,7 @@ export default function ChecklistTables({ characters }) {
             });
 
         return (
-            <div>
+            <div className={styles.cell}>
                 {[...Array(event.quantity).keys()].map((v, i) => (
                     <Checkbox
                         key={i}
@@ -83,7 +85,7 @@ export default function ChecklistTables({ characters }) {
     };
 
     return (
-        <div className={styles.checklist}>
+        <section className={styles.checklists}>
             <div className="d-flex-center mb-xs">
                 <h3>Dailies</h3>
                 <Button size="small" className="ml-xs" onClick={() => handleReset('daily')}>
@@ -97,11 +99,14 @@ export default function ChecklistTables({ characters }) {
                 pagination={false}
             />
 
-            <div className="d-flex-center mt-s mb-xs">
-                <h3>Weeklies</h3>
-                <Button size="small" className="ml-xs" onClick={() => handleReset('weekly')}>
-                    Reset
-                </Button>
+            <div className="d-flex-center justify-between mt-s mb-xs">
+                <div className="d-flex-center">
+                    <h3>Weeklies</h3>
+                    <Button size="small" className="ml-xs" onClick={() => handleReset('weekly')}>
+                        Reset
+                    </Button>
+                </div>
+                {characters.length > 0 && <WeeklyGold characters={characters} />}
             </div>
             <Table
                 columns={columns}
@@ -109,6 +114,6 @@ export default function ChecklistTables({ characters }) {
                 size="small"
                 pagination={false}
             />
-        </div>
+        </section>
     );
 }
