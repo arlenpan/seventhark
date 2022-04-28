@@ -1,9 +1,7 @@
-import { CaretRightOutlined } from '@ant-design/icons';
 import { Collapse, Input } from 'antd';
 import classNames from 'classnames';
-import { ALL_MATERIALS, CRYSTALS } from 'src/data/economy';
-import formStyles from 'src/styles/forms.module.scss';
-import ItemIcon from '../ItemIcon';
+import ItemIcon from 'src/components/ItemIcon';
+import { ALL_MATERIALS, CRYSTALS, ROYAL_CRYSTALS } from 'src/data/economy';
 import styles from './CostEntry.module.scss';
 
 export default function CostEntry({ tiers, costs = {}, onChange, className }) {
@@ -18,17 +16,40 @@ export default function CostEntry({ tiers, costs = {}, onChange, className }) {
         <Collapse defaultActiveKey={['1']}>
             <Collapse.Panel key="1" header="Enter Gold Costs">
                 <div className={classNames(className, styles.container)}>
-                    <strong>Gem Cost in Gold:</strong>
-                    <div className="d-flex-center mb-s">
-                        <div className={styles['input-wrapper']}>
-                            <Input
-                                type="number"
-                                className={styles.input}
-                                value={costs[CRYSTALS.id]}
-                                onChange={(e) => handleInputChange(e, CRYSTALS)}
-                            />
-                            <span className="mr-xs ml-xs">95</span>
-                            <ItemIcon item={CRYSTALS} />
+                    <div className="d-flex-center">
+                        <div className="mr-xs">
+                            <strong>Gem Cost in Gold:</strong>
+                            <div className="d-flex-center mb-s">
+                                <div className={styles['input-wrapper']}>
+                                    <Input
+                                        type="number"
+                                        className={styles.input}
+                                        value={costs[CRYSTALS.id]}
+                                        onChange={(e) => handleInputChange(e, CRYSTALS)}
+                                    />
+                                    <span className="mr-xs ml-xs">{CRYSTALS.purchaseUnit}</span>
+                                    <ItemIcon item={CRYSTALS} width={40} />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <strong>Gold Bought with Royal Crystals:</strong>
+                            <div className="d-flex-center mb-s">
+                                <div className={styles['input-wrapper']}>
+                                    <span className="mr-xs ml-xs">
+                                        {ROYAL_CRYSTALS.purchaseUnit}
+                                    </span>
+                                    <ItemIcon item={ROYAL_CRYSTALS} width={40} />
+                                    <span className="ml-xs mr-xs"> = </span>
+                                    <Input
+                                        type="number"
+                                        className={styles.input}
+                                        value={costs[ROYAL_CRYSTALS.id]}
+                                        onChange={(e) => handleInputChange(e, ROYAL_CRYSTALS)}
+                                    />
+                                </div>
+                            </div>
                         </div>
                     </div>
 

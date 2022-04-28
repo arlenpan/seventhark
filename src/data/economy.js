@@ -44,7 +44,7 @@ const HARMONY_SHARD_POUCH_S = {
 const HARMONY_SHARD_POUCH_M = {
     id: 'harmony_shard_pouch_m',
     name: 'Harmony Shard Pouch (M)',
-    imgUrl: '/icons/harmony_shard_pouch_s.png',
+    imgUrl: '/icons/harmony_shard_pouch_m.webp',
     tier: 1,
     mariQuantity: 15,
     mariGemCost: 141,
@@ -257,6 +257,22 @@ export const CRYSTALS = {
     id: 'crystals',
     name: 'Blue Crystals',
     imgUrl: '/icons/blue_crystals.png',
+    purchaseUnit: 95,
+};
+
+export const ROYAL_CRYSTALS = {
+    id: 'royal_crystals',
+    name: 'Royal Crystals',
+    imgUrl: '/icons/royal_crystals.png',
+    purchaseUnit: 238,
+    packPrice: 10,
+    packAmount: 1000,
+};
+
+export const GOLD = {
+    id: 'gold',
+    name: 'Gold',
+    imgUrl: '/icons/gold.png',
 };
 
 export const T1_MATERIALS = [
