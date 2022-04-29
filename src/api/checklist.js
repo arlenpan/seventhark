@@ -43,6 +43,7 @@ export const resetChecklistDailies = () => {
 
     setLocal(CHECKLIST_KEY, newChecklist);
 };
+
 export const resetChecklistWeeklies = () => {
     const checklist = getLocal(CHECKLIST_KEY);
     const newChecklist = { ...checklist };

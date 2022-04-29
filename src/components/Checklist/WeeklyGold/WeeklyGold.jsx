@@ -1,10 +1,14 @@
 import { Button, Checkbox, Modal, Table } from 'antd';
 import { useState } from 'react';
 import { GOLD_GENERATION } from 'src/data/events';
+import { useRouter } from 'next/router';
 
 export default function WeeklyGold({ characters = [], className }) {
     const [isModalVisible, setModalVisible] = useState(false);
     const [fieldsChecked, setFieldsChecked] = useState({});
+
+    const router = useRouter();
+    const { modifier } = router.query;
 
     const handleCheck = (e, eventId, characterId, index) => {
         const { checked } = e.target;
@@ -119,13 +123,17 @@ export default function WeeklyGold({ characters = [], className }) {
 
     return (
         <>
-            <Button size="small" className={className} onClick={() => setModalVisible(true)}>
+            <Button
+                size="small"
+                className={className}
+                onClick={() => router.push('/checklist/weeklygold', undefined, { shallow: true })}
+            >
                 Weekly Gold Generation
             </Button>
             <Modal
                 title="Weekly Gold Generation"
-                visible={isModalVisible}
-                onCancel={() => setModalVisible(false)}
+                visible={modifier && modifier[0] === 'weeklygold'}
+                onCancel={() => router.push('/checklist', undefined, { shallow: true })}
                 footer={null}
                 width={960}
             >
