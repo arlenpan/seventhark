@@ -28,10 +28,57 @@ export default function GemTable({ className }) {
 
     const handleChangeLevel = (value) => setLevel(value);
 
+    const columns = [
+        {
+            render: () => 'You will need',
+            width: 100,
+        },
+        {
+            title: 'Quantity',
+            key: 'quantity',
+            dataIndex: 'quantity',
+            width: 100,
+        },
+        {
+            title: 'Gem',
+            key: 'level',
+            dataIndex: 'level',
+            render: (value) => `Level ${value} gems.`,
+            width: 100,
+        },
+        {
+            title: 'Gold Per Gem',
+            key: 'goldPerGem',
+            dataIndex: 'goldPerGem',
+            render: (value) => Math.round(value * 10) / 10,
+            width: 150,
+        },
+        {
+            title: 'Gold Per Gem (Post Tax)',
+            key: 'goldPerGemPostTax',
+            dataIndex: 'goldPerGemPostTax',
+            render: (value) => Math.round(value * 10) / 10,
+        },
+    ];
+    const data = [...Array(level - 1).keys()].reverse().map((value) => {
+        const actualLevel = value + 1;
+        const quantity = 3 ** (level - (value + 1));
+        const goldPerGem = cost / quantity;
+        const costPostTax = Math.floor(cost * 0.95);
+        const goldPerGemPostTax = costPostTax / quantity;
+
+        return {
+            level: actualLevel,
+            quantity,
+            goldPerGem,
+            goldPerGemPostTax,
+        };
+    });
+
     return (
         <div className={className}>
             <span className="subtitle">
-                This tool is for calculating break even on buying lower level gems.
+                This tool is to help calculate breakeven on flipping gems.
             </span>
             <Row>
                 <Col xs={24} md={5}>
@@ -53,19 +100,12 @@ export default function GemTable({ className }) {
                 </Col>
             </Row>
 
-            <span className="subtitle">Silver Reroll Cost: {REROLL_TABLE[level]}k</span>
+            <span className="subtitle">Silver Reroll Cost: {REROLL_TABLE[level]}k. </span>
+            <span className="subtitle">
+                Selling this gem will net {Math.floor(cost * 0.95)}g post tax.
+            </span>
 
-            <List>
-                {[...Array(level - 1).keys()].reverse().map((value) => {
-                    const numGems = 3 ** (level - (value + 1));
-                    return (
-                        <List.Item>
-                            You will need <strong>{numGems}</strong> Level {value + 1} gems, each at{' '}
-                            {Math.round((cost / numGems) * 10) / 10} Gold.
-                        </List.Item>
-                    );
-                })}
-            </List>
+            <Table size="small" pagination={false} columns={columns} dataSource={data} />
         </div>
     );
 }
