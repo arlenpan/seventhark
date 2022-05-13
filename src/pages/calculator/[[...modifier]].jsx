@@ -5,6 +5,7 @@ import { getActiveTiers, getCosts, setActiveTier, setCost } from 'src/api/econom
 import BloodstoneExchangeTable from 'src/components/Calculators/BloodstoneExchangeTable';
 import CostEntry from 'src/components/Calculators/CostEntry';
 import CrystalsGold from 'src/components/Calculators/CrystalsGold';
+import GemTable from 'src/components/Calculators/GemTable';
 import InfiniteChaosTable from 'src/components/Calculators/InfiniteChaosTable';
 import MariShopTable from 'src/components/Calculators/MariShopTable';
 import PVPExchangeTable from 'src/components/Calculators/PVPExchangeTable';
@@ -70,6 +71,9 @@ const Calculator = () => {
                 </Tabs.TabPane>
                 <Tabs.TabPane tab="Crystal Value" key="crystals">
                     <CrystalsGold costs={costs} />
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Gems" key="gems">
+                    <GemTable />
                 </Tabs.TabPane>
                 <Tabs.TabPane tab="Item Honing (WIP)" key="honing" disabled>
                     <div>WIP</div>
