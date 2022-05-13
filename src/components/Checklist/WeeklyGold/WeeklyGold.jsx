@@ -56,8 +56,8 @@ export default function WeeklyGold({ characters = [], className }) {
             render: (value, { key, event, hideCheck }) => {
                 if (!hideCheck && !event.rosterWide) {
                     const isIlvlBound = char.ilvl >= event.ilvlGoldCutoff || char.ilvl < event.ilvl;
-                    const isSucceeded = fieldsChecked?.[event.hardMode]?.[char.name];
-                    const isPreceeded = fieldsChecked?.[event.normalMode]?.[char.name];
+                    const isSucceeded = fieldsChecked?.[event.hardMode]?.[char.name]?.[0];
+                    const isPreceeded = fieldsChecked?.[event.normalMode]?.[char.name]?.[0];
                     return (
                         <Checkbox
                             checked={value && value[0]}
