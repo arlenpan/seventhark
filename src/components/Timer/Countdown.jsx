@@ -12,10 +12,18 @@ export default function Countdown({ targetDateTime, units, onReset }) {
             setTime(newTime);
         }, 1000);
 
-        return () => {
-            clearInterval(intervalId);
-        };
+        return () => clearInterval(intervalId);
     }, [time]);
+
+    // reset timer when browser focuses back in
+    useEffect(() => {
+        window.addEventListener('focus', handleFocus);
+        return () => window.removeEventListener('focus', handleFocus);
+    }, []);
+
+    const handleFocus = () => {
+        setTime(getCurrentUTC());
+    };
 
     if (!time) return null;
 

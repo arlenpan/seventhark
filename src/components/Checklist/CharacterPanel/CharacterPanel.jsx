@@ -41,7 +41,7 @@ export default function CharacterPanel({ characters = [], onUpdate }) {
     };
 
     return (
-        <div className="mb-s">
+        <section className="mb-s">
             <div className="d-flex-center mb-xs">
                 <h3>Characters</h3>
                 {characters.length > 1 && (
@@ -65,6 +65,6 @@ export default function CharacterPanel({ characters = [], onUpdate }) {
                 <Button onClick={() => setCreatePanel(true)}>Add Character</Button>
             )}
             {/* <Button onClick={handleResetCharacters}>Reset Sample Data</Button> */}
-        </div>
+        </section>
     );
 }

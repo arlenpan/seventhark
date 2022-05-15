@@ -1,0 +1,10 @@
+@import 'src/styles/_colors';
+
+.checklists {
+    padding-right: 1rem;
+}
+
+.cell {
+    display: flex;
+    flex-wrap: nowrap;
+}

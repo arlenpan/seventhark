@@ -2,7 +2,7 @@ import { Input } from 'antd';
 import { useEffect, useRef, useState } from 'react';
 import styles from './FormEditableCell.module.scss';
 
-export default function FormEditableCell({ value, record, onChange }) {
+export default function FormEditableCell({ value, type, record, onChange }) {
     const [editing, setEditing] = useState(false);
     const inputRef = useRef(null);
 
@@ -24,6 +24,7 @@ export default function FormEditableCell({ value, record, onChange }) {
     if (editing) {
         return (
             <Input
+                type={type}
                 className={styles['editable-input']}
                 defaultValue={value}
                 ref={inputRef}
@@ -34,7 +35,7 @@ export default function FormEditableCell({ value, record, onChange }) {
     }
     return (
         <div className={styles['editable-value']} onClick={handleEditClick}>
-            {value}
+            {value || 0}
         </div>
     );
 }

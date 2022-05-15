@@ -19,6 +19,9 @@
 .w-100 {
     width: 100%;
 }
+.nowrap {
+    flex-wrap: nowrap;
+}
 
 // SPACING
 $sizes: (
@@ -51,6 +54,10 @@ $sizes: (
 }
 .capitalize {
     text-transform: capitalize;
+}
+.subtitle {
+    color: gray;
+    font-size: 90%;
 }
 
 // DISPLAY

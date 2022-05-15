@@ -1,9 +1,9 @@
 import { Table } from 'antd';
 import classNames from 'classnames';
+import ItemIcon from 'src/components/ItemIcon';
 import { ALL_MATERIALS, CRYSTALS } from 'src/data/economy';
 import formStyles from 'src/styles/forms.module.scss';
 import tierStyles from 'src/styles/tiers.module.scss';
-import ItemIcon from '../ItemIcon';
 
 export default function MariShopTable({ costs, tiers, className }) {
     const renderNameCell = (name, record) => {
@@ -71,7 +71,12 @@ export default function MariShopTable({ costs, tiers, className }) {
             render: (value, record) => renderValueCell(record, 'mari'),
             onCell: (record) => getValueCellClassname(record, 'mari'),
         },
-        { title: 'Gold Difference', dataIndex: 'goldDiff', key: 'goldDiff' },
+        {
+            title: 'Gold Difference',
+            dataIndex: 'goldDiff',
+            key: 'goldDiff',
+            sorter: (a, b) => a.goldDiff - b.goldDiff,
+        },
     ];
 
     const data = ALL_MATERIALS.filter(
@@ -79,7 +84,8 @@ export default function MariShopTable({ costs, tiers, className }) {
     ).map((item) => {
         const goldValueAH = item.mariQuantity * costs[item.id];
         const goldDiff = Math.round(
-            item.mariQuantity * costs[item.id] - (costs[CRYSTALS.id] / 95) * item.mariGemCost
+            item.mariQuantity * costs[item.id] -
+                (costs[CRYSTALS.id] / CRYSTALS.purchaseUnit) * item.mariGemCost
         );
 
         return {
@@ -90,7 +96,8 @@ export default function MariShopTable({ costs, tiers, className }) {
             gemCost: item.mariGemCost,
             goldValueAH: !Number.isNaN(goldValueAH) && goldValueAH,
             goldValueMari:
-                costs[CRYSTALS.id] && Math.round((costs[CRYSTALS.id] / 95) * item.mariGemCost),
+                costs[CRYSTALS.id] &&
+                Math.round((costs[CRYSTALS.id] / CRYSTALS.purchaseUnit) * item.mariGemCost),
             goldDiff: !Number.isNaN(goldDiff) && goldDiff,
             tier: item.tier,
             imgUrl: item.imgUrl,

@@ -1,16 +1,10 @@
+@import 'src/styles/_colors';
+
+// GLOBAL OVERRIDES
 body,
 #__next {
     width: 100%;
     height: 100%;
-}
-
-.ant-menu {
-    background: none;
-}
-
-.ant-table.ant-table-small .ant-table-tbody > tr > td {
-    padding: 0;
-    padding-left: 7px;
 }
 
 h1,
@@ -20,4 +14,17 @@ h4,
 h5,
 h6 {
     margin-bottom: 0;
+}
+
+// ANTD OVERRIDES
+.ant-table-wrapper {
+    background: $antd-table-bg;
+    overflow: auto;
+}
+.ant-menu {
+    background: none;
+}
+.ant-table.ant-table-small .ant-table-tbody > tr > td {
+    padding: 0;
+    padding-left: 7px;
 }
