@@ -98,8 +98,6 @@ export default function ChecklistTables({ characters }) {
                 pagination={false}
             />
 
-            {/* <DailyRapportTable characters={characters} /> */}
-
             <div className="d-flex-center justify-between mt-s mb-xs">
                 <div className="d-flex-center">
                     <h3>Weeklies</h3>
