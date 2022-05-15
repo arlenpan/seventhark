@@ -34,7 +34,6 @@ export default function RapportTable({ className, rapport = {}, onChange, onFavo
             ],
             onFilter: (value, record) => record.isFavorite === value,
             sorter: (a, b) => (a.isFavorite ? -1 : 1),
-            defaultSortOrder: 'ascend',
         },
         {
             dataIndex: 'isComplete',

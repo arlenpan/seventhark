@@ -37,7 +37,7 @@ const Calculator = () => {
     };
 
     return (
-        <div>
+        <>
             <div className="d-flex-center mb-s">
                 {[...Array(3).keys()].map((n) => (
                     <div className="d-flex-center" key={n}>
@@ -79,7 +79,7 @@ const Calculator = () => {
                     <div>WIP</div>
                 </Tabs.TabPane>
             </Tabs>
-        </div>
+        </>
     );
 };
 

@@ -20,11 +20,7 @@ const Islands = () => {
         getIslands().then(setIslands);
     };
 
-    return (
-        <div>
-            <IslandTable islands={islands} onChange={handleChange} onFavorite={handleFavorite} />
-        </div>
-    );
+    return <IslandTable islands={islands} onChange={handleChange} onFavorite={handleFavorite} />;
 };
 
 Islands.getLayout = (page) => <MainLayout>{page}</MainLayout>;

@@ -20,11 +20,7 @@ const Rapport = () => {
         getRapport().then(setRapport);
     };
 
-    return (
-        <div>
-            <RapportTable rapport={rapport} onChange={handleChange} onFavorite={handleFavorite} />
-        </div>
-    );
+    return <RapportTable rapport={rapport} onChange={handleChange} onFavorite={handleFavorite} />;
 };
 
 Rapport.getLayout = (page) => <MainLayout>{page}</MainLayout>;

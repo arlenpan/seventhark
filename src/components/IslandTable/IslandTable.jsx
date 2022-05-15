@@ -37,7 +37,6 @@ export default function IslandTable({ className, islands = {}, onChange, onFavor
             ],
             onFilter: (value, record) => record.isFavorite === value,
             sorter: (a, b) => (a.isFavorite ? -1 : 1),
-            defaultSortOrder: 'ascend',
         },
         {
             dataIndex: 'isComplete',
