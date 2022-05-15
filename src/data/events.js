@@ -30,6 +30,16 @@ const DAILY_EVENT_GUARDIAN_RAID = {
     name: 'Event Guardian Raid',
     quantity: 1,
 };
+const DAILY_RAPPORT_SONG = {
+    id: 'rapport_song',
+    name: 'Rapport - Songs',
+    quantity: 6,
+};
+const DAILY_RAPPORT_EMOTE = {
+    id: 'rapport_emote',
+    name: 'Rapport - Emotes',
+    quantity: 6,
+};
 
 export const DAILIES = [
     DAILY_UNAS_TASK,
@@ -42,6 +52,8 @@ export const DAILIES = [
     DAILY_ANGUISHED_ISLE,
     DAILY_FERMATA,
     DAILY_EVENT_GUARDIAN_RAID,
+    DAILY_RAPPORT_SONG,
+    DAILY_RAPPORT_EMOTE,
 ];
 
 const WEEKLY_ABYSSAL_DUNGEON_340_1 = {

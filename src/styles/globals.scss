@@ -28,3 +28,6 @@ h6 {
     padding: 0;
     padding-left: 7px;
 }
+.ant-checkbox-wrapper + .ant-checkbox-wrapper {
+    margin: 0;
+}

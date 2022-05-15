@@ -1,5 +1,4 @@
 import { Button, Checkbox, Table } from 'antd';
-import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import {
     getChecklist,
@@ -11,7 +10,6 @@ import { DAILIES, WEEKLIES } from 'src/data/events';
 import formStyles from 'src/styles/forms.module.scss';
 import WeeklyGold from '../WeeklyGold';
 import styles from './ChecklistTables.module.scss';
-import DailyRapportTable from './DailyRapportTable';
 
 export default function ChecklistTables({ characters }) {
     const [checklist, setChecklist] = useState({});
@@ -99,6 +97,8 @@ export default function ChecklistTables({ characters }) {
                 size="small"
                 pagination={false}
             />
+
+            {/* <DailyRapportTable characters={characters} /> */}
 
             <div className="d-flex-center justify-between mt-s mb-xs">
                 <div className="d-flex-center">
