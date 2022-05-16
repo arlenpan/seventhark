@@ -1,7 +1,8 @@
-import { DAILIES, WEEKLIES } from 'src/data/events';
+import { DAILIES, TYPE_DAILY, TYPE_WEEKLY, WEEKLIES } from 'src/data/events';
 import { getLocal, setLocal } from './localStorage';
 
 export const CHECKLIST_KEY = 'checklist';
+export const CHECKLIST_CUSTOM_EVENTS = 'checklist_custom_events';
 
 export const getChecklist = async () => {
     return getLocal(CHECKLIST_KEY) ?? {};
@@ -29,14 +30,22 @@ export const setChecklistItem = ({ value, index, character, event }) => {
     setLocal(CHECKLIST_KEY, newChecklist);
 };
 
-export const resetChecklistDailies = () => {
+export const resetChecklist = (type) => {
     const checklist = getLocal(CHECKLIST_KEY);
+    const customEvents = getLocal(CHECKLIST_CUSTOM_EVENTS);
     const newChecklist = { ...checklist };
+    let arrayToCheck = [];
+    if (type === TYPE_DAILY) arrayToCheck = DAILIES;
+    if (type === TYPE_WEEKLY) arrayToCheck = WEEKLIES;
 
     Object.keys(newChecklist).forEach((characterName) => {
-        Object.keys(newChecklist[characterName]).forEach((eventName) => {
-            if (DAILIES.find((daily) => eventName === daily.id)) {
-                delete newChecklist[characterName][eventName];
+        Object.keys(newChecklist[characterName]).forEach((eventId) => {
+            if (arrayToCheck.find((e) => eventId === e.id)) {
+                // default events
+                delete newChecklist[characterName][eventId];
+            } else if (customEvents && customEvents[eventId]) {
+                // custom events
+                delete newChecklist[characterName][eventId];
             }
         });
     });
@@ -44,17 +53,18 @@ export const resetChecklistDailies = () => {
     setLocal(CHECKLIST_KEY, newChecklist);
 };
 
+export const resetChecklistDailies = () => {
+    resetChecklist(TYPE_DAILY);
+};
+
 export const resetChecklistWeeklies = () => {
-    const checklist = getLocal(CHECKLIST_KEY);
-    const newChecklist = { ...checklist };
+    resetChecklist(TYPE_WEEKLY);
+};
 
-    Object.keys(newChecklist).forEach((characterName) => {
-        Object.keys(newChecklist[characterName]).forEach((eventName) => {
-            if (WEEKLIES.find((weekly) => eventName === weekly.id)) {
-                delete newChecklist[characterName][eventName];
-            }
-        });
-    });
+export const setChecklistCustomEvents = async (newCustomEvents) => {
+    setLocal(CHECKLIST_CUSTOM_EVENTS, newCustomEvents);
+};
 
-    setLocal(CHECKLIST_KEY, newChecklist);
+export const getChecklistCustomEvents = async () => {
+    return getLocal(CHECKLIST_CUSTOM_EVENTS) ?? {};
 };

@@ -5,7 +5,7 @@ export default function CreateCharacterForm({ onSubmit, onClose }) {
     return (
         <Form onFinish={onSubmit} className={formStyles['input-panel']}>
             <Form.Item label="Name" name="name" rules={[{ required: true }]}>
-                <Input />
+                <Input autoFocus />
             </Form.Item>
             <Form.Item label="Item Level" name="ilvl">
                 <Input type="number" />

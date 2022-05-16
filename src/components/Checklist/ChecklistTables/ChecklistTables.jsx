@@ -2,20 +2,24 @@ import { Button, Checkbox, Table } from 'antd';
 import { useEffect, useState } from 'react';
 import {
     getChecklist,
+    getChecklistCustomEvents,
     resetChecklistDailies,
     resetChecklistWeeklies,
     setChecklistItem,
 } from 'src/api/checklist';
-import { DAILIES, WEEKLIES } from 'src/data/events';
+import { DAILIES, TYPE_DAILY, TYPE_WEEKLY, WEEKLIES } from 'src/data/events';
 import formStyles from 'src/styles/forms.module.scss';
-import WeeklyGold from '../WeeklyGold';
+import WeeklyGoldModal from '../WeeklyGoldModal';
+import CustomizeEventsModal from '../CustomizeEventsModal';
 import styles from './ChecklistTables.module.scss';
 
 export default function ChecklistTables({ characters }) {
     const [checklist, setChecklist] = useState({});
+    const [customEvents, setCustomEvents] = useState(null);
 
     useEffect(() => {
         getChecklist().then(setChecklist);
+        getChecklistCustomEvents().then(setCustomEvents);
     }, []);
 
     // BUILD COLUMNS
@@ -30,14 +34,20 @@ export default function ChecklistTables({ characters }) {
     const columns = [...checkboxColumns, { title: 'Event', dataIndex: 'name', key: 'name' }];
 
     // BUILD DATA
-    const buildEventTableData = (events) => {
-        return events.map((event) => {
-            const characterFields = {};
-            characters.forEach((char) => {
-                characterFields[char.name] = checklist[char.name] && checklist[char.name][event.id];
-            });
-            return { ...characterFields, event, key: event.id, name: event.name };
-        });
+    const buildEventTableData = (events, type) => {
+        const custom = customEvents
+            ? Object.values(customEvents).filter((e) => e.type === type)
+            : [];
+        return [
+            ...events.concat(custom).map((event) => {
+                const characterFields = {};
+                characters.forEach((char) => {
+                    characterFields[char.name] =
+                        checklist[char.name] && checklist[char.name][event.id];
+                });
+                return { ...characterFields, event, key: event.id, name: event.name };
+            }),
+        ];
     };
 
     // RENDER STUFF
@@ -49,10 +59,10 @@ export default function ChecklistTables({ characters }) {
             Object.entries(checklist).find(([name, checks]) => {
                 return name !== char.name && checks[event.id] && checks[event.id].length > 0;
             });
-
+        const quantity = parseInt(event.quantity, 10);
         return (
             <div className={styles.cell}>
-                {[...Array(event.quantity).keys()].map((v, i) => (
+                {[...Array(quantity).keys()].map((v, i) => (
                     <Checkbox
                         key={i}
                         disabled={charTooLowLevel || rosterComplete}
@@ -85,15 +95,20 @@ export default function ChecklistTables({ characters }) {
 
     return (
         <section className={styles.checklists}>
-            <div className="d-flex-center mb-xs">
-                <h3>Dailies</h3>
-                <Button size="small" className="ml-xs" onClick={() => handleReset('daily')}>
-                    Reset
-                </Button>
+            <div className="d-flex-center justify-between mb-xs">
+                <div className="d-flex-center">
+                    <h3>Dailies</h3>
+                    <Button size="small" className="ml-xs" onClick={() => handleReset('daily')}>
+                        Reset
+                    </Button>
+                </div>
+                <CustomizeEventsModal
+                    onSubmit={() => getChecklistCustomEvents().then(setCustomEvents)}
+                />
             </div>
             <Table
                 columns={columns}
-                dataSource={buildEventTableData(DAILIES)}
+                dataSource={buildEventTableData(DAILIES, TYPE_DAILY)}
                 size="small"
                 pagination={false}
             />
@@ -105,11 +120,11 @@ export default function ChecklistTables({ characters }) {
                         Reset
                     </Button>
                 </div>
-                {characters.length > 0 && <WeeklyGold characters={characters} />}
+                <WeeklyGoldModal characters={characters} />
             </div>
             <Table
                 columns={columns}
-                dataSource={buildEventTableData(WEEKLIES)}
+                dataSource={buildEventTableData(WEEKLIES, TYPE_WEEKLY)}
                 size="small"
                 pagination={false}
             />

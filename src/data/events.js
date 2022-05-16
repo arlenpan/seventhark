@@ -1,3 +1,6 @@
+export const TYPE_DAILY = 'daily';
+export const TYPE_WEEKLY = 'weekly';
+
 const DAILY_CHAOS_DUNGEON = { id: 'chaos_dungeon', name: 'Chaos Dungeon', quantity: 2 };
 const DAILY_GUARDIAN_RAID = { id: 'guardian_raid', name: 'Guardian Raid', quantity: 2 };
 const DAILY_GUILD_DONATION = { id: 'guild', name: 'Guild Donation/Support', quantity: 1 };

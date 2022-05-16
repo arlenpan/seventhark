@@ -34,6 +34,12 @@ $sizes: (
 );
 
 @each $size, $value in $sizes {
+    .m-#{$size} {
+        margin: $value;
+    }
+    .p-#{$size} {
+        padding: $value;
+    }
     .mt-#{$size} {
         margin-top: $value;
     }

@@ -4,7 +4,6 @@ import { GOLD_GENERATION } from 'src/data/events';
 import { useRouter } from 'next/router';
 
 export default function WeeklyGold({ characters = [], className }) {
-    const [isModalVisible, setModalVisible] = useState(false);
     const [fieldsChecked, setFieldsChecked] = useState({});
 
     const router = useRouter();
