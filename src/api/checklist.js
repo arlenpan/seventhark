@@ -3,6 +3,7 @@ import { getLocal, setLocal } from './localStorage';
 
 export const CHECKLIST_KEY = 'checklist';
 export const CHECKLIST_CUSTOM_EVENTS = 'checklist_custom_events';
+export const CHECKLIST_HIDDEN_EVENTS = 'checklist_hidden_events';
 
 export const getChecklist = async () => {
     return getLocal(CHECKLIST_KEY) ?? {};
@@ -61,10 +62,21 @@ export const resetChecklistWeeklies = () => {
     resetChecklist(TYPE_WEEKLY);
 };
 
-export const setChecklistCustomEvents = async (newCustomEvents) => {
+// CUSTOM EVENTS
+export const getChecklistCustomEvents = async () => {
+    return getLocal(CHECKLIST_CUSTOM_EVENTS) ?? {};
+};
+
+export const setChecklistCustomEvents = async (newCustomEvents = {}) => {
     setLocal(CHECKLIST_CUSTOM_EVENTS, newCustomEvents);
 };
 
-export const getChecklistCustomEvents = async () => {
-    return getLocal(CHECKLIST_CUSTOM_EVENTS) ?? {};
+// HIDDEN EVENTS
+export const getChecklistHiddenEvents = async () => {
+    return getLocal(CHECKLIST_HIDDEN_EVENTS) ?? {};
+};
+
+export const setChecklistHiddenEvents = async (newHiddenEvents = {}) => {
+    console.log(newHiddenEvents);
+    setLocal(CHECKLIST_HIDDEN_EVENTS, newHiddenEvents);
 };

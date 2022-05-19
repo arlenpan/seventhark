@@ -1,16 +1,16 @@
 import { Button } from 'antd';
 import { useState } from 'react';
-import { setChecklistCustomEvents } from 'src/api/checklist';
+import { setChecklistCustomEvents, setChecklistHiddenEvents } from 'src/api/checklist';
 import CustomizeEventsModal from './CustomizeEventsModal';
 
 export default function CustomizeEvents({ className, onSubmit }) {
     const [showModal, setModal] = useState(false);
 
-    const handleSubmit = (customEvents) => {
-        setChecklistCustomEvents(customEvents).then(() => {
-            setModal(false);
-            if (onSubmit) onSubmit();
-        });
+    const handleSubmit = (customEvents, hiddenEvents) => {
+        setChecklistHiddenEvents(hiddenEvents);
+        setChecklistCustomEvents(customEvents);
+        setModal(false);
+        if (onSubmit) onSubmit();
     };
 
     return (

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import {
     getChecklist,
     getChecklistCustomEvents,
+    getChecklistHiddenEvents,
     resetChecklistDailies,
     resetChecklistWeeklies,
     setChecklistItem,
@@ -16,10 +17,12 @@ import styles from './ChecklistTables.module.scss';
 export default function ChecklistTables({ characters }) {
     const [checklist, setChecklist] = useState({});
     const [customEvents, setCustomEvents] = useState(null);
+    const [hiddenEvents, setHiddenEvents] = useState(null);
 
     useEffect(() => {
         getChecklist().then(setChecklist);
         getChecklistCustomEvents().then(setCustomEvents);
+        getChecklistHiddenEvents().then(setHiddenEvents);
     }, []);
 
     // BUILD COLUMNS
@@ -38,8 +41,9 @@ export default function ChecklistTables({ characters }) {
         const custom = customEvents
             ? Object.values(customEvents).filter((e) => e.type === type)
             : [];
+        const allEvents = events.concat(custom).filter((event) => !hiddenEvents?.[event.id]);
         return [
-            ...events.concat(custom).map((event) => {
+            ...allEvents.map((event) => {
                 const characterFields = {};
                 characters.forEach((char) => {
                     characterFields[char.name] =
@@ -93,6 +97,11 @@ export default function ChecklistTables({ characters }) {
         getChecklist().then(setChecklist);
     };
 
+    const handleSubmitCustomize = () => {
+        getChecklistCustomEvents().then(setCustomEvents);
+        getChecklistHiddenEvents().then(setHiddenEvents);
+    };
+
     return (
         <section className={styles.checklists}>
             <div className="d-flex-center justify-between mb-xs">
@@ -102,9 +111,7 @@ export default function ChecklistTables({ characters }) {
                         Reset
                     </Button>
                 </div>
-                <CustomizeEventsModal
-                    onSubmit={() => getChecklistCustomEvents().then(setCustomEvents)}
-                />
+                <CustomizeEventsModal onSubmit={handleSubmitCustomize} />
             </div>
             <Table
                 columns={columns}

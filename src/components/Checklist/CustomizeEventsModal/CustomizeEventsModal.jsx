@@ -1,7 +1,7 @@
-import { Button, Form, Input, Modal, Table, Tag } from 'antd';
+import { Button, Checkbox, Form, Input, Modal, Table, Tag } from 'antd';
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
-import { getChecklistCustomEvents } from 'src/api/checklist';
+import { getChecklistCustomEvents, getChecklistHiddenEvents } from 'src/api/checklist';
 import { ABYSSALS, DAILIES, TYPE_DAILY, TYPE_WEEKLY, WEEKLIES } from 'src/data/events';
 import formStyles from 'src/styles/forms.module.scss';
 import { v4 as uuidv4 } from 'uuid';
@@ -9,9 +9,11 @@ import { v4 as uuidv4 } from 'uuid';
 export default function CustomizeEventsModal({ onClose, onSubmit }) {
     const [showCustomForm, setCustomForm] = useState(false);
     const [customEvents, setCustomEvents] = useState(null);
+    const [hiddenEvents, setHiddenEvents] = useState(null);
 
     useEffect(() => {
         getChecklistCustomEvents().then(setCustomEvents);
+        getChecklistHiddenEvents().then(setHiddenEvents);
     }, []);
 
     const columns = [
@@ -44,12 +46,19 @@ export default function CustomizeEventsModal({ onClose, onSubmit }) {
                 );
             },
         },
-        // {
-        //     key: 'isHidden',
-        //     title: 'Hidden?',
-        //     dataIndex: 'isHidden',
-        //     width: 75,
-        // },
+        {
+            key: 'isHidden',
+            title: 'Hide',
+            dataIndex: 'isHidden',
+            width: 75,
+            render: (value, record) => {
+                if (record.id) {
+                    return (
+                        <Checkbox checked={value} onChange={(e) => handleToggleHide(e, record)} />
+                    );
+                }
+            },
+        },
     ];
 
     const generateData = (eventList, type) => {
@@ -60,6 +69,7 @@ export default function CustomizeEventsModal({ onClose, onSubmit }) {
             ...combinedEvents.map((event) => ({
                 key: event.id,
                 ...event,
+                isHidden: hiddenEvents?.[event.id],
             })),
             {
                 name: renderCreateRow(type),
@@ -119,6 +129,12 @@ export default function CustomizeEventsModal({ onClose, onSubmit }) {
         setCustomForm(false);
     };
 
+    const handleToggleHide = (e, record) => {
+        const newHiddenEvents = { ...hiddenEvents };
+        newHiddenEvents[record.id] = e.target.checked;
+        setHiddenEvents(newHiddenEvents);
+    };
+
     const handleRemoveCustom = (event) => {
         const newCustomEvents = { ...customEvents };
         delete newCustomEvents[event.id];
@@ -134,7 +150,7 @@ export default function CustomizeEventsModal({ onClose, onSubmit }) {
     };
 
     const handleSubmit = () => {
-        onSubmit(transformSubmit(customEvents));
+        onSubmit(transformSubmit(customEvents), hiddenEvents);
     };
 
     return (
