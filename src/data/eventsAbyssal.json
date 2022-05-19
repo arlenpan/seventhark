@@ -185,7 +185,8 @@
     "tier": 3,
     "ilvl": 1445,
     "gold": 1000,
-    "type": "weekly"
+    "type": "weekly",
+    "normalMode": "legion_raid_1415_1"
   },
   "legion_raid_1445_2": {
     "id": "legion_raid_1445_2",
@@ -194,6 +195,7 @@
     "tier": 3,
     "ilvl": 1445,
     "gold": 3500,
-    "type": "weekly"
+    "type": "weekly",
+    "normalMode": "legion_raid_1415_2"
   }
 }
