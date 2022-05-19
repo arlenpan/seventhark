@@ -1,0 +1,8 @@
+{
+  "event_guardian_raid": {
+    "id": "event_guardian_raid",
+    "name": "Event Guardian Raid",
+    "quantity": 1,
+    "type": "daily"
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "abyssal_dungeon_340_1": {
+    "id": "abyssal_dungeon_340_1",
+    "name": "Abyssal Dungeon 340 (Demon Beast Canyon)",
+    "quantity": 1,
+    "tier": 1,
+    "ilvl": 340,
+    "ilvlGoldCutoff": 840,
+    "gold": 80,
+    "type": "weekly"
+  },
+  "abyssal_dungeon_340_2": {
+    "id": "abyssal_dungeon_340_2",
+    "name": "Abyssal Dungeon 340 (Necromancer's Origin)",
+    "quantity": 1,
+    "tier": 1,
+    "ilvl": 340,
+    "ilvlGoldCutoff": 840,
+    "gold": 80,
+    "type": "weekly"
+  },
+  "abyssal_dungeon_460_1": {
+    "id": "abyssal_dungeon_460_1",
+    "name": "Abyssal Dungeon 460 (Hall of the Twisted Warlord)",
+    "quantity": 1,
+    "tier": 1,
+    "ilvl": 460,
+    "ilvlGoldCutoff": 960,
+    "gold": 80,
+    "type": "weekly"
+  },
+  "abyssal_dungeon_460_2": {
+    "id": "abyssal_dungeon_460_2",
+    "name": "Abyssal Dungeon 460 (Hildebrandt Palace)",
+    "quantity": 1,
+    "tier": 1,
+    "ilvl": 460,
+    "ilvlGoldCutoff": 960,
+    "gold": 80,
+    "type": "weekly"
+  },
+  "abyssal_dungeon_840_1": {
+    "id": "abyssal_dungeon_840_1",
+    "name": "Abyssal Dungeon 840 (Road of Lament)",
+    "quantity": 1,
+    "tier": 2,
+    "ilvl": 840,
+    "ilvlGoldCutoff": 1325,
+    "gold": 100,
+    "type": "weekly"
+  },
+  "abyssal_dungeon_840_2": {
+    "id": "abyssal_dungeon_840_2",
+    "name": "Abyssal Dungeon 840 (Forge of Fallen Pride)",
+    "quantity": 1,
+    "tier": 2,
+    "ilvl": 840,
+    "ilvlGoldCutoff": 1325,
+    "gold": 100,
+    "type": "weekly"
+  },
+  "abyssal_dungeon_960_1": {
+    "id": "abyssal_dungeon_960_1",
+    "name": "Abyssal Dungeon 960 (Sea of Indolence)",
+    "quantity": 1,
+    "tier": 2,
+    "ilvl": 960,
+    "ilvlGoldCutoff": 1370,
+    "gold": 100,
+    "type": "weekly"
+  },
+  "abyssal_dungeon_960_2": {
+    "id": "abyssal_dungeon_960_2",
+    "name": "Abyssal Dungeon 960 (Tranquil Karkosa)",
+    "quantity": 1,
+    "tier": 2,
+    "ilvl": 960,
+    "ilvlGoldCutoff": 1370,
+    "gold": 100,
+    "type": "weekly"
+  },
+  "abyssal_dungeon_960_3": {
+    "id": "abyssal_dungeon_960_3",
+    "name": "Abyssal Dungeon 960 (Alaric's Sanctuary)",
+    "quantity": 1,
+    "tier": 2,
+    "ilvl": 960,
+    "ilvlGoldCutoff": 1370,
+    "gold": 100,
+    "type": "weekly"
+  },
+  "abyssal_dungeon_1325_1": {
+    "id": "abyssal_dungeon_1325_1",
+    "name": "Abyssal Dungeon 1325 (Aira's Oculus)",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1325,
+    "hardMode": "abyssal_dungeon_1370_1",
+    "gold": 600,
+    "type": "weekly"
+  },
+  "abyssal_dungeon_1340_1": {
+    "id": "abyssal_dungeon_1340_1",
+    "name": "Abyssal Dungeon 1340 (Oreha Prevaza)",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1340,
+    "hardMode": "abyssal_dungeon_1370_2",
+    "gold": 900,
+    "type": "weekly"
+  },
+  "abyssal_dungeon_1370_1": {
+    "id": "abyssal_dungeon_1370_1",
+    "name": "Abyssal Dungeon 1370 (Aira's Oculus Hard)",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1370,
+    "normalMode": "abyssal_dungeon_1325_1",
+    "gold": 900,
+    "type": "weekly"
+  },
+  "abyssal_dungeon_1370_2": {
+    "id": "abyssal_dungeon_1370_2",
+    "name": "Abyssal Dungeon 1370 (Oreha Prevaza Hard)",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1370,
+    "normalMode": "abyssal_dungeon_1340_1",
+    "gold": 1200,
+    "type": "weekly"
+  },
+  "abyss_raid_1370_1": {
+    "id": "abyss_raid_1370_1",
+    "name": "Argos Phase 1",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1370,
+    "gold": 800,
+    "type": "weekly"
+  },
+  "abyss_raid_1370_2": {
+    "id": "abyss_raid_1370_2",
+    "name": "Argos Phase 2",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1370,
+    "gold": 900,
+    "type": "weekly"
+  },
+  "abyss_raid_1370_3": {
+    "id": "abyss_raid_1370_3",
+    "name": "Argos Phase 3",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1370,
+    "gold": 1000,
+    "type": "weekly"
+  }
+}

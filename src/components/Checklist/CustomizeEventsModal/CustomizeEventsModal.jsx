@@ -2,7 +2,7 @@ import { Button, Form, Input, Modal, Table, Tag } from 'antd';
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { getChecklistCustomEvents } from 'src/api/checklist';
-import { DAILIES, WEEKLIES, TYPE_DAILY, TYPE_WEEKLY } from 'src/data/events';
+import { ABYSSALS, DAILIES, TYPE_DAILY, TYPE_WEEKLY, WEEKLIES } from 'src/data/events';
 import formStyles from 'src/styles/forms.module.scss';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -91,7 +91,12 @@ export default function CustomizeEventsModal({ onClose, onSubmit }) {
         }
 
         return (
-            <Button type="link" size="small" className="p-0 capitalize" onClick={() => setCustomForm(type)}>
+            <Button
+                type="link"
+                size="small"
+                className="p-0 capitalize"
+                onClick={() => setCustomForm(type)}
+            >
                 Add Custom {type}
             </Button>
         );
@@ -153,7 +158,7 @@ export default function CustomizeEventsModal({ onClose, onSubmit }) {
                 size="small"
                 pagination={false}
                 columns={columns}
-                dataSource={generateData(WEEKLIES, TYPE_WEEKLY)}
+                dataSource={generateData([...WEEKLIES, ...ABYSSALS], TYPE_WEEKLY)}
             />
         </Modal>
     );

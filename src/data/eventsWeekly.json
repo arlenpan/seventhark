@@ -1,0 +1,53 @@
+{
+  "weekly_unas_task": {
+    "id": "weekly_unas_task",
+    "name": "Una's Task (Weekly)",
+    "quantity": 3,
+    "type": "weekly"
+  },
+  "weekly_guild_tasks": {
+    "id": "weekly_guild_tasks",
+    "name": "Guild Tasks (Weekly)",
+    "quantity": 1,
+    "type": "weekly"
+  },
+  "trade_sylmael_bloodstone": {
+    "id": "trade_sylmael_bloodstone",
+    "name": "Sylmael Bloodstone Exchange",
+    "quantity": 1,
+    "type": "weekly"
+  },
+  "trade_merchant_ships": {
+    "id": "trade_merchant_ships",
+    "name": "Pirate Merchant Ships",
+    "quantity": 1,
+    "type": "weekly"
+  },
+  "trade_event": {
+    "id": "trade_event",
+    "name": "Event Exchange",
+    "quantity": 1,
+    "type": "weekly"
+  },
+  "trade_pvp": {
+    "id": "trade_pvp",
+    "name": "PvP Exchange",
+    "quantity": 1,
+    "type": "weekly"
+  },
+  "weekly_ghost_ship": {
+    "id": "weekly_ghost_ship",
+    "name": "Ghost Ship",
+    "quantity": 1,
+    "rosterWide": true,
+    "type": "weekly"
+  },
+  "weekly_chaos_line": {
+    "id": "weekly_chaos_line",
+    "name": "Chaos Line",
+    "quantity": 1,
+    "ilvl": 1340,
+    "rosterWide": true,
+    "type": "weekly"
+  }
+}

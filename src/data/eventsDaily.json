@@ -1,0 +1,76 @@
+{
+  "unas_task": {
+    "id": "unas_task",
+    "name": "Una's Task",
+    "quantity": 3,
+    "type": "daily"
+  },
+  "chaos_dungeon": {
+    "id": "chaos_dungeon",
+    "name": "Chaos Dungeon",
+    "quantity": 2,
+    "type": "daily"
+  },
+  "guardian_raid": {
+    "id": "guardian_raid",
+    "name": "Guardian Raid",
+    "quantity": 2,
+    "type": "daily"
+  },
+  "guild": {
+    "id": "guild",
+    "name": "Guild Donation/Support",
+    "quantity": 1,
+    "type": "daily"
+  },
+  "world_boss": {
+    "id": "world_boss",
+    "name": "World Boss",
+    "quantity": 1,
+    "rosterWide": true,
+    "type": "daily"
+  },
+  "chaos_gate": {
+    "id": "chaos_gate",
+    "name": "Chaos Gate",
+    "quantity": 1,
+    "rosterWide": true,
+    "type": "daily"
+  },
+  "adventure_island": {
+    "id": "adventure_island",
+    "name": "Adventure Island",
+    "quantity": 1,
+    "rosterWide": true,
+    "type": "daily"
+  },
+  "anguished_isle": {
+    "id": "anguished_isle",
+    "name": "Island - Anguished Isle",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1100,
+    "rosterWide": true,
+    "island": true,
+    "type": "daily"
+  },
+  "fermata": {
+    "id": "fermata",
+    "name": "Island - Cradle of the Sea Fermata",
+    "quantity": 1,
+    "island": true,
+    "type": "daily"
+  },
+  "rapport_song": {
+    "id": "rapport_song",
+    "name": "Rapport - Songs",
+    "quantity": 6,
+    "type": "daily"
+  },
+  "rapport_emote": {
+    "id": "rapport_emote",
+    "name": "Rapport - Emotes",
+    "quantity": 6,
+    "type": "daily"
+  }
+}

@@ -7,10 +7,10 @@ import {
     resetChecklistWeeklies,
     setChecklistItem,
 } from 'src/api/checklist';
-import { DAILIES, TYPE_DAILY, TYPE_WEEKLY, WEEKLIES } from 'src/data/events';
+import { ABYSSALS, DAILIES, TYPE_DAILY, TYPE_WEEKLY, WEEKLIES } from 'src/data/events';
 import formStyles from 'src/styles/forms.module.scss';
-import WeeklyGoldModal from '../WeeklyGoldModal';
 import CustomizeEventsModal from '../CustomizeEventsModal';
+import WeeklyGoldModal from '../WeeklyGoldModal';
 import styles from './ChecklistTables.module.scss';
 
 export default function ChecklistTables({ characters }) {
@@ -124,7 +124,7 @@ export default function ChecklistTables({ characters }) {
             </div>
             <Table
                 columns={columns}
-                dataSource={buildEventTableData(WEEKLIES, TYPE_WEEKLY)}
+                dataSource={buildEventTableData([...WEEKLIES, ...ABYSSALS], TYPE_WEEKLY)}
                 size="small"
                 pagination={false}
             />
