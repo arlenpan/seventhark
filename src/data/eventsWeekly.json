@@ -13,25 +13,25 @@
   },
   "trade_sylmael_bloodstone": {
     "id": "trade_sylmael_bloodstone",
-    "name": "Sylmael Bloodstone Exchange",
+    "name": "Vendor - Sylmael Bloodstone Exchange",
     "quantity": 1,
     "type": "weekly"
   },
   "trade_merchant_ships": {
     "id": "trade_merchant_ships",
-    "name": "Pirate Merchant Ships",
+    "name": "Vendor - Pirate Merchant Ships",
     "quantity": 1,
     "type": "weekly"
   },
   "trade_event": {
     "id": "trade_event",
-    "name": "Event Exchange",
+    "name": "Vendor - Chicking Event Exchange",
     "quantity": 1,
     "type": "weekly"
   },
   "trade_pvp": {
     "id": "trade_pvp",
-    "name": "PvP Exchange",
+    "name": "Vendor - PvP Exchange",
     "quantity": 1,
     "type": "weekly"
   },
