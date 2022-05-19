@@ -49,5 +49,12 @@
     "ilvl": 1340,
     "rosterWide": true,
     "type": "weekly"
+  },
+  "weekly_challenge_guardians": {
+    "id": "weekly_challenge_guardians",
+    "name": "Challenge Guardians",
+    "quantity": 3,
+    "rosterWide": true,
+    "type": "weekly"
   }
 }

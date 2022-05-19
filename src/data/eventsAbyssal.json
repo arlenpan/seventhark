@@ -97,6 +97,7 @@
     "ilvl": 1325,
     "hardMode": "abyssal_dungeon_1370_1",
     "gold": 600,
+    "ilvlGoldCutoff": 1415,
     "type": "weekly"
   },
   "abyssal_dungeon_1340_1": {
@@ -107,6 +108,7 @@
     "ilvl": 1340,
     "hardMode": "abyssal_dungeon_1370_2",
     "gold": 900,
+    "ilvlGoldCutoff": 1415,
     "type": "weekly"
   },
   "abyssal_dungeon_1370_1": {
@@ -117,6 +119,7 @@
     "ilvl": 1370,
     "normalMode": "abyssal_dungeon_1325_1",
     "gold": 900,
+    "ilvlGoldCutoff": 1415,
     "type": "weekly"
   },
   "abyssal_dungeon_1370_2": {
@@ -127,11 +130,12 @@
     "ilvl": 1370,
     "normalMode": "abyssal_dungeon_1340_1",
     "gold": 1200,
+    "ilvlGoldCutoff": 1415,
     "type": "weekly"
   },
   "abyss_raid_1370_1": {
     "id": "abyss_raid_1370_1",
-    "name": "Argos Phase 1",
+    "name": "Argos - Phase 1",
     "quantity": 1,
     "tier": 3,
     "ilvl": 1370,
@@ -140,7 +144,7 @@
   },
   "abyss_raid_1370_2": {
     "id": "abyss_raid_1370_2",
-    "name": "Argos Phase 2",
+    "name": "Argos - Phase 2",
     "quantity": 1,
     "tier": 3,
     "ilvl": 1370,
@@ -149,11 +153,47 @@
   },
   "abyss_raid_1370_3": {
     "id": "abyss_raid_1370_3",
-    "name": "Argos Phase 3",
+    "name": "Argos - Phase 3",
     "quantity": 1,
     "tier": 3,
     "ilvl": 1370,
     "gold": 1000,
+    "type": "weekly"
+  },
+  "legion_raid_1415_1": {
+    "id": "legion_raid_1415_1",
+    "name": "Valtan - Phase 1",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1415,
+    "gold": 500,
+    "type": "weekly"
+  },
+  "legion_raid_1415_2": {
+    "id": "legion_raid_1415_2",
+    "name": "Valtan - Phase 2",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1415,
+    "gold": 2000,
+    "type": "weekly"
+  },
+  "legion_raid_1445_1": {
+    "id": "legion_raid_1445_1",
+    "name": "Valtan - Phase 1 (Hard)",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1445,
+    "gold": 1000,
+    "type": "weekly"
+  },
+  "legion_raid_1445_2": {
+    "id": "legion_raid_1445_2",
+    "name": "Valtan - Phase 2 (Hard)",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1445,
+    "gold": 3500,
     "type": "weekly"
   }
 }
