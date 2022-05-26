@@ -1,4 +1,4 @@
-import { DAILIES, TYPE_DAILY, TYPE_WEEKLY, WEEKLIES } from 'src/data/events';
+import { ABYSSALS, DAILIES, TYPE_DAILY, TYPE_WEEKLY, WEEKLIES } from 'src/data/events';
 import { getLocal, setLocal } from './localStorage';
 
 export const CHECKLIST_KEY = 'checklist';
@@ -37,7 +37,7 @@ export const resetChecklist = (type) => {
     const newChecklist = { ...checklist };
     let arrayToCheck = [];
     if (type === TYPE_DAILY) arrayToCheck = DAILIES;
-    if (type === TYPE_WEEKLY) arrayToCheck = WEEKLIES;
+    if (type === TYPE_WEEKLY) arrayToCheck = [...WEEKLIES, ...ABYSSALS];
 
     Object.keys(newChecklist).forEach((characterName) => {
         Object.keys(newChecklist[characterName]).forEach((eventId) => {
@@ -77,6 +77,5 @@ export const getChecklistHiddenEvents = async () => {
 };
 
 export const setChecklistHiddenEvents = async (newHiddenEvents = {}) => {
-    console.log(newHiddenEvents);
     setLocal(CHECKLIST_HIDDEN_EVENTS, newHiddenEvents);
 };

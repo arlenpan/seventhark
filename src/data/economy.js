@@ -27,8 +27,8 @@ const HARMONY_LEAPSTONE = {
     name: 'Harmony Leapstone',
     imgUrl: '/icons/harmony_leapstone.png',
     tier: 1,
-    mariQuantity: 50,
-    mariGemCost: 50,
+    mariQuantity: 30,
+    mariGemCost: 30,
     pvpExchangeCost: 20,
     bloodstoneCost: 50,
 };
@@ -60,7 +60,7 @@ const STARS_BREATH = {
     id: 'stars_breath',
     name: "Star's Breath",
     tier: 1,
-    mariQuantity: 10,
+    mariQuantity: 15,
     mariGemCost: 30,
     imgUrl: '/icons/stars_breath.png',
 };
