@@ -8,7 +8,7 @@
   "weekly_guild_tasks": {
     "id": "weekly_guild_tasks",
     "name": "Guild Tasks (Weekly)",
-    "quantity": 1,
+    "quantity": 3,
     "type": "weekly"
   },
   "trade_sylmael_bloodstone": {
