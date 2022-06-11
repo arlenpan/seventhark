@@ -11,6 +11,18 @@
     "quantity": 3,
     "type": "weekly"
   },
+  "weekly_guild_siege_medeia": {
+    "id": "weekly_guild_siege_medeia",
+    "name": "Guild Siege - Medeia Island",
+    "quantity": 1,
+    "type": "weekly"
+  },
+  "weekly_guild_siege_slime": {
+    "id": "weekly_guild_siege_slime",
+    "name": "Guild Siege - Slime Island",
+    "quantity": 1,
+    "type": "weekly"
+  },
   "trade_sylmael_bloodstone": {
     "id": "trade_sylmael_bloodstone",
     "name": "Vendor - Sylmael Bloodstone Exchange",
