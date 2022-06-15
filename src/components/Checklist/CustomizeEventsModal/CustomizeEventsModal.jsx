@@ -62,14 +62,19 @@ export default function CustomizeEventsModal({ onClose, onSubmit }) {
     ];
 
     const generateData = (eventList, type) => {
+        const filteredEvents = eventList.filter((event, index) => {
+            const i = eventList.findIndex((e) => e.combinedName === event.combinedName);
+            return i === 0 || i === index;
+        });
         const newEvents =
             customEvents && Object.values(customEvents).filter((event) => event.type === type);
-        const combinedEvents = customEvents ? eventList.concat(newEvents) : eventList;
+        const combinedEvents = customEvents ? filteredEvents.concat(newEvents) : filteredEvents;
         return [
             ...combinedEvents.map((event) => ({
                 key: event.id,
                 ...event,
                 isHidden: hiddenEvents?.[event.id],
+                name: event.combinedName || event.name,
             })),
             {
                 name: renderCreateRow(type),

@@ -41,7 +41,14 @@ export default function ChecklistTables({ characters }) {
         const custom = customEvents
             ? Object.values(customEvents).filter((e) => e.type === type)
             : [];
-        const allEvents = events.concat(custom).filter((event) => !hiddenEvents?.[event.id]);
+        const allEvents = events
+            .concat(custom)
+            .filter((event, index) => {
+                const i = events.findIndex((e) => e.combinedName === event.combinedName);
+                return i === 0 || i === index;
+            })
+            .filter((event) => !hiddenEvents?.[event.id]);
+
         return [
             ...allEvents.map((event) => {
                 const characterFields = {};
@@ -49,7 +56,12 @@ export default function ChecklistTables({ characters }) {
                     characterFields[char.name] =
                         checklist[char.name] && checklist[char.name][event.id];
                 });
-                return { ...characterFields, event, key: event.id, name: event.name };
+                return {
+                    ...characterFields,
+                    event,
+                    key: event.id,
+                    name: event.combinedName || event.name,
+                };
             }),
         ];
     };

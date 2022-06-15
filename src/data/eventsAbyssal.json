@@ -98,7 +98,8 @@
     "hardMode": "abyssal_dungeon_1370_1",
     "gold": 600,
     "ilvlGoldCutoff": 1415,
-    "type": "weekly"
+    "type": "weekly",
+    "combinedName": "Abyssal Dungeon 1325/1370 (Aira's Oculus)"
   },
   "abyssal_dungeon_1340_1": {
     "id": "abyssal_dungeon_1340_1",
@@ -109,7 +110,8 @@
     "hardMode": "abyssal_dungeon_1370_2",
     "gold": 900,
     "ilvlGoldCutoff": 1415,
-    "type": "weekly"
+    "type": "weekly",
+    "combinedName": "Abyssal Dungeon 1340/1370 (Oreha Prevaza)"
   },
   "abyssal_dungeon_1370_1": {
     "id": "abyssal_dungeon_1370_1",
@@ -120,7 +122,8 @@
     "normalMode": "abyssal_dungeon_1325_1",
     "gold": 900,
     "ilvlGoldCutoff": 1415,
-    "type": "weekly"
+    "type": "weekly",
+    "combinedName": "Abyssal Dungeon 1325/1370 (Aira's Oculus)"
   },
   "abyssal_dungeon_1370_2": {
     "id": "abyssal_dungeon_1370_2",
@@ -131,7 +134,8 @@
     "normalMode": "abyssal_dungeon_1340_1",
     "gold": 1200,
     "ilvlGoldCutoff": 1415,
-    "type": "weekly"
+    "type": "weekly",
+    "combinedName": "Abyssal Dungeon 1340/1370 (Oreha Prevaza)"
   },
   "abyss_raid_1370_1": {
     "id": "abyss_raid_1370_1",
@@ -167,7 +171,8 @@
     "tier": 3,
     "ilvl": 1415,
     "gold": 500,
-    "type": "weekly"
+    "type": "weekly",
+    "combinedName": "Valtan - Phase 1"
   },
   "legion_raid_1415_2": {
     "id": "legion_raid_1415_2",
@@ -176,7 +181,8 @@
     "tier": 3,
     "ilvl": 1415,
     "gold": 2000,
-    "type": "weekly"
+    "type": "weekly",
+    "combinedName": "Valtan - Phase 2"
   },
   "legion_raid_1445_1": {
     "id": "legion_raid_1445_1",
@@ -186,7 +192,8 @@
     "ilvl": 1445,
     "gold": 1000,
     "type": "weekly",
-    "normalMode": "legion_raid_1415_1"
+    "normalMode": "legion_raid_1415_1",
+    "combinedName": "Valtan - Phase 1"
   },
   "legion_raid_1445_2": {
     "id": "legion_raid_1445_2",
@@ -196,6 +203,7 @@
     "ilvl": 1445,
     "gold": 3500,
     "type": "weekly",
-    "normalMode": "legion_raid_1415_2"
+    "normalMode": "legion_raid_1415_2",
+    "combinedName": "Valtan - Phase 2"
   }
 }
