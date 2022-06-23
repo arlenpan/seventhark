@@ -35,12 +35,6 @@
     "quantity": 1,
     "type": "weekly"
   },
-  "trade_event": {
-    "id": "trade_event",
-    "name": "Vendor - Chicking Event Exchange",
-    "quantity": 1,
-    "type": "weekly"
-  },
   "trade_pvp": {
     "id": "trade_pvp",
     "name": "Vendor - PvP Exchange",
