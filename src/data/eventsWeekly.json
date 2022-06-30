@@ -41,6 +41,12 @@
     "quantity": 1,
     "type": "weekly"
   },
+  "trade_event": {
+    "id": "trade_event",
+    "name": "Vendor - Event Exchange",
+    "quantity": 1,
+    "type": "weekly"
+  },
   "weekly_ghost_ship": {
     "id": "weekly_ghost_ship",
     "name": "Ghost Ship",

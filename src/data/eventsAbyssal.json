@@ -205,5 +205,68 @@
     "type": "weekly",
     "normalMode": "legion_raid_1415_2",
     "combinedName": "Valtan - Phase 2"
+  },
+  "legion_raid_1430_1": {
+    "id": "legion_raid_1430_1",
+    "name": "Vykas - Phase 1",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1430,
+    "gold": 500,
+    "type": "weekly",
+    "combinedName": "Vykas - Phase 1"
+  },
+  "legion_raid_1430_2": {
+    "id": "legion_raid_1430_2",
+    "name": "Vykas - Phase 2",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1430,
+    "gold": 600,
+    "type": "weekly",
+    "combinedName": "Vykas - Phase 2"
+  },
+  "legion_raid_1430_3": {
+    "id": "legion_raid_1430_3",
+    "name": "Vykas - Phase 3",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1430,
+    "gold": 1400,
+    "type": "weekly",
+    "combinedName": "Vykas - Phase 3"
+  },
+  "legion_raid_1460_1": {
+    "id": "legion_raid_1460_1",
+    "name": "Vykas - Phase 1 (Hard)",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1460,
+    "gold": 1000,
+    "type": "weekly",
+    "normalMode": "legion_raid_1430_1",
+    "combinedName": "Vykas - Phase 1"
+  },
+  "legion_raid_1460_2": {
+    "id": "legion_raid_1460_2",
+    "name": "Vykas - Phase 2 (Hard)",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1460,
+    "gold": 1000,
+    "type": "weekly",
+    "normalMode": "legion_raid_1430_2",
+    "combinedName": "Vykas - Phase 2"
+  },
+  "legion_raid_1460_3": {
+    "id": "legion_raid_1460_3",
+    "name": "Vykas - Phase 3 (Hard)",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1460,
+    "gold": 2500,
+    "type": "weekly",
+    "normalMode": "legion_raid_1430_3",
+    "combinedName": "Vykas - Phase 3"
   }
 }
