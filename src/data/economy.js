@@ -274,6 +274,11 @@ export const GOLD = {
     name: 'Gold',
     imgUrl: '/icons/gold.png',
 };
+export const PHEONS = {
+    id: 'pheons',
+    name: 'Pheons',
+    imgUrl: '/icons/pheon.webp',
+};
 
 export const T1_MATERIALS = [
     HARMONY_LEAPSTONE,

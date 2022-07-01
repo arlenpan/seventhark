@@ -69,7 +69,7 @@ const Calculator = () => {
                 <Tabs.TabPane tab="Sylmael Bloodstone Exchange" key="guild">
                     <BloodstoneExchangeTable costs={costs} />
                 </Tabs.TabPane>
-                <Tabs.TabPane tab="Crystal Value" key="crystals">
+                <Tabs.TabPane tab="Crystal/Pheon Value" key="crystals">
                     <CrystalsGold costs={costs} />
                 </Tabs.TabPane>
                 <Tabs.TabPane tab="Gems" key="gems">

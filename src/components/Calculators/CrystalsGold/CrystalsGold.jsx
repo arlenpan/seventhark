@@ -2,7 +2,7 @@ import { Table } from 'antd';
 import { useState } from 'react';
 import FormEditableCell from 'src/components/FormEditableCell';
 import ItemIcon from 'src/components/ItemIcon';
-import { CRYSTALS, GOLD, ROYAL_CRYSTALS } from 'src/data/economy';
+import { CRYSTALS, GOLD, PHEONS, ROYAL_CRYSTALS } from 'src/data/economy';
 import { round } from 'src/lib/num';
 
 export default function CrystalsGold({ costs }) {
@@ -10,6 +10,7 @@ export default function CrystalsGold({ costs }) {
         [GOLD.id]: 0,
         [CRYSTALS.id]: 0,
         [ROYAL_CRYSTALS.id]: 0,
+        [PHEONS.id]: 0,
     });
 
     const handleInputChange = (value, record) => {
@@ -43,13 +44,16 @@ export default function CrystalsGold({ costs }) {
         },
     ];
 
+    const crystalsPerPheon = 850 / 100;
+
     const goldPerBlueCrystal = costs.crystals / CRYSTALS.purchaseUnit;
+    const goldPerPheon = crystalsPerPheon * goldPerBlueCrystal;
     const goldPerRoyalCrystal = costs.royal_crystals / ROYAL_CRYSTALS.purchaseUnit;
+
     const dollarPerRoyalCrystal = ROYAL_CRYSTALS.packPrice / ROYAL_CRYSTALS.packAmount;
-    const goldDollarValue = (itemCost.gold / goldPerRoyalCrystal) * dollarPerRoyalCrystal;
-    const crystalDollarValue =
-        ((itemCost.crystals * goldPerBlueCrystal) / goldPerRoyalCrystal) * dollarPerRoyalCrystal;
-    const royalCrystalDollarValue = dollarPerRoyalCrystal * itemCost.royal_crystals;
+    const dollarPerGold = dollarPerRoyalCrystal / goldPerRoyalCrystal;
+    const dollarPerCrystal = (goldPerBlueCrystal / goldPerRoyalCrystal) * dollarPerRoyalCrystal;
+    const dollarPerPheon = goldPerPheon * dollarPerGold;
 
     const data = [
         {
@@ -57,21 +61,28 @@ export default function CrystalsGold({ costs }) {
             item: GOLD,
             cost: itemCost.gold,
             goldValue: round(itemCost.gold),
-            dollarValue: `$${round(goldDollarValue)}`,
+            dollarValue: `$${round(itemCost.gold * dollarPerGold)}`,
         },
         {
             key: CRYSTALS.id,
             item: CRYSTALS,
             cost: itemCost.crystals,
             goldValue: round(itemCost.crystals * goldPerBlueCrystal),
-            dollarValue: `$${round(crystalDollarValue)}`,
+            dollarValue: `$${round(itemCost.crystals * dollarPerCrystal)}`,
         },
         {
             key: ROYAL_CRYSTALS.id,
             item: ROYAL_CRYSTALS,
             cost: itemCost.royal_crystals,
             goldValue: round(itemCost.royal_crystals * goldPerRoyalCrystal),
-            dollarValue: `$${round(royalCrystalDollarValue)}`,
+            dollarValue: `$${round(itemCost.royal_crystals * dollarPerRoyalCrystal)}`,
+        },
+        {
+            key: PHEONS.id,
+            item: PHEONS,
+            cost: itemCost.pheons,
+            goldValue: round(itemCost.pheons * goldPerPheon),
+            dollarValue: `$${round(itemCost.pheons * dollarPerPheon)}`,
         },
     ];
 

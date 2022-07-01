@@ -1,7 +1,7 @@
 import { Collapse, Input } from 'antd';
 import classNames from 'classnames';
 import ItemIcon from 'src/components/ItemIcon';
-import { ALL_MATERIALS, CRYSTALS, ROYAL_CRYSTALS } from 'src/data/economy';
+import { ALL_MATERIALS, CRYSTALS, GOLD, ROYAL_CRYSTALS } from 'src/data/economy';
 import styles from './CostEntry.module.scss';
 
 export default function CostEntry({ tiers, costs = {}, onChange, className }) {
@@ -27,7 +27,8 @@ export default function CostEntry({ tiers, costs = {}, onChange, className }) {
                                         value={costs[CRYSTALS.id]}
                                         onChange={(e) => handleInputChange(e, CRYSTALS)}
                                     />
-                                    <span className="mr-xs ml-xs">{CRYSTALS.purchaseUnit}</span>
+                                    <ItemIcon item={GOLD} width={35} />
+                                    <span className="mr-xs ml-xs">for {CRYSTALS.purchaseUnit}</span>
                                     <ItemIcon item={CRYSTALS} width={40} />
                                 </div>
                             </div>
@@ -41,13 +42,14 @@ export default function CostEntry({ tiers, costs = {}, onChange, className }) {
                                         {ROYAL_CRYSTALS.purchaseUnit}
                                     </span>
                                     <ItemIcon item={ROYAL_CRYSTALS} width={40} />
-                                    <span className="ml-xs mr-xs"> = </span>
+                                    <span className="ml-xs mr-xs"> for </span>
                                     <Input
                                         type="number"
                                         className={styles.input}
                                         value={costs[ROYAL_CRYSTALS.id]}
                                         onChange={(e) => handleInputChange(e, ROYAL_CRYSTALS)}
                                     />
+                                    <ItemIcon item={GOLD} width={35} />
                                 </div>
                             </div>
                         </div>

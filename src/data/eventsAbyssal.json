@@ -172,6 +172,7 @@
     "ilvl": 1415,
     "gold": 500,
     "type": "weekly",
+    "hardMode": "legion_raid_1445_1",
     "combinedName": "Valtan - Phase 1"
   },
   "legion_raid_1415_2": {
@@ -182,6 +183,7 @@
     "ilvl": 1415,
     "gold": 2000,
     "type": "weekly",
+    "hardMode": "legion_raid_1445_2",
     "combinedName": "Valtan - Phase 2"
   },
   "legion_raid_1445_1": {
@@ -214,6 +216,7 @@
     "ilvl": 1430,
     "gold": 500,
     "type": "weekly",
+    "hardMode": "legion_raid_1460_1",
     "combinedName": "Vykas - Phase 1"
   },
   "legion_raid_1430_2": {
@@ -224,6 +227,7 @@
     "ilvl": 1430,
     "gold": 600,
     "type": "weekly",
+    "hardMode": "legion_raid_1460_2",
     "combinedName": "Vykas - Phase 2"
   },
   "legion_raid_1430_3": {
@@ -234,6 +238,7 @@
     "ilvl": 1430,
     "gold": 1400,
     "type": "weekly",
+    "hardMode": "legion_raid_1460_3",
     "combinedName": "Vykas - Phase 3"
   },
   "legion_raid_1460_1": {
