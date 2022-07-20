@@ -68,5 +68,12 @@
     "quantity": 3,
     "rosterWide": true,
     "type": "weekly"
+  },
+  "weekly_challenge_abyssal_dungeon": {
+    "id": "weekly_challenge_abyssal_dungeon",
+    "name": "Challenge Abyssal Dungeons",
+    "quantity": 2,
+    "rosterWide": true,
+    "type": "weekly"
   }
 }
