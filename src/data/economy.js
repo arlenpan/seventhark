@@ -257,6 +257,7 @@ const POWDER_OF_SAGE = {
 const TAILORING_APPLIED_MENDING = {
     id: 'tailoring_applied_mending',
     name: 'Tailoring: Applied Mending',
+    imgUrl: '/icons/tailoring_applied_mending.webp',
     tier: 3.5,
     mariQuantity: 4,
     mariGemCost: 260,
@@ -264,6 +265,7 @@ const TAILORING_APPLIED_MENDING = {
 const METALLURGY_APPLIED_WELDING = {
     id: 'metallurgy_applied_welding',
     name: 'Metallurgy: Applied Welding',
+    imgUrl: '/icons/metallurgy_applied_welding.webp',
     tier: 3.5,
     mariQuantity: 2,
     mariGemCost: 280,
