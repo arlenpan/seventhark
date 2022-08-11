@@ -151,7 +151,7 @@ const GUARDIAN_STONE_CRYSTAL = {
     tier: 3,
     bundle: 10,
     mariQuantity: 100,
-    mariGemCost: 270,
+    mariGemCost: 150,
     pvpExchangeCost: 20,
     chaosExchangeCost: [10, 40, 60, 80, 100, 120, 140, 160, 190, 210, 230],
     imgUrl: '/icons/guardian_stone_crystal.png',
@@ -183,6 +183,8 @@ const HONOR_SHARD_POUCH_L = {
     name: 'Honor Shard Pouch (L)',
     tier: 3,
     pvpExchangeCost: 670,
+    mariQuantity: 20,
+    mariGemCost: 291,
     chaosExchangeCost: [500, 570],
     imgUrl: '/icons/honor_shard_pouch_l.png',
 };
@@ -212,8 +214,8 @@ const SOLAR_PROTECTION = {
     id: 'solar_protection',
     name: 'Solar Protection',
     tier: 3,
-    mariQuantity: 8,
-    mariGemCost: 360,
+    mariQuantity: 25,
+    mariGemCost: 750,
     pvpExchangeCost: 360,
     chaosExchangeCost: [590, 670],
     imgUrl: '/icons/solar_protection.png',
@@ -251,6 +253,20 @@ const POWDER_OF_SAGE = {
     tier: 3.5,
     chaosExchangeCost: [1470],
     imgUrl: '/icons/powder_of_sage.png',
+};
+const TAILORING_APPLIED_MENDING = {
+    id: 'tailoring_applied_mending',
+    name: 'Tailoring: Applied Mending',
+    tier: 3.5,
+    mariQuantity: 4,
+    mariGemCost: 260,
+};
+const METALLURGY_APPLIED_WELDING = {
+    id: 'metallurgy_applied_welding',
+    name: 'Metallurgy: Applied Welding',
+    tier: 3.5,
+    mariQuantity: 2,
+    mariGemCost: 280,
 };
 
 export const CRYSTALS = {
@@ -313,6 +329,8 @@ export const T3_MATERIALS = [
     GREAT_HONOR_LEAPSTONE,
     BASIC_OREHA_FUSION_MATERIAL,
     POWDER_OF_SAGE,
+    TAILORING_APPLIED_MENDING,
+    METALLURGY_APPLIED_WELDING,
 ];
 
 export const ALL_MATERIALS = [...T1_MATERIALS, ...T2_MATERIALS, ...T3_MATERIALS];

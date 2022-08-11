@@ -1,6 +1,6 @@
 import { DateTime, Interval } from 'luxon';
 
-const RESET_DAY = 4; // Thursday
+const RESET_DAY = 3; // Thursday
 const RESET_HOUR = 10; // 10AM
 const RESET_MINUTE = 0;
 
