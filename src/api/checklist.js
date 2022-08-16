@@ -44,7 +44,11 @@ export const resetChecklist = (type) => {
             if (arrayToCheck.find((e) => eventId === e.id)) {
                 // default events
                 delete newChecklist[characterName][eventId];
-            } else if (customEvents && customEvents[eventId]) {
+            } else if (
+                customEvents &&
+                customEvents[eventId] &&
+                customEvents[eventId].type === type
+            ) {
                 // custom events
                 delete newChecklist[characterName][eventId];
             }
