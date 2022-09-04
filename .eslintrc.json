@@ -16,6 +16,7 @@
 
         "import/no-unresolved": 0,
         "import/prefer-default-export": 1,
+        "import/extensions": 0,
 
         "react/no-array-index-key": 1,
         "react/jsx-props-no-spreading": 1,

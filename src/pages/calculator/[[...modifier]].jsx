@@ -1,4 +1,4 @@
-import { Checkbox, Tabs } from 'antd';
+import { Button, Checkbox, Tabs } from 'antd';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { getActiveTiers, getCosts, setActiveTier, setCost } from 'src/api/economy';
@@ -6,6 +6,7 @@ import BloodstoneExchangeTable from 'src/components/Calculators/BloodstoneExchan
 import CostEntry from 'src/components/Calculators/CostEntry';
 import CrystalsGold from 'src/components/Calculators/CrystalsGold';
 import GemTable from 'src/components/Calculators/GemTable';
+import ImportMarketModal from 'src/components/Calculators/ImportMarketModal';
 import InfiniteChaosTable from 'src/components/Calculators/InfiniteChaosTable';
 import MariShopTable from 'src/components/Calculators/MariShopTable';
 import PVPExchangeTable from 'src/components/Calculators/PVPExchangeTable';
@@ -22,7 +23,7 @@ const Calculator = () => {
 
     useEffect(() => {
         getActiveTiers().then(setTiers);
-        getCosts().then(setCosts);
+        updateCosts();
     }, []);
 
     const handleTierCheck = (e, n) => {
@@ -33,21 +34,26 @@ const Calculator = () => {
 
     const handleCostChange = (value, item) => {
         setCost(item.id, value);
-        getCosts().then(setCosts);
+        updateCosts();
     };
+
+    const updateCosts = () => getCosts().then(setCosts);
 
     return (
         <>
-            <div className="d-flex-center mb-s">
-                {[...Array(3).keys()].map((n) => (
-                    <div className="d-flex-center" key={n}>
-                        <Checkbox
-                            onClick={(e) => handleTierCheck(e, n + 1)}
-                            checked={tiers[n + 1]}
-                        />
-                        <span className="ml-xs mr-s">Tier {n + 1}</span>
-                    </div>
-                ))}
+            <div className="d-flex-center align-center justify-between mb-s">
+                <div className="d-flex-center">
+                    {[...Array(3).keys()].map((n) => (
+                        <div className="d-flex-center" key={n}>
+                            <Checkbox
+                                onClick={(e) => handleTierCheck(e, n + 1)}
+                                checked={tiers[n + 1]}
+                            />
+                            <span className="ml-xs mr-s">Tier {n + 1}</span>
+                        </div>
+                    ))}
+                </div>
+                <ImportMarketModal onSubmit={updateCosts} />
             </div>
 
             <CostEntry tiers={tiers} costs={costs} onChange={handleCostChange} />

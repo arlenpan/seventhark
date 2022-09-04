@@ -61,6 +61,7 @@ export default function MainLayout({ children }) {
                     <Menu.Item key="https://lost-ark.maxroll.gg/upgrade-calculator">
                         Maxroll - Honing Calculator
                     </Menu.Item>
+                    <Menu.Item key="https://www.lostarkmarket.online/">Lost Ark Market</Menu.Item>
                     <Menu.Divider />
                     <Menu.Item key="import">Import/Export Data</Menu.Item>
                     <Menu.Item key="wipe" onClick={handleConfirmModal}>

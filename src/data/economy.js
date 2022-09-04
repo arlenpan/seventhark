@@ -9,6 +9,7 @@ const DESTRUCTION_STONE_FRAGMENT = {
     pvpExchangeCost: 20,
     bloodstoneCost: 120,
     bloodstoneQuantity: 2,
+    LAMID: 'destruction-stone-fragment-0',
 };
 const GUARDIAN_STONE_FRAGMENT = {
     id: 'guardian_stone_fragment',
@@ -21,6 +22,7 @@ const GUARDIAN_STONE_FRAGMENT = {
     pvpExchangeCost: 10,
     bloodstoneCost: 40,
     bloodstoneQuantity: 2,
+    LAMID: 'guardian-stone-fragment-0',
 };
 const HARMONY_LEAPSTONE = {
     id: 'harmony_leapstone',
@@ -31,6 +33,7 @@ const HARMONY_LEAPSTONE = {
     mariGemCost: 30,
     pvpExchangeCost: 20,
     bloodstoneCost: 50,
+    LAMID: 'harmony-leapstone-2',
 };
 const HARMONY_SHARD_POUCH_S = {
     id: 'harmony_shard_pouch_s',
@@ -40,6 +43,7 @@ const HARMONY_SHARD_POUCH_S = {
     mariQuantity: 5,
     mariGemCost: 23,
     bloodstoneCost: 80,
+    LAMID: 'harmony-shard-pouch-s-1',
 };
 const HARMONY_SHARD_POUCH_M = {
     id: 'harmony_shard_pouch_m',
@@ -48,6 +52,7 @@ const HARMONY_SHARD_POUCH_M = {
     tier: 1,
     mariQuantity: 15,
     mariGemCost: 141,
+    LAMID: 'harmony-shard-pouch-m-2',
 };
 const HARMONY_SHARD_POUCH_L = {
     id: 'harmony_shard_pouch_l',
@@ -55,6 +60,7 @@ const HARMONY_SHARD_POUCH_L = {
     tier: 1,
     pvpExchangeCost: 130,
     imgUrl: '/icons/harmony_shard_pouch_l.webp',
+    LAMID: 'harmony-shard-pouch-l-3',
 };
 const STARS_BREATH = {
     id: 'stars_breath',
@@ -63,6 +69,7 @@ const STARS_BREATH = {
     mariQuantity: 15,
     mariGemCost: 30,
     imgUrl: '/icons/stars_breath.png',
+    LAMID: 'star-s-breath-3',
 };
 
 const DESTRUCTION_STONE = {
@@ -76,6 +83,7 @@ const DESTRUCTION_STONE = {
     imgUrl: '/icons/destruction_stone.webp',
     bloodstoneCost: 150,
     bloodstoneQuantity: 2,
+    LAMID: 'destruction-stone-0',
 };
 const GUARDIAN_STONE = {
     id: 'guardian_stone',
@@ -88,6 +96,7 @@ const GUARDIAN_STONE = {
     imgUrl: '/icons/guardian_stone.png',
     bloodstoneCost: 50,
     bloodstoneQuantity: 2,
+    LAMID: 'guardian-stone-0',
 };
 const LIFE_LEAPSTONE = {
     id: 'life_leapstone',
@@ -98,6 +107,7 @@ const LIFE_LEAPSTONE = {
     pvpExchangeCost: 30,
     imgUrl: '/icons/life_leapstone.png',
     bloodstoneCost: 60,
+    LAMID: 'life-leapstone-2',
 };
 const LIFE_SHARD_POUCH_S = {
     id: 'life_shard_pouch_s',
@@ -107,6 +117,7 @@ const LIFE_SHARD_POUCH_S = {
     mariGemCost: 75,
     imgUrl: '/icons/life_shard_pouch_s.png',
     bloodstoneCost: 480,
+    LAMID: 'life-shard-pouch-s-1',
 };
 const LIFE_SHARD_POUCH_L = {
     id: 'life_shard_pouch_l',
@@ -114,6 +125,7 @@ const LIFE_SHARD_POUCH_L = {
     tier: 2,
     pvpExchangeCost: 200,
     imgUrl: '/icons/life_shard_pouch_l.webp',
+    LAMID: 'life-shard-pouch-l-3',
 };
 const MOONS_BREATH = {
     id: 'moons_breath',
@@ -122,6 +134,7 @@ const MOONS_BREATH = {
     mariQuantity: 10,
     mariGemCost: 30,
     imgUrl: '/icons/moons_breath.png',
+    LAMID: 'moon-s-breath-3',
 };
 const CALDARR_FUSION_MATERIAL = {
     id: 'caldarr_fusion_material',
@@ -130,11 +143,12 @@ const CALDARR_FUSION_MATERIAL = {
     mariQuantity: 15,
     mariGemCost: 60,
     imgUrl: '/icons/caldarr_fusion_material.png',
+    LAMID: 'caldarr-fusion-material-2',
 };
 
 const DESTRUCTION_STONE_CRYSTAL = {
     id: 'destruction_stone_crystal',
-    name: 'Destruction Stone Crystal',
+    name: 'Crystallized Destruction Stone',
     tier: 3,
     bundle: 10,
     mariQuantity: 50,
@@ -144,10 +158,11 @@ const DESTRUCTION_STONE_CRYSTAL = {
     imgUrl: '/icons/destruction_stone_crystal.webp',
     bloodstoneCost: 240,
     bloodstoneQuantity: 2,
+    LAMID: 'crystallized-destruction-stone-0',
 };
 const GUARDIAN_STONE_CRYSTAL = {
     id: 'guardian_stone_crystal',
-    name: 'Guardian Stone Crystal',
+    name: 'Crystallized Guardian Stone',
     tier: 3,
     bundle: 10,
     mariQuantity: 100,
@@ -157,6 +172,7 @@ const GUARDIAN_STONE_CRYSTAL = {
     imgUrl: '/icons/guardian_stone_crystal.png',
     bloodstoneCost: 80,
     bloodstoneQuantity: 2,
+    LAMID: 'crystallized-guardian-stone-0',
 };
 const HONOR_LEAPSTONE = {
     id: 'honor_leapstone',
@@ -168,6 +184,7 @@ const HONOR_LEAPSTONE = {
     chaosExchangeCost: [100, 130, 170, 200, 230, 270],
     imgUrl: '/icons/honor_leapstone.png',
     bloodstoneCost: 80,
+    LAMID: 'honor-leapstone-2',
 };
 const HONOR_SHARD_POUCH_S = {
     id: 'honor_shard_pouch_s',
@@ -177,6 +194,7 @@ const HONOR_SHARD_POUCH_S = {
     mariGemCost: 112,
     imgUrl: '/icons/honor_shard_pouch_s.png',
     bloodstoneCost: 830,
+    LAMID: 'honor-shard-pouch-s-1',
 };
 const HONOR_SHARD_POUCH_L = {
     id: 'honor_shard_pouch_l',
@@ -187,6 +205,7 @@ const HONOR_SHARD_POUCH_L = {
     mariGemCost: 291,
     chaosExchangeCost: [500, 570],
     imgUrl: '/icons/honor_shard_pouch_l.png',
+    LAMID: 'honor-shard-pouch-l-3',
 };
 const SOLAR_GRACE = {
     id: 'solar_grace',
@@ -198,6 +217,7 @@ const SOLAR_GRACE = {
     chaosExchangeQuantity: 7,
     pvpExchangeCost: 80,
     imgUrl: '/icons/solar_grace.png',
+    LAMID: 'solar-grace-1',
 };
 const SOLAR_BLESSING = {
     id: 'solar_blessing',
@@ -209,6 +229,7 @@ const SOLAR_BLESSING = {
     chaosExchangeQuantity: 2,
     pvpExchangeCost: 250,
     imgUrl: '/icons/solar_blessing.png',
+    LAMID: 'solar-blessing-2',
 };
 const SOLAR_PROTECTION = {
     id: 'solar_protection',
@@ -219,6 +240,7 @@ const SOLAR_PROTECTION = {
     pvpExchangeCost: 360,
     chaosExchangeCost: [590, 670],
     imgUrl: '/icons/solar_protection.png',
+    LAMID: 'solar-protection-3',
 };
 const GREAT_HONOR_LEAPSTONE = {
     id: 'great_honor_leapstone',
@@ -230,6 +252,7 @@ const GREAT_HONOR_LEAPSTONE = {
     chaosExchangeCost: [130, 170, 200, 240, 280, 310, 360],
     imgUrl: '/icons/great_honor_leapstone.webp',
     bloodstoneCost: 90,
+    LAMID: 'great-honor-leapstone-2',
 };
 const SIMPLE_OREHA_FUSION_MATERIAL = {
     id: 'simple_oreha_fusion_material',
@@ -238,6 +261,7 @@ const SIMPLE_OREHA_FUSION_MATERIAL = {
     mariQuantity: 20,
     mariGemCost: 54,
     imgUrl: '/icons/simple_oreha_fusion_material.png',
+    LAMID: 'simple-oreha-fusion-material-1',
 };
 const BASIC_OREHA_FUSION_MATERIAL = {
     id: 'basic_oreha_fusion_material',
@@ -246,6 +270,7 @@ const BASIC_OREHA_FUSION_MATERIAL = {
     mariQuantity: 20,
     mariGemCost: 72,
     imgUrl: '/icons/basic_oreha_fusion_material.png',
+    LAMID: 'basic-oreha-fusion-material-2',
 };
 const POWDER_OF_SAGE = {
     id: 'powder_of_sage',
@@ -253,6 +278,7 @@ const POWDER_OF_SAGE = {
     tier: 3.5,
     chaosExchangeCost: [1470],
     imgUrl: '/icons/powder_of_sage.png',
+    LAMID: 'powder-of-sage-3',
 };
 const TAILORING_APPLIED_MENDING = {
     id: 'tailoring_applied_mending',
@@ -261,6 +287,7 @@ const TAILORING_APPLIED_MENDING = {
     tier: 3.5,
     mariQuantity: 4,
     mariGemCost: 260,
+    LAMID: 'tailoring-applied-mending-4',
 };
 const METALLURGY_APPLIED_WELDING = {
     id: 'metallurgy_applied_welding',
@@ -269,6 +296,7 @@ const METALLURGY_APPLIED_WELDING = {
     tier: 3.5,
     mariQuantity: 2,
     mariGemCost: 280,
+    LAMID: 'metallurgy-applied-welding-4',
 };
 
 export const CRYSTALS = {
@@ -276,6 +304,7 @@ export const CRYSTALS = {
     name: 'Blue Crystals',
     imgUrl: '/icons/blue_crystals.png',
     purchaseUnit: 95,
+    LAMID: 'blue-crystal-0',
 };
 
 export const ROYAL_CRYSTALS = {
@@ -285,6 +314,7 @@ export const ROYAL_CRYSTALS = {
     purchaseUnit: 238,
     packPrice: 10,
     packAmount: 1000,
+    LAMID: 'royal-crystal-0',
 };
 
 export const GOLD = {
