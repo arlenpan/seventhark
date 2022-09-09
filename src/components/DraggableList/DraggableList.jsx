@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import styles from './DraggableList.module.scss';
 
@@ -7,7 +8,15 @@ import styles from './DraggableList.module.scss';
  *      item { id: str, render: () => jsx }
  * itemKey: key to lookup for each item for unique identification
  */
-export default function DraggableList({ id, items, itemKey, onReorder, renderItem }) {
+export default function DraggableList({
+    id,
+    items,
+    itemKey,
+    activeItemKey,
+    renderItem,
+    onReorder,
+    onItemClick,
+}) {
     const handleDragEnd = (result) => {
         const { destination, source, draggableId } = result;
         if (!destination) return;
@@ -33,8 +42,12 @@ export default function DraggableList({ id, items, itemKey, onReorder, renderIte
                             <Draggable key={item[itemKey]} draggableId={item[itemKey]} index={i}>
                                 {(dragProvided) => (
                                     <div
-                                        className={styles.item}
+                                        className={classNames(
+                                            styles.item,
+                                            activeItemKey === item[itemKey] && styles.active
+                                        )}
                                         ref={dragProvided.innerRef}
+                                        onClick={() => onItemClick && onItemClick(item)}
                                         {...dragProvided.draggableProps}
                                         {...dragProvided.dragHandleProps}
                                     >

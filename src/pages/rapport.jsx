@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getRapport, setRapportComplete, setRapportFavorite } from 'src/api/rapport';
-import RapportTable from 'src/components/RapportTable';
 import MainLayout from 'src/layouts/MainLayout';
+import RapportTable from 'src/page-components/RapportTable';
 
 const Rapport = () => {
     const [rapport, setRapport] = useState({});

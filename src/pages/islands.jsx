@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getIslands, setIslandComplete, setIslandFavorite } from 'src/api/islands';
-import IslandTable from 'src/components/IslandTable';
 import MainLayout from 'src/layouts/MainLayout';
+import IslandTable from 'src/page-components/IslandTable';
 
 const Islands = () => {
     const [islands, setIslands] = useState({});

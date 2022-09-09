@@ -4,23 +4,27 @@ import { useState } from 'react';
 import {
     createEngravingPreset,
     deleteEngravingPreset,
-    updateEngravingPresets,
+    updateEngravingPresets
 } from 'src/api/engravings';
-import DraggableList from '../DraggableList';
+import DraggableList from 'src/components/DraggableList';
 import CreateEngravingForm from './CreateEngravingForm';
 
-export default function Engravings({ activePreset, presets = [], onUpdate }) {
+export default function Engravings({ presets = [], onUpdate, activePreset, setActivePreset }) {
     const [showCreatePanel, setCreatePanel] = useState(false);
 
     const handleSubmitCreate = (values) => {
-        createEngravingPreset(values);
-        onUpdate();
-        setCreatePanel(false);
+        createEngravingPreset(values).then(() => {
+            onUpdate();
+            setActivePreset(values);
+            setCreatePanel(false);
+        });
     };
 
     const handleDelete = (preset) => {
-        deleteEngravingPreset(preset.name);
-        onUpdate();
+        deleteEngravingPreset(preset.name).then(() => {
+            if (activePreset.name === preset.name) setActivePreset(null);
+            onUpdate();
+        });
     };
 
     const handleReorderPresets = (newPresets) => {
@@ -39,15 +43,22 @@ export default function Engravings({ activePreset, presets = [], onUpdate }) {
                 id="engraving-presets"
                 items={presets}
                 itemKey="name"
+                activeItemKey={activePreset?.name}
                 renderItem={(preset) => (
                     <>
                         <div className="d-flex-column">
                             <span>Name: {preset.name}</span>
                         </div>
-                        <CloseOutlined onClick={() => handleDelete(preset)} />
+                        <CloseOutlined
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                handleDelete(preset);
+                            }}
+                        />
                     </>
                 )}
                 onReorder={handleReorderPresets}
+                onItemClick={setActivePreset}
             />
 
             {showCreatePanel && (

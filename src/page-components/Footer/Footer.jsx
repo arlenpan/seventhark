@@ -1,6 +1,6 @@
 import { useState } from 'react';
+import { Countdown } from 'src/components/Timer';
 import { getDailyResetTimeUTC, getWeeklyResetTimeUTC } from 'src/lib/date';
-import { Countdown } from '../Timer';
 
 export default function Footer() {
     const [dailyReset, setDailyReset] = useState(getDailyResetTimeUTC());

@@ -2,9 +2,9 @@ import { Menu, Modal } from 'antd';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { resetAllData } from 'src/api/importExport';
-import Footer from 'src/components/Footer';
-import Head from 'src/components/Head';
-import ImportExportModal from 'src/components/ImportExportModal/ImportExportModal';
+import Footer from 'src/page-components/Footer';
+import Head from 'src/page-components/Head';
+import ImportExportModal from 'src/page-components/ImportExportModal';
 import styles from './MainLayout.module.scss';
 
 // keys - starts with / - internal link

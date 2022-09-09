@@ -1,9 +1,9 @@
 import { Col, Row } from 'antd';
 import { useEffect, useState } from 'react';
 import { getAllCharacters } from 'src/api/character';
-import CharacterPanel from 'src/components/Checklist/CharacterPanel';
-import ChecklistTables from 'src/components/Checklist/ChecklistTables';
 import MainLayout from 'src/layouts/MainLayout';
+import CharacterPanel from 'src/page-components/Checklist/CharacterPanel';
+import ChecklistTables from 'src/page-components/Checklist/ChecklistTables';
 
 const Checklist = () => {
     const [characters, setCharacters] = useState([]);

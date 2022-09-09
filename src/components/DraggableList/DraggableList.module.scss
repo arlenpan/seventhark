@@ -1,9 +1,13 @@
 .item {
-  display: flex;
-  align-items: center;
-  background: rgba(lightgray, 0.2);
-  border-radius: 5px;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    background: rgba(lightgray, 0.2);
+    border-radius: 5px;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+}
+
+.active {
+    border: 1px solid lightgray;
 }

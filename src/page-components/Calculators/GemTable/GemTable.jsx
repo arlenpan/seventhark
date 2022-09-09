@@ -1,8 +1,8 @@
-import { Col, Input, List, Row, Select, Table } from 'antd';
+import { Col, Input, Row, Select, Table } from 'antd';
 import { useState } from 'react';
-import costEntryStyles from 'src/components/Calculators/CostEntry/CostEntry.module.scss';
 import ItemIcon from 'src/components/ItemIcon';
 import { GOLD } from 'src/data/economy';
+import costEntryStyles from '../CostEntry/CostEntry.module.scss';
 
 const REROLL_TABLE = {
     1: 7,
