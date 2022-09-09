@@ -1,23 +1,17 @@
+import { CloseOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
-import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
     createCharacter,
     deleteCharacter,
     resetSampleCharacters,
     updateAllCharacters,
 } from 'src/api/character';
+import DraggableList from 'src/components/DraggableList';
 import CreateCharacterForm from './CreateCharacterForm';
-
-const DraggableCharacters = dynamic(import('./DraggableCharacters'));
 
 export default function CharacterPanel({ characters = [], onUpdate }) {
     const [showCreatePanel, setCreatePanel] = useState(false);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        setLoading(false);
-    }, []);
 
     const handleReorderCharacters = (newCharacters) => {
         updateAllCharacters(newCharacters);
@@ -48,13 +42,22 @@ export default function CharacterPanel({ characters = [], onUpdate }) {
                     <span className="font-small ml-xs">(drag to reorder)</span>
                 )}
             </div>
-            {!loading && (
-                <DraggableCharacters
-                    characters={characters}
-                    onDelete={handleDelete}
-                    onReorder={handleReorderCharacters}
-                />
-            )}
+            <DraggableList
+                id="characters"
+                items={characters}
+                itemKey="name"
+                renderItem={(character) => (
+                    <>
+                        <div className="d-flex-column">
+                            <span>Name: {character.name}</span>
+                            <span>Item Level: {character.ilvl}</span>
+                        </div>
+                        <CloseOutlined onClick={() => handleDelete(character)} />
+                    </>
+                )}
+                onReorder={handleReorderCharacters}
+            />
+
             {showCreatePanel && (
                 <CreateCharacterForm
                     onSubmit={handleSubmitCreate}
