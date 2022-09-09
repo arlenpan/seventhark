@@ -25,7 +25,7 @@ export default function ImportExportModal({ visible, onClose }) {
     };
 
     return (
-        <Modal visible={visible} onCancel={onClose} footer={false}>
+        <Modal open={visible} onCancel={onClose} footer={false}>
             <h3>Import Data</h3>
             <Upload onChange={handleUpload} maxCount={1} action="/api/noop">
                 <Button type="primary" icon={<UploadOutlined />}>

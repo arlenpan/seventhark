@@ -39,6 +39,31 @@ const Calculator = () => {
 
     const updateCosts = () => getCosts().then(setCosts);
 
+    const items = [
+        {
+            label: "Mari's Shop",
+            key: 'mari',
+            children: <MariShopTable tiers={tiers} costs={costs} />,
+        },
+        { label: 'Chaos Exchange', key: 'chaos', children: <InfiniteChaosTable costs={costs} /> },
+        { label: 'PVP Exchange', key: 'pvp', children: <PVPExchangeTable costs={costs} /> },
+        {
+            label: 'Bloodstone Exchange',
+            key: 'guild',
+            children: <BloodstoneExchangeTable costs={costs} />,
+        },
+        {
+            label: 'Crystal/Pheon Value',
+            key: 'crystals',
+            children: <CrystalsGold costs={costs} />,
+        },
+        {
+            label: 'Gems',
+            key: 'gems',
+            children: <GemTable />,
+        },
+    ];
+
     return (
         <>
             <div className="d-flex-center align-center justify-between mb-s">
@@ -62,29 +87,8 @@ const Calculator = () => {
                 className="mt-s"
                 activeKey={(modifier && modifier[0]) || DEFAULT_TAB}
                 onChange={(key) => router.push(key, undefined, { shallow: true })}
-            >
-                <Tabs.TabPane tab="Mari's Shop" key="mari">
-                    <MariShopTable tiers={tiers} costs={costs} />
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Chaos Exchange" key="chaos">
-                    <InfiniteChaosTable costs={costs} />
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="PvP Exchange" key="pvp">
-                    <PVPExchangeTable costs={costs} />
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Sylmael Bloodstone Exchange" key="guild">
-                    <BloodstoneExchangeTable costs={costs} />
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Crystal/Pheon Value" key="crystals">
-                    <CrystalsGold costs={costs} />
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Gems" key="gems">
-                    <GemTable />
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Item Honing (WIP)" key="honing" disabled>
-                    <div>WIP</div>
-                </Tabs.TabPane>
-            </Tabs>
+                items={items}
+            />
         </>
     );
 };

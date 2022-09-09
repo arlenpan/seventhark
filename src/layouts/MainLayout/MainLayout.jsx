@@ -7,9 +7,15 @@ import Head from 'src/components/Head';
 import ImportExportModal from 'src/components/ImportExportModal/ImportExportModal';
 import styles from './MainLayout.module.scss';
 
+// keys - starts with / - internal link
+// starts with https:// - external link
+// otherwise launch modal
+
+const DEFAULT_ROUTE = '/checklist';
+
 export default function MainLayout({ children }) {
     const router = useRouter();
-    const activeKey = router.pathname === '/' ? '/checklist' : router.pathname;
+    const activeKey = router.asPath === '/' ? DEFAULT_ROUTE : router.asPath;
 
     const [modals, setModals] = useState({});
 
@@ -35,6 +41,41 @@ export default function MainLayout({ children }) {
         });
     };
 
+    const menuItems = [
+        { label: 'Checklist', key: '/checklist' },
+        { label: 'Economy Calculators', key: '/calculator' },
+        { label: 'Engravings', key: '/engravings' },
+        { label: 'Islands', key: '/islands' },
+        { label: 'Rapport', key: '/rapport' },
+        {
+            label: 'Useful Links',
+            key: 'links',
+            children: [
+                {
+                    label: "Maxroll - Important Una's Tasks",
+                    key: 'https://lost-ark.maxroll.gg/resources/unas-tasks',
+                },
+                {
+                    label: 'Maxroll - Rapport Tool',
+                    key: 'https://lost-ark.maxroll.gg/resources/rapport-guide',
+                },
+                {
+                    label: 'Maxroll - Honing Calculator',
+                    key: 'https://lost-ark.maxroll.gg/upgrade-calculator',
+                },
+                {
+                    label: 'Lost Ark Market Online',
+                    key: 'https://www.lostarkmarket.online/',
+                },
+                {
+                    label: 'Import/Export Data',
+                    key: 'import',
+                },
+                { label: 'Reset All Data', key: 'wipe', onClick: handleConfirmModal },
+            ],
+        },
+    ];
+
     return (
         <div className={styles.layout}>
             <Head />
@@ -43,32 +84,8 @@ export default function MainLayout({ children }) {
                 className={styles.nav}
                 selectedKeys={[activeKey]}
                 mode="horizontal"
-            >
-                <Menu.Item key="/checklist">Checklist</Menu.Item>
-                <Menu.Item key="/calculator">Economy Calculators</Menu.Item>
-                <Menu.Item key="/islands">Island Tracker</Menu.Item>
-                <Menu.Item key="/rapport">Rapport Tracker</Menu.Item>
-                {/* <Menu.Item key="/logger" disabled>
-                    Economy Log (WIP)
-                </Menu.Item> */}
-                <Menu.SubMenu key="links" title="Useful Links">
-                    <Menu.Item key="https://lost-ark.maxroll.gg/resources/unas-tasks">
-                        Maxroll - Important Una's Tasks
-                    </Menu.Item>
-                    <Menu.Item key="https://lost-ark.maxroll.gg/resources/rapport-guide">
-                        Maxroll - Rapport Tool
-                    </Menu.Item>
-                    <Menu.Item key="https://lost-ark.maxroll.gg/upgrade-calculator">
-                        Maxroll - Honing Calculator
-                    </Menu.Item>
-                    <Menu.Item key="https://www.lostarkmarket.online/">Lost Ark Market</Menu.Item>
-                    <Menu.Divider />
-                    <Menu.Item key="import">Import/Export Data</Menu.Item>
-                    <Menu.Item key="wipe" onClick={handleConfirmModal}>
-                        Reset All Data
-                    </Menu.Item>
-                </Menu.SubMenu>
-            </Menu>
+                items={menuItems}
+            />
             <section className={styles['page-container']}>
                 <div className={styles.page}>{children}</div>
                 <Footer />

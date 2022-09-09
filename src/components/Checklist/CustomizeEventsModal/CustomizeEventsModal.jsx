@@ -161,7 +161,7 @@ export default function CustomizeEventsModal({ onClose, onSubmit }) {
     return (
         <Modal
             title="Customize Events"
-            visible
+            open
             onCancel={onClose}
             okText="Save"
             onOk={handleSubmit}

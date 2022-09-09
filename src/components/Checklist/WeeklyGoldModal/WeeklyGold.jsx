@@ -131,7 +131,7 @@ export default function WeeklyGold({ characters = [], className }) {
             </Button>
             <Modal
                 title="Weekly Gold Generation"
-                visible={modifier && modifier[0] === 'weeklygold'}
+                open={modifier && modifier[0] === 'weeklygold'}
                 onCancel={() => router.push('/checklist', undefined, { shallow: true })}
                 footer={null}
                 width={960}

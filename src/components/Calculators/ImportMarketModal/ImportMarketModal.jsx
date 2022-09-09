@@ -21,7 +21,7 @@ export default function ImportMarketModal({ onSubmit }) {
             </Button>
             <Modal
                 title="Import from Lost Ark Market Online"
-                visible={visible}
+                open={visible}
                 onCancel={() => setVisible(false)}
                 okText="Import"
                 onOk={handleSubmit}
