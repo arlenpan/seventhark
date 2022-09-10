@@ -1,6 +1,7 @@
 import { CHARACTER_KEY } from './character';
 import { CHECKLIST_CUSTOM_EVENTS, CHECKLIST_HIDDEN_EVENTS, CHECKLIST_KEY } from './checklist';
 import { COSTS_KEY, TIERS_KEY } from './economy';
+import { ENGRAVINGS_KEY } from './engravings';
 import { ISLAND_KEY } from './islands';
 import { getLocal, setLocal } from './localStorage';
 import { RAPPORT_KEY } from './rapport';
@@ -15,6 +16,7 @@ const STORAGE_KEYS = [
     COSTS_KEY,
     ISLAND_KEY,
     RAPPORT_KEY,
+    ENGRAVINGS_KEY
 ];
 
 const downloadObjectAsJson = (exportObj, exportName) => {

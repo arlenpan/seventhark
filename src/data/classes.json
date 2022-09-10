@@ -1,0 +1,209 @@
+{
+  "berserker": {
+    "name": "berserker",
+    "subclass": "warrior",
+    "gender": "male",
+    "engravings": [
+      "berserker's technique",
+      "mayhem"
+    ]
+  },
+  "destroyer": {
+    "name": "destroyer",
+    "subclass": "warrior",
+    "gender": "male",
+    "engravings": [
+      "gravity training",
+      "rage hammer"
+    ]
+  },
+  "gunlancer": {
+    "name": "gunlancer",
+    "subclass": "warrior",
+    "gender": "male",
+    "engravings": [
+      "combat readiness",
+      "lone knight"
+    ]
+  },
+  "paladin": {
+    "name": "paladin",
+    "subclass": "warrior",
+    "gender": "male",
+    "engravings": [
+      "blessed aura",
+      "judgment"
+    ]
+  },
+  "striker": {
+    "name": "striker",
+    "subclass": "martial artist",
+    "gender": "male",
+    "engravings": [
+      "deathblow",
+      "esoteric flurry"
+    ]
+  },
+  "wardancer": {
+    "name": "wardancer",
+    "subclass": "martial artist",
+    "gender": "female",
+    "engravings": [
+      "esoteric skill enhancement",
+      "first intention"
+    ]
+  },
+  "scrapper": {
+    "name": "scrapper",
+    "subclass": "martial artist",
+    "gender": "female",
+    "engravings": [
+      "shock training",
+      "ultimate skill: taijutsu"
+    ]
+  },
+  "soulfist": {
+    "name": "soulfist",
+    "subclass": "martial artist",
+    "gender": "female",
+    "engravings": [
+      "energy overflow",
+      "robust spirit"
+    ]
+  },
+  "glavier": {
+    "name": "glavier",
+    "subclass": "martial artist",
+    "gender": "female",
+    "engravings": [
+      "control",
+      "pinnacle"
+    ]
+  },
+  "gunslinger": {
+    "name": "gunslinger",
+    "subclass": "gunner",
+    "gender": "female",
+    "engravings": [
+      "peacemaker",
+      "time to hunt"
+    ]
+  },
+  "deadeye": {
+    "name": "deadeye",
+    "subclass": "gunner",
+    "gender": "male",
+    "engravings": [
+      "enhanced weapon",
+      "pistoleer"
+    ]
+  },
+  "artillerist": {
+    "name": "artillerist",
+    "subclass": "gunner",
+    "gender": "male",
+    "engravings": [
+      "barrage enhancement",
+      "firepower enhancement"
+    ]
+  },
+  "sharpshooter": {
+    "name": "sharpshooter",
+    "subclass": "gunner",
+    "gender": "male",
+    "engravings": [
+      "death strike",
+      "loyal companion"
+    ]
+  },
+  "machinist": {
+    "name": "machinist",
+    "subclass": "gunner",
+    "gender": "male",
+    "engravings": [
+      "arthetine technology",
+      "legacy of evolution"
+    ]
+  },
+  "bard": {
+    "name": "bard",
+    "subclass": "mage",
+    "gender": "female",
+    "engravings": [
+      "desperate salvation",
+      "true courage"
+    ]
+  },
+  "sorceress": {
+    "name": "sorceress",
+    "subclass": "mage",
+    "gender": "female",
+    "engravings": [
+      "igniter",
+      "reflux"
+    ]
+  },
+  "arcanist": {
+    "name": "arcanist",
+    "subclass": "mage",
+    "gender": "female",
+    "engravings": [
+      "emperor",
+      "empress"
+    ]
+  },
+  "summoner": {
+    "name": "summoner",
+    "subclass": "mage",
+    "gender": "female",
+    "engravings": [
+      "communication overflow",
+      "master summoner"
+    ]
+  },
+  "shadowhunter": {
+    "name": "shadowhunter",
+    "subclass": "assassin",
+    "gender": "female",
+    "engravings": [
+      "demonic impulse",
+      "perfect suppression"
+    ]
+  },
+  "deathblade": {
+    "name": "deathblade",
+    "subclass": "assassin",
+    "gender": "female",
+    "engravings": [
+      "remaining energy",
+      "surge"
+    ]
+  },
+  "reaper": {
+    "name": "reaper",
+    "subclass": "assassin",
+    "gender": "female",
+    "engravings": [
+      "moon",
+      "thirst"
+    ]
+  },
+  "artist": {
+    "name": "artist",
+    "subclass": "specialist",
+    "gender": "female",
+    "engravings": [
+      "full bloom",
+      "regression"
+    ]
+  },
+  "aeromancer": {
+    "name": "aeromancer",
+    "subclass": "specialist",
+    "gender": "female",
+    "engravings": [
+      "windfury",
+      "drizzle"
+    ]
+  }
+}

@@ -44,7 +44,7 @@ export default function MainLayout({ children }) {
     const menuItems = [
         { label: 'Checklist', key: '/checklist' },
         { label: 'Economy Calculators', key: '/calculator' },
-        { label: 'Engravings', key: '/engravings' },
+        { label: 'Engravings (WIP)', key: '/engravings' },
         { label: 'Islands', key: '/islands' },
         { label: 'Rapport', key: '/rapport' },
         {

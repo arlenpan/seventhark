@@ -7,7 +7,8 @@ import {
     updateEngravingPresets
 } from 'src/api/engravings';
 import DraggableList from 'src/components/DraggableList';
-import CreateEngravingForm from './CreateEngravingForm';
+import { capitalize } from 'src/lib/string';
+import EngravingForm from './EngravingForm';
 
 export default function Engravings({ presets = [], onUpdate, activePreset, setActivePreset }) {
     const [showCreatePanel, setCreatePanel] = useState(false);
@@ -48,6 +49,7 @@ export default function Engravings({ presets = [], onUpdate, activePreset, setAc
                     <>
                         <div className="d-flex-column">
                             <span>Name: {preset.name}</span>
+                            {preset.class && <span>Class: {capitalize(preset.class)}</span>}
                         </div>
                         <CloseOutlined
                             onClick={(e) => {
@@ -62,7 +64,7 @@ export default function Engravings({ presets = [], onUpdate, activePreset, setAc
             />
 
             {showCreatePanel && (
-                <CreateEngravingForm
+                <EngravingForm
                     onSubmit={handleSubmitCreate}
                     onClose={() => setCreatePanel(false)}
                 />
