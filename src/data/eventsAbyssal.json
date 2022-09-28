@@ -273,5 +273,32 @@
     "type": "weekly",
     "normalMode": "legion_raid_1430_3",
     "combinedName": "Vykas - Phase 3"
+  },
+  "legion_raid_1475_1": {
+    "id": "legion_raid_1475_1",
+    "name": "Kakul-Saydon - Phase 1",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1475,
+    "gold": 1000,
+    "type": "weekly"
+  },
+  "legion_raid_1475_2": {
+    "id": "legion_raid_1475_2",
+    "name": "Kakul-Saydon - Phase 2",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1475,
+    "gold": 1000,
+    "type": "weekly"
+  },
+  "legion_raid_1475_3": {
+    "id": "legion_raid_1475_3",
+    "name": "Kakul-Saydon - Phase 3",
+    "quantity": 1,
+    "tier": 3,
+    "ilvl": 1475,
+    "gold": 2500,
+    "type": "weekly"
   }
 }

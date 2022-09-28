@@ -4,5 +4,11 @@
     "name": "Event Guardian Raid",
     "quantity": 1,
     "type": "daily"
-  }
+  },
+  "trade_event": {
+    "id": "trade_event",
+    "name": "Vendor - Event Exchange",
+    "quantity": 1,
+    "type": "weekly"
+  },
 }
